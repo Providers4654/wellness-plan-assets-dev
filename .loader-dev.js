@@ -14,7 +14,8 @@
   const version = daily + (manualBump ? "-" + manualBump : "");
   const ts = Date.now();
 
-  const base = "https://providers4654.github.io/wellness-plan-assets";
+  const base = "https://providers4654.github.io/wellness-plan-assets-dev";
+
 
   // === 1. Load HTML shell ===
   fetch(`${base}/wellness-plan.html?v=${version}&t=${ts}`)
