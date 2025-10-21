@@ -15,10 +15,9 @@ function cssVar(name) {
 // --- Provider-specific public CSVs ---
 const PROVIDERS = {
   wellness: {
-    wellness: "https://docs.google.com/spreadsheets/d/e/2PACX-1vYOURDEVLINK/pub?gid=123456789&single=true&output=csv"
+    wellness: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Bi2xiUKiVQaoTioPuFRR80FnErpRYewmt9bHTrkFW7KSUeiXBoZM3bJZHGzFgDWA3lYrb5_6T5WO/pub?gid=67277044&single=true&output=csv"
   }
 };
-
 
 
 const TABS = {
