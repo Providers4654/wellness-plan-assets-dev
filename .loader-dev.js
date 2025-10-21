@@ -1,5 +1,5 @@
 // ============================
-// DEV WELLNESS PLAN DEV LOADER (HTML + CSS + JS)
+// DEV WELLNESS PLAN LOADER (HTML + CSS + JS)
 // ============================
 
 (() => {
@@ -16,9 +16,8 @@
 
   const base = "https://providers4654.github.io/wellness-plan-assets-dev";
 
-
   // === 1. Load HTML shell ===
-  fetch(`${base}/wellness-plan.html?v=${version}&t=${ts}`)
+  fetch(`${base}/wellness-plan-dev.html?v=${version}&t=${ts}`)
     .then(res => res.text())
     .then(html => {
       document.getElementById("wellness-root").innerHTML = html;
@@ -26,7 +25,7 @@
       // === 2. Load CSS after HTML ===
       const cssLink = document.createElement("link");
       cssLink.rel = "stylesheet";
-      cssLink.href = `${base}/wellness-plan.css?v=${version}&t=${ts}`;
+      cssLink.href = `${base}/wellness-plan-dev.css?v=${version}&t=${ts}`;
       cssLink.crossOrigin = "anonymous";
       cssLink.referrerPolicy = "no-referrer";
       document.head.appendChild(cssLink);
