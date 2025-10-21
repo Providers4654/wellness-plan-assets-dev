@@ -17,30 +17,31 @@
   const base = "https://providers4654.github.io/wellness-plan-assets-dev";
 
   // === 1. Load HTML shell ===
-  fetch(`${base}/wellness-plan-dev.html?v=${version}&t=${ts}`)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("wellness-root").innerHTML = html;
+fetch(`${base}/wellness-plan-dev.html?v=${version}&t=${ts}`)
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("wellness-root").innerHTML = html;
 
-      // === 2. Load CSS after HTML ===
-      const cssLink = document.createElement("link");
-      cssLink.rel = "stylesheet";
-      cssLink.href = `${base}/wellness-plan-dev.css?v=${version}&t=${ts}`;
-      cssLink.crossOrigin = "anonymous";
-      cssLink.referrerPolicy = "no-referrer";
-      document.head.appendChild(cssLink);
+    // === 2. Load CSS after HTML ===
+    const cssLink = document.createElement("link");
+    cssLink.rel = "stylesheet";
+    cssLink.href = `${base}/wellness-plan-dev.css?v=${version}&t=${ts}`;
+    cssLink.crossOrigin = "anonymous";
+    cssLink.referrerPolicy = "no-referrer";
+    document.head.appendChild(cssLink);
 
-      // === 3. Load JS logic (DEV version) ===
-      const jsScript = document.createElement("script");
-      jsScript.src = `${base}/wellness-plan-dev.js?v=${version}&t=${ts}`;
-      jsScript.crossOrigin = "anonymous";
-      jsScript.referrerPolicy = "no-referrer";
-      jsScript.onload = () => {
-        console.log("[Loader DEV] wellness-plan-dev.js loaded successfully 🚀");
-      };
-      document.body.appendChild(jsScript);
-    })
-    .catch(err => console.error("[Wellness DEV Loader] Failed to load HTML", err));
+    // === 3. Load JS logic (DEV version) ===
+    const jsScript = document.createElement("script");
+    jsScript.src = `${base}/wellness-plan-dev.js?v=${version}&t=${ts}`;
+    jsScript.crossOrigin = "anonymous";
+    jsScript.referrerPolicy = "no-referrer";
+    jsScript.onload = () => {
+      console.log("[Loader DEV] wellness-plan-dev.js loaded successfully 🚀");
+    };
+    document.body.appendChild(jsScript);
+  })
+  .catch(err => console.error("[Wellness DEV Loader] Failed to load HTML", err));
+
 
   console.log(`[Wellness Plan DEV Loader] version=${version}, ts=${ts}`);
 })();
