@@ -1,9 +1,9 @@
 // ============================
-// WELLNESS PLAN LOADER (HTML + CSS + JS)
+// DEV WELLNESS PLAN DEV LOADER (HTML + CSS + JS)
 // ============================
 
 (() => {
-  const manualBump = "1"; // set to "" for normal daily refresh
+  const manualBump = "1"; // bump this if your browser caches aggressively
 
   const today = new Date();
   const daily =
@@ -14,33 +14,33 @@
   const version = daily + (manualBump ? "-" + manualBump : "");
   const ts = Date.now();
 
+  const base = "https://providers4654.github.io/wellness-plan-assets";
+
   // === 1. Load HTML shell ===
-  fetch(`https://providers4654.github.io/wellness-plan-assets/wellness-plan.html?v=${version}&t=${ts}`)
+  fetch(`${base}/wellness-plan.html?v=${version}&t=${ts}`)
     .then(res => res.text())
     .then(html => {
       document.getElementById("wellness-root").innerHTML = html;
 
-
       // === 2. Load CSS after HTML ===
       const cssLink = document.createElement("link");
       cssLink.rel = "stylesheet";
-      cssLink.href = `https://providers4654.github.io/wellness-plan-assets/wellness-plan.css?v=${version}&t=${ts}`;
+      cssLink.href = `${base}/wellness-plan.css?v=${version}&t=${ts}`;
       cssLink.crossOrigin = "anonymous";
       cssLink.referrerPolicy = "no-referrer";
       document.head.appendChild(cssLink);
 
-      // === 3. Load JS logic after HTML ===
+      // === 3. Load JS logic (DEV version) ===
       const jsScript = document.createElement("script");
-      jsScript.src = `https://providers4654.github.io/wellness-plan-assets/wellness-plan.js?v=${version}&t=${ts}`;
+      jsScript.src = `${base}/wellness-plan-dev.js?v=${version}&t=${ts}`;
       jsScript.crossOrigin = "anonymous";
       jsScript.referrerPolicy = "no-referrer";
       jsScript.onload = () => {
-        console.log("[Loader] wellness-plan.js loaded");
-
+        console.log("[Loader DEV] wellness-plan-dev.js loaded successfully 🚀");
       };
       document.body.appendChild(jsScript);
     })
-    .catch(err => console.error("[Wellness Loader] Failed to load HTML", err));
+    .catch(err => console.error("[Wellness DEV Loader] Failed to load HTML", err));
 
-  console.log(`[Wellness Plan Loader] version=${version}, ts=${ts}`);
+  console.log(`[Wellness Plan DEV Loader] version=${version}, ts=${ts}`);
 })();
