@@ -799,12 +799,6 @@ html, body {
   margin-right: 0;
 }
 
-/* ✅ Text injection from CSS variable still works */
-.wellness-plan .wellness-bubble .section-subtext.to-consider-subtext::before {
-  content: var(--to-consider-subtext);
-  display: block;
-}
-
 /* Hover polish */
 .to-consider-subtext:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
