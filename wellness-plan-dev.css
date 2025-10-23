@@ -1648,14 +1648,16 @@ html, body {
    BUTTONS: SCHEDULE + PRINT (Refined, centered, no icon)
    ============================ */
 
-/* Center wrapper (now standalone, not tied to .resource-link) */
+/* Follow-Up Button Block — with divider and extra spacing */
 .wellness-plan .followup-link {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 36px;       /* more space above */
   margin-bottom: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #eee; /* subtle divider like other resource sections */
 }
 
-/* Anchor alignment */
+/* Center the anchor and ensure proper alignment */
 .wellness-plan .followup-link a {
   display: flex;
   justify-content: center;
@@ -1685,7 +1687,7 @@ html, body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), inset 0 1px 0 #fff;
 }
 
-/* Hover + pressed states */
+/* Hover + Pressed States */
 .schedule-followup-btn:hover {
   background: linear-gradient(145deg, #f8f8f8, #eaeaea);
   border-color: #999;
@@ -1726,7 +1728,7 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile adjustment */
+/* Mobile Adjustment */
 @media (max-width: 600px) {
   .schedule-followup-btn {
     width: 100%;
@@ -1740,6 +1742,7 @@ html, body {
     justify-content: center;
   }
 }
+
 
 
 
