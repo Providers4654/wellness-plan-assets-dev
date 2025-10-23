@@ -123,6 +123,7 @@ setTextIfAvailable(".title-summary", "--title-summary", "Summary");
 setTextIfAvailable(".title-lifestyle", "--title-lifestyle", "Lifestyle & Health Optimization Protocol");
 setTextIfAvailable(".lifestyle-subtext", "--lifestyle-subtext", "");
 setTextIfAvailable(".title-to-consider", "--title-to-consider", "To Consider");
+setTextIfAvailable(".to-consider-subtext", "--to-consider-subtext", ""); // 👈 ADD THIS LINE
 setTextIfAvailable(".title-goals", "--title-goals", "Goals & Follow-Up");
 
 
