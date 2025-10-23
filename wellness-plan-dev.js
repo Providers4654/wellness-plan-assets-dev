@@ -471,10 +471,12 @@ toConsiderList.innerHTML = orderedCats.map(cat => `
 
 
 
-    toConsiderBlock.style.display = "block";
-  } else {
-    toConsiderBlock.style.display = "none";
-  }
+toConsiderBlock.style.display = "block";
+} else {
+  // Hide the entire "To Consider" section wrapper if there’s nothing selected
+  const toConsiderSection = document.querySelector(".to-consider-section");
+  if (toConsiderSection) toConsiderSection.remove(); // remove entire section (title + spacing)
+}
 }
 
 
