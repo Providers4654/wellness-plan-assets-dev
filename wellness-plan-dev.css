@@ -747,39 +747,67 @@ html, body {
 
 
 /* ============================
-   FINAL OVERRIDE: TO CONSIDER (ENFORCED)
+   TO CONSIDER — FINAL, WORKING
+   (expects markup like:)
+   <ul id="toConsider">
+     <li class="to-consider-li">
+       <div class="to-consider-subtitle">Hormones</div>
+       <div class="to-consider-content">…items…</div>
+     </li>
+     …
+   </ul>
    ============================ */
 
+/* Block wrapper cleanup (keep your bubble clean) */
+.wellness-plan .med-time-block.to-consider-block {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove any legacy label */
+.wellness-plan .med-time-block.to-consider-block .med-time-label {
+  display: none !important;
+}
+
+/* Each category lives in a single <li> */
+#toConsider .to-consider-li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------
+   CATEGORY HEADER (button)
+------------------------------- */
 .wellness-plan .to-consider-subtitle {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:relative;
-  background:#f9fbff;
-  border:1px solid #e2e8f9;
-  border-radius:14px;
-  padding:1.25rem 1.5rem 1.25rem 5.25rem;
-  margin:0.9rem 0;
-  color:#121212;
-  font-size:2rem;
-  font-weight:700;
-  cursor:pointer;
-  transition:all 0.25s ease;
-  box-shadow:0 3px 10px rgba(0,0,0,0.05);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25rem 1.5rem 1.25rem 5.25rem;
+  margin: 0.9rem 0;
+  background: #f9fbff;
+  border: 1px solid #e2e8f9;
+  border-radius: 14px;
+  color: #121212;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-
-
-/* Mobile scaling */
-@media (max-width: 600px) {
-  .to-consider-subtitle {
-    font-size: 1.1rem !important;
-    padding: 1rem 1rem 1rem 3rem !important;
-  }
+.wellness-plan .to-consider-subtitle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
-/* Accent bar + arrow restored */
-.to-consider-subtitle::before {
+/* Left accent bar */
+.wellness-plan .to-consider-subtitle::before {
   content: "";
   position: absolute;
   left: 0;
@@ -789,23 +817,110 @@ html, body {
   border-radius: 14px 0 0 14px;
   background: var(--accent-color, #6b93ff);
 }
-.to-consider-subtitle::after {
+
+/* Arrow chevron */
+.wellness-plan .to-consider-subtitle::after {
   content: "›";
   font-size: 1.75rem;
   color: var(--accent-color, #6b93ff);
   transition: transform 0.3s ease;
 }
-.to-consider-subtitle.expanded::after {
+.wellness-plan .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-/* Category color themes reapplied */
-.to-consider-subtitle:nth-of-type(1) { --accent-color: #6b93ff; }
-.to-consider-subtitle:nth-of-type(2) { --accent-color: #f5a623; }
-.to-consider-subtitle:nth-of-type(3) { --accent-color: #6acb72; }
-.to-consider-subtitle:nth-of-type(4) { --accent-color: #b48bff; }
-.to-consider-subtitle:nth-of-type(5) { --accent-color: #ff6b6b; }
+/* Mobile scale */
+@media (max-width: 600px) {
+  .wellness-plan .to-consider-subtitle {
+    font-size: 1.1rem !important;
+    padding: 1rem 1rem 1rem 3rem !important;
+  }
+}
 
+/* ------------------------------
+   PANEL CONTENT (collapsible)
+------------------------------- */
+.wellness-plan .to-consider-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1.75rem;
+  margin: 0.25rem 0 0.75rem 0.5rem;
+  transition: all 0.35s ease;
+  border-left: 3px solid transparent;
+  border-radius: 6px;
+  background: #fff;
+}
+.wellness-plan .to-consider-content.open {
+  max-height: 800px;
+  opacity: 1;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+/* ------------------------------
+   ITEMS INSIDE PANEL
+------------------------------- */
+.wellness-plan .to-consider-item {
+  padding: 0.9rem 0 0.9rem 0.75rem;
+  border-bottom: 1px dashed #e3e6f0;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.wellness-plan .to-consider-item:hover {
+  background: #f8faff;
+  transform: translateY(-1px);
+}
+.wellness-plan .to-consider-item:last-child { border-bottom: none; }
+
+.wellness-plan .to-consider-name {
+  font-weight: 700;
+  color: #202020;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+.wellness-plan .to-consider-blurb {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.55;
+  font-style: italic;
+}
+.wellness-plan .to-consider-blurb a {
+  color: var(--accent-color, #3052ff);
+  text-decoration: underline;
+  font-style: italic;
+  transition: color 0.25s ease;
+}
+.wellness-plan .to-consider-blurb a:hover { color: #1b33b6; }
+
+/* ------------------------------
+   CATEGORY COLORS
+   (match order of <li>s)
+------------------------------- */
+#toConsider > li:nth-child(1) .to-consider-subtitle,
+#toConsider > li:nth-child(1) .to-consider-content {
+  --accent-color: #6b93ff;   /* Blue */
+  border-left-color: #6b93ff;
+}
+#toConsider > li:nth-child(2) .to-consider-subtitle,
+#toConsider > li:nth-child(2) .to-consider-content {
+  --accent-color: #6acb72;   /* Green */
+  border-left-color: #6acb72;
+}
+#toConsider > li:nth-child(3) .to-consider-subtitle,
+#toConsider > li:nth-child(3) .to-consider-content {
+  --accent-color: #ff6b6b;   /* Coral */
+  border-left-color: #ff6b6b;
+}
+#toConsider > li:nth-child(4) .to-consider-subtitle,
+#toConsider > li:nth-child(4) .to-consider-content {
+  --accent-color: #b48bff;   /* Lavender */
+  border-left-color: #b48bff;
+}
+#toConsider > li:nth-child(5) .to-consider-subtitle,
+#toConsider > li:nth-child(5) .to-consider-content {
+  --accent-color: #f5a623;   /* Gold */
+  border-left-color: #f5a623;
+}
 
 
 
