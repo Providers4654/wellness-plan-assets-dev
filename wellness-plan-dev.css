@@ -1087,6 +1087,10 @@ html, body {
    GOALS + FOLLOW-UP (dynamic & polished)
    ============================ */
 
+.wellness-plan .goal-block {
+  margin-bottom: 2.2rem; /* consistent rhythm between blocks */
+}
+
 .wellness-plan .goals-list {
   list-style: none;
   padding-left: 0;
@@ -1144,65 +1148,67 @@ html, body {
   font-weight: 500;
   transition: color 0.25s ease;
 }
+
 .wellness-plan .goals-list li a:hover {
   color: #004999;
 }
 
-/* --- Automatic rotating accent colors for each goals-list block --- */
-.wellness-plan .goals-list:nth-of-type(1) li {
+/* --- Automatic rotating accent colors for each goal block --- */
+.wellness-plan .goal-block:nth-of-type(1) .goals-list li {
   border-left-color: #6b93ff;
   background: linear-gradient(135deg, #eef1ff, #ffffff);
 }
-.wellness-plan .goals-subheader:nth-of-type(1) {
+.wellness-plan .goal-block:nth-of-type(1) .goals-subheader {
   color: #6b93ff;
 }
 
-.wellness-plan .goals-list:nth-of-type(2) li {
+.wellness-plan .goal-block:nth-of-type(2) .goals-list li {
   border-left-color: #00a5b5;
   background: linear-gradient(135deg, #e8ffff, #ffffff);
 }
-.wellness-plan .goals-subheader:nth-of-type(2) {
+.wellness-plan .goal-block:nth-of-type(2) .goals-subheader {
   color: #00a5b5;
 }
 
-.wellness-plan .goals-list:nth-of-type(3) li {
+.wellness-plan .goal-block:nth-of-type(3) .goals-list li {
   border-left-color: #b86bff;
   background: linear-gradient(135deg, #f8f3ff, #ffffff);
 }
-.wellness-plan .goals-subheader:nth-of-type(3) {
+.wellness-plan .goal-block:nth-of-type(3) .goals-subheader {
   color: #b86bff;
 }
 
-.wellness-plan .goals-list:nth-of-type(4) li {
+.wellness-plan .goal-block:nth-of-type(4) .goals-list li {
   border-left-color: #28b463;
   background: linear-gradient(135deg, #e9f7ef, #ffffff);
 }
-.wellness-plan .goals-subheader:nth-of-type(4) {
+.wellness-plan .goal-block:nth-of-type(4) .goals-subheader {
   color: #28b463;
 }
 
-.wellness-plan .goals-list:nth-of-type(5) li {
+.wellness-plan .goal-block:nth-of-type(5) .goals-list li {
   border-left-color: #ff6f61;
   background: linear-gradient(135deg, #fff4f4, #ffffff);
 }
-.wellness-plan .goals-subheader:nth-of-type(5) {
+.wellness-plan .goal-block:nth-of-type(5) .goals-subheader {
   color: #ff6f61;
 }
 
-.wellness-plan .goals-list:nth-of-type(6) li {
+.wellness-plan .goal-block:nth-of-type(6) .goals-list li {
   border-left-color: #f5a623;
   background: linear-gradient(135deg, #fff8e1, #ffffff);
 }
-.wellness-plan .goals-subheader:nth-of-type(6) {
+.wellness-plan .goal-block:nth-of-type(6) .goals-subheader {
   color: #f5a623;
 }
 
-/* --- Nested bullet lists --- */
+/* --- Nested bullet lists (inside any goal item) --- */
 .wellness-plan .goals-list li ul {
   list-style: disc;
   margin: 8px 0 0 22px;
   padding-left: 0;
 }
+
 .wellness-plan .goals-list li ul li {
   background: none !important;
   border-left: none !important;
