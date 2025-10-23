@@ -1133,6 +1133,12 @@ html, body {
   text-transform: none;
   position: relative;
 }
+
+/* Fix: first goal block (Visit Timeline) starts too low */
+.wellness-plan .goal-block:first-of-type .goals-subheader {
+  margin-top: 0.4rem !important;
+}
+
 .wellness-plan .goals-subheader::after {
   content: "";
   display: block;
