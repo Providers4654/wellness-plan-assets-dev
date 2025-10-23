@@ -730,7 +730,6 @@ async function loadPatientData() {
 
     if (patientBlock.length > 0) {
       injectPatientData(patientBlock, lifestyleData, medsData, bodyCompData, toConsiderData);
-      injectResourceLinksAndTitles(); // 👈 new line
     } else {
       console.warn(`⚠️ No rows found for Patient ID=${patientId}`);
     }
