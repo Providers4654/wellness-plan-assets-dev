@@ -726,7 +726,7 @@ html, body {
 @media (max-width: 600px) {
   /* Section Titles (📋 Personalized Wellness Plan, 💊 Treatment Summary, etc.) */
   .wellness-plan .section-title {
-    font-size: 16.5px !important;   /* smaller on mobile */
+    font-size: 18px !important;   /* smaller on mobile */
     padding: 4px 14px !important; /* tighter pill padding */
   }
 
