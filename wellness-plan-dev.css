@@ -750,27 +750,24 @@ html, body {
    FINAL OVERRIDE: TO CONSIDER (ENFORCED)
    ============================ */
 
-.wellness-plan .to-consider-subtitle,
-.sqs-block-content .to-consider-subtitle,
-.to-consider-subtitle {
-  all: unset; /* clears theme defaults */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  position: relative !important;
-  background: #f9fbff !important;
-  border: 1px solid #e2e8f9 !important;
-  border-radius: 14px !important;
-  padding: 1.25rem 1.5rem 1.25rem 5.25rem !important;
-  margin: 0.9rem 0 !important;
-  color: #121212 !important;
-  font-size: 2rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.4px !important;
-  cursor: pointer !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
+.wellness-plan .to-consider-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: #f9fbff;
+  border: 1px solid #e2e8f9;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem 1.25rem 5.25rem;
+  margin: 0.9rem 0;
+  color: #121212;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
+
 
 /* Mobile scaling */
 @media (max-width: 600px) {
