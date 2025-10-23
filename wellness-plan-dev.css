@@ -1140,12 +1140,12 @@ html, body {
 
 /* Adds consistent vertical spacing between each goal section block */
 .wellness-plan .goal-block {
-  margin-top: 2rem; /* Adjust for more/less space between goals */
+  margin-top: 3rem; /* Adjust for more/less space between goals */
 }
 
 /* Keep the first goal block snug under the pill title */
 .wellness-plan .goal-block:first-of-type {
-  margin-top: 0.6rem !important;
+  margin-top: 0.2rem !important;
 }
 
 
