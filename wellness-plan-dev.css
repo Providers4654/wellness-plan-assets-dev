@@ -1648,11 +1648,20 @@ html, body {
    BUTTONS: SCHEDULE + PRINT (Refined, centered, no icon)
    ============================ */
 
-/* Wrapper to center the button on desktop */
+/* Center wrapper + override global left-align */
 .wellness-plan .resource-link.followup-link {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+/* Fix: anchor inherits left-align from global rule — override that */
+.wellness-plan .resource-link.followup-link a {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center !important;
 }
 
 .schedule-followup-btn {
@@ -1667,7 +1676,7 @@ html, body {
   cursor: pointer;
   transition: all 0.25s ease;
   letter-spacing: 0.3px;
-  display: inline-flex; /* needed for text-align centering to work */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
@@ -1724,8 +1733,9 @@ html, body {
     padding: 10px 20px;
   }
 
-  .wellness-plan .resource-link.followup-link {
-    text-align: center; /* keeps centered feel on mobile */
+  .wellness-plan .resource-link.followup-link a {
+    width: 100%;
+    justify-content: center;
   }
 }
 
