@@ -456,7 +456,7 @@ if (toConsiderList && toConsiderBlock) {
     ];
 
 toConsiderList.innerHTML = orderedCats.map(cat => `
-  <li class="to-consider-subtitle">${cat}</li>
+  <div class="to-consider-subtitle">${cat}</div>
   <div class="to-consider-content">
     ${grouped[cat].map(item => `
       <div class="to-consider-item">
@@ -466,6 +466,7 @@ toConsiderList.innerHTML = orderedCats.map(cat => `
     `).join("")}
   </div>
 `).join("");
+
 
 
     toConsiderBlock.style.display = "block";
