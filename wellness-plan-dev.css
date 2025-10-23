@@ -752,127 +752,118 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" BLOCK (final polished version)
+   "TO CONSIDER" BLOCK (refined minimal version)
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
-  background: linear-gradient(180deg, #f9faff, #f3f6ff);
-  border-left: 5px solid #6b93ff;
-  padding: 1.5rem 1.25rem;
+  background: #fff;
+  border-left: 4px solid #6b93ff;
   border-radius: 16px;
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.06),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9);
-  transition: box-shadow 0.3s ease, transform 0.25s ease;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
 }
 
 .wellness-plan .med-time-block.to-consider-block:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.08),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
 }
 
-/* Hide legacy header if still present */
+/* Hide old header if present */
 .wellness-plan .med-time-block.to-consider-block .med-time-label {
   display: none !important;
 }
 
-/* Category list container */
+/* Container list */
 .wellness-plan .med-time-block.to-consider-block .medication-list {
   list-style: none;
   padding-left: 0;
-  margin-top: 0.75rem;
+  margin: 0;
 }
 
 /* ============================
-   CATEGORY HEADERS
+   CATEGORY HEADER (clean accordion)
    ============================ */
 .to-consider-subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f7f8ff;
-  border: 1px solid rgba(107, 147, 255, 0.25);
+  background: #fafbff;
+  border: 1px solid #e0e4f7;
   border-radius: 10px;
   padding: 0.75rem 1rem;
-  margin-bottom: 10px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #30366f;
+  color: #2a2a2a;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   cursor: pointer;
   user-select: none;
-  box-shadow: 0 1px 3px rgba(107, 147, 255, 0.12);
   transition: all 0.25s ease;
+}
+
+.to-consider-subtitle:hover {
+  background: #f5f7ff;
+  border-color: #d0d7ff;
 }
 
 .to-consider-subtitle::after {
   content: "›";
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #6b93ff;
-  transition: transform 0.3s ease;
-}
-
-.to-consider-subtitle.expanded {
-  background: linear-gradient(90deg, #eef2ff, #f8faff);
-  border-color: rgba(107, 147, 255, 0.4);
-  color: #2333a5;
-  box-shadow: 0 2px 8px rgba(107, 147, 255, 0.15);
+  transition: transform 0.25s ease;
 }
 
 .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-.to-consider-subtitle:hover {
-  background: linear-gradient(90deg, #f0f3ff, #f9faff);
-  box-shadow: 0 2px 6px rgba(107, 147, 255, 0.18);
-}
-
 /* ============================
-   ITEMS INSIDE CATEGORY
+   ITEM CARDS
    ============================ */
 .to-consider-row {
-  margin-bottom: 14px;
-  padding: 0.75rem 1rem 0.5rem 1.5rem;
   background: #ffffff;
+  border: 1px solid #eee;
   border-radius: 10px;
-  border-left: 4px solid rgba(107, 147, 255, 0.3);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: all 0.25s ease;
 }
 
 .to-consider-row:hover {
-  transform: translateX(4px);
-  border-left-color: #6b93ff;
-  box-shadow: 0 2px 6px rgba(107, 147, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(107, 147, 255, 0.12);
+  border-color: #dbe3ff;
+  transform: translateY(-1px);
 }
 
 .to-consider-name {
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: #111;
   font-size: 0.96rem;
-  color: #1d1d1f;
 }
 
 .to-consider-blurb {
   font-style: italic;
-  color: #4a4a4a;
+  color: #444;
   line-height: 1.45;
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
 }
 
 .to-consider-blurb a {
-  color: #0069d9;
-  text-decoration: underline;
+  color: #0056d6;
   font-style: italic;
+  text-decoration: underline;
 }
 
-/* Hide rows until expanded */
+/* ============================
+   BEHAVIOR
+   ============================ */
 .to-consider-subtitle + .to-consider-row {
   display: none;
 }
@@ -880,6 +871,7 @@ html, body {
 .to-consider-subtitle.expanded + .to-consider-row {
   display: block;
 }
+
 
 
 
