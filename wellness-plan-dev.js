@@ -188,21 +188,31 @@ document.addEventListener("click", e => {
 
 
 // ============================
-// To Consider Collapsible Categories (final clean version)
+// To Consider Accordion (modern clean version)
 // ============================
 
 document.addEventListener("click", e => {
-  const subtitle = e.target.closest(".to-consider-subtitle");
-  if (!subtitle) return;
+  const header = e.target.closest(".to-consider-subtitle");
+  if (!header) return;
 
-  // Collapse all others
-  document.querySelectorAll(".to-consider-subtitle.expanded").forEach(open => {
-    if (open !== subtitle) open.classList.remove("expanded");
-  });
+  const isExpanded = header.classList.contains("expanded");
+  const allHeaders = document.querySelectorAll(".to-consider-subtitle");
+  const allContents = document.querySelectorAll(".to-consider-content");
 
-  // Toggle this one
-  subtitle.classList.toggle("expanded");
+  // Collapse all
+  allHeaders.forEach(h => h.classList.remove("expanded"));
+  allContents.forEach(c => c.classList.remove("open"));
+
+  // Expand clicked one
+  if (!isExpanded) {
+    header.classList.add("expanded");
+    const content = header.nextElementSibling;
+    if (content && content.classList.contains("to-consider-content")) {
+      content.classList.add("open");
+    }
+  }
 });
+
 
 
 
