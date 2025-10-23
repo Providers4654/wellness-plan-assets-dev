@@ -1645,8 +1645,16 @@ html, body {
 
 
 /* ============================
-   BUTTONS: SCHEDULE + PRINT (Refined, no icon)
+   BUTTONS: SCHEDULE + PRINT (Refined, centered, no icon)
    ============================ */
+
+/* Wrapper to center the button on desktop */
+.wellness-plan .resource-link.followup-link {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .schedule-followup-btn {
   background: linear-gradient(145deg, #ffffff, #f5f5f5);
   color: #1f2d3d;
@@ -1659,7 +1667,7 @@ html, body {
   cursor: pointer;
   transition: all 0.25s ease;
   letter-spacing: 0.3px;
-  display: inline-flex;
+  display: inline-flex; /* needed for text-align centering to work */
   align-items: center;
   justify-content: center;
   gap: 6px;
@@ -1715,7 +1723,12 @@ html, body {
     font-size: 14px;
     padding: 10px 20px;
   }
+
+  .wellness-plan .resource-link.followup-link {
+    text-align: center; /* keeps centered feel on mobile */
+  }
 }
+
 
 
 
