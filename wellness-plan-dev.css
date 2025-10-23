@@ -1128,7 +1128,7 @@ html, body {
 .wellness-plan .goals-subheader {
   font-size: 1.15rem;
   font-weight: 800;
-  margin: 1rem 0 0.9rem; /* 🔽 reduced top margin globally */
+  margin: 1.4rem 0 0.9rem; /* 🔽 reduced top margin globally */
   letter-spacing: 0.4px;
   text-transform: none;
   position: relative;
@@ -1136,7 +1136,7 @@ html, body {
 
 /* Fix: first goal block (Visit Timeline) starts too low */
 .wellness-plan .goal-block:first-of-type .goals-subheader {
-  margin-top: 0.4rem !important;
+  margin-top: 0.2rem !important;
 }
 
 .wellness-plan .goals-subheader::after {
