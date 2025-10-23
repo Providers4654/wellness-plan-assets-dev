@@ -752,130 +752,104 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — Sleek Premium Design
+   TO CONSIDER — Sleek Capsule Style (CSS only)
    ============================ */
 
-.wellness-plan .med-time-block.to-consider-block {
-  background: #fff !important;
-  border-left: 4px solid #6b93ff !important;
-  border-radius: 18px;
-  padding: 1.75rem 1.5rem 1.25rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+/* Shell: keep it white & airy, no gray or jammed left edge */
+.wellness-plan .med-time-block.to-consider-block{
+  background:#fff !important;        /* kill gray */
+  border-left: none !important;       /* drop the old blue rail */
+  border-radius:20px;
+  padding: 24px 22px 18px;            /* comfy gutters on all sides */
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
-/* CATEGORY HEADERS */
-.to-consider-subtitle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;               /* ⬅️ more internal breathing room */
-  margin: 0.75rem 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #1f2d3d;
-  background: linear-gradient(180deg, #f9fbff 0%, #f1f4ff 100%);
-  border: 1px solid #e0e6f9;
-  border-radius: 12px;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
+/* Reset any inherited list styles in this block */
+#toConsider, #toConsider *{ background:transparent !important; }
+#toConsider{ list-style:none; padding:0; margin:0; }
 
-.to-consider-subtitle:hover {
-  background: linear-gradient(180deg, #f1f5ff 0%, #e7ecff 100%);
-  border-color: #cdd9ff;
-  color: #3052ff;
+/* Category header: capsule with right chevron */
+.to-consider-subtitle{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+
+  margin: 10px 4px 8px;
+  padding: 14px 48px 14px 16px;       /* > right pad reserves space for arrow */
+  border:1px solid #e6eaff;
+  border-radius:14px;
+  background: linear-gradient(180deg,#fcfdff,#f4f7ff);
+  color:#1f2d3d;
+  font-weight:700;
+  font-size:1.02rem;
+  letter-spacing:.2px;
+  text-transform:none;
+
+  cursor:pointer;
+  user-select:none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease, color .2s ease;
+}
+.to-consider-subtitle:hover{
+  border-color:#d6dcff;
+  box-shadow:0 4px 12px rgba(107,147,255,.15);
   transform: translateY(-1px);
+  color:#1c2a4a;
 }
 
-.to-consider-subtitle::after {
-  content: "›";
-  font-size: 1.8rem;                   /* ⬆️ bigger arrow */
-  line-height: 1;
-  color: #6b93ff;
-  transition: transform 0.25s ease;
-  margin-left: 12px;
+/* BIG crisp chevron (SVG mask) */
+.to-consider-subtitle::after{
+  content:"";
+  position:absolute;
+  right:12px; top:50%; transform: translateY(-50%);
+  width:24px; height:24px;              /* bigger arrow */
+  color:#6b93ff;                         /* accent */
+  opacity:.95;
+  background: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / 20px 20px;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / 20px 20px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.to-consider-subtitle.expanded::after{ transform: translateY(-50%) rotate(90deg); }
+
+/* Default collapsed state for first row after a subtitle.
+   (Your JS toggles the rest; leave this as a sane default.) */
+.to-consider-subtitle + .to-consider-row{ display:none; }
+
+/* Item cards */
+.to-consider-row{
+  margin: 0 4px 10px;
+  padding: 14px 16px;
+  border:1px solid #edf0fe;
+  border-radius:12px;
+  background:#fff !important;          /* ensure no gray */
+  box-shadow:0 2px 8px rgba(107,147,255,.08);
+  transition: box-shadow .2s ease, transform .12s ease, border-color .2s ease;
+}
+.to-consider-row:hover{
+  transform: translateY(-1px);
+  border-color:#dfe5ff;
+  box-shadow:0 6px 16px rgba(107,147,255,.12);
 }
 
-.to-consider-subtitle.expanded {
-  background: linear-gradient(180deg, #eef3ff 0%, #e7edff 100%);
-  border-color: #c5d3ff;
-  color: #2a47c7;
+/* Item text */
+.to-consider-name{
+  font-weight:700;
+  color:#111;
+  font-size:.96rem;
+  margin-bottom:4px;
 }
-
-.to-consider-subtitle.expanded::after {
-  transform: rotate(90deg);
+.to-consider-blurb{
+  color:#404040;
+  font-size:.92rem;
+  line-height:1.55;
+  font-style:italic;
 }
-
-/* CONTENT PANEL */
-.to-consider-content {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  padding: 0 1.25rem;
-  margin: 0 0 0.75rem;
-  border-left: 2px solid #e3e9ff;
-  border-radius: 0 0 12px 12px;
-  transition: all 0.35s ease;
+.to-consider-blurb a{
+  color:#0a61ff; text-decoration:underline;
 }
-
-.to-consider-content.open {
-  max-height: 800px;
-  opacity: 1;
-  padding-top: 0.75rem;
-  padding-bottom: 0.5rem;
-}
-
-/* ITEM ROWS */
-.to-consider-item {
-  padding: 0.75rem 0;
-  border-bottom: 1px dashed #e3e3e3;
-}
-
-.to-consider-item:last-child {
-  border-bottom: none;
-}
-
-.to-consider-name {
-  font-weight: 600;
-  color: #111;
-  font-size: 0.98rem;
-  margin-bottom: 0.25rem;
-}
-
-.to-consider-blurb {
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.55;
-  font-style: italic;
-}
-
-.to-consider-blurb a {
-  color: #3052ff;
-  text-decoration: underline;
-  transition: color 0.2s ease;
-}
-
-.to-consider-blurb a:hover {
-  color: #1b33b6;
-}
-
-/* ANIMATION */
-@keyframes fadeSlideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
+.to-consider-blurb a:hover{ color:#0647b8; }
 
 
 
