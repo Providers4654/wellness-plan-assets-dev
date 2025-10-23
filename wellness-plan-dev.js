@@ -188,35 +188,22 @@ document.addEventListener("click", e => {
 
 
 // ============================
-// To Consider Collapsible Categories
+// To Consider Collapsible Categories (final clean version)
 // ============================
-// --- Clean accordion for To Consider ---
+
 document.addEventListener("click", e => {
   const subtitle = e.target.closest(".to-consider-subtitle");
   if (!subtitle) return;
 
   // Collapse all others
   document.querySelectorAll(".to-consider-subtitle.expanded").forEach(open => {
-    if (open !== subtitle) {
-      open.classList.remove("expanded");
-      let next = open.nextElementSibling;
-      while (next && !next.classList.contains("to-consider-subtitle")) {
-        next.style.display = "none";
-        next = next.nextElementSibling;
-      }
-    }
+    if (open !== subtitle) open.classList.remove("expanded");
   });
 
-  // Toggle current section
+  // Toggle this one
   subtitle.classList.toggle("expanded");
-  let next = subtitle.nextElementSibling;
-  while (next && !next.classList.contains("to-consider-subtitle")) {
-    next.style.display = subtitle.classList.contains("expanded")
-      ? "block"
-      : "none";
-    next = next.nextElementSibling;
-  }
 });
+
 
 
 
