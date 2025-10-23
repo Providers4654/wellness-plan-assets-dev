@@ -752,10 +752,9 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — minimalist, color-linked, no outer box
+   "TO CONSIDER" — final elevated version
    ============================ */
 
-/* Remove outer box */
 .wellness-plan .med-time-block.to-consider-block {
   background: transparent !important;
   border: none !important;
@@ -775,13 +774,13 @@ html, body {
   align-items: center;
   justify-content: space-between;
 
-  padding: 1rem 1.25rem 1rem 1.75rem; /* more left padding for space from accent */
-  margin: 0.75rem 0;
+  padding: 1.25rem 1.5rem 1.25rem 2rem; /* increased left padding */
+  margin: 0.9rem 0;
   background: #f9fbff;
   border: 1px solid #e2e8f9;
   border-radius: 14px;
-  color: #1b263b;
-  font-size: 1.05rem;
+  color: #1a1a1a;
+  font-size: 1.12rem; /* bigger title text */
   font-weight: 700;
   letter-spacing: 0.3px;
   cursor: pointer;
@@ -801,16 +800,16 @@ html, body {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 5px;
+  width: 6px;
   border-radius: 14px 0 0 14px;
   background: var(--accent-color, #6b93ff);
 }
 
-/* Arrow styling */
+/* Arrow icon */
 .to-consider-subtitle::after {
   content: "";
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   margin-left: 1rem;
   background: var(--accent-color, #6b93ff);
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
@@ -822,7 +821,9 @@ html, body {
   transform: rotate(90deg);
 }
 
-/* PANEL CONTENT */
+/* ============================
+   PANEL CONTENT
+   ============================ */
 .to-consider-content {
   overflow: hidden;
   max-height: 0;
@@ -830,7 +831,9 @@ html, body {
   padding: 0 1.75rem;
   margin: 0.25rem 0 0.75rem 0.5rem;
   transition: all 0.35s ease;
-  border-left: 2px solid rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--accent-color, #6b93ff); /* MATCHES CATEGORY */
+  border-radius: 6px;
+  background: #fff;
 }
 
 .to-consider-content.open {
@@ -840,9 +843,11 @@ html, body {
   padding-bottom: 0.25rem;
 }
 
-/* ITEM STYLES */
+/* ============================
+   ITEMS INSIDE CONTENT
+   ============================ */
 .to-consider-item {
-  padding: 0.75rem 0;
+  padding: 0.9rem 0 0.9rem 0.5rem;
   border-bottom: 1px dashed #e3e6f0;
   transition: background 0.25s ease, transform 0.2s ease;
 }
@@ -860,7 +865,7 @@ html, body {
   font-weight: 700;
   color: #202020;
   margin-bottom: 0.25rem;
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 
 .to-consider-blurb {
@@ -871,7 +876,7 @@ html, body {
 }
 
 .to-consider-blurb a {
-  color: #3052ff;
+  color: var(--accent-color, #3052ff);
   text-decoration: underline;
   font-style: italic;
   transition: color 0.25s ease;
@@ -880,22 +885,15 @@ html, body {
   color: #1b33b6;
 }
 
-/* CATEGORY COLOR ASSIGNMENTS */
-.to-consider-subtitle:nth-of-type(1) {
-  --accent-color: #6b93ff; /* Blue */
-}
-.to-consider-subtitle:nth-of-type(2) {
-  --accent-color: #f5a623; /* Gold/Orange */
-}
-.to-consider-subtitle:nth-of-type(3) {
-  --accent-color: #6acb72; /* Green */
-}
-.to-consider-subtitle:nth-of-type(4) {
-  --accent-color: #b48bff; /* Lavender */
-}
-.to-consider-subtitle:nth-of-type(5) {
-  --accent-color: #ff6b6b; /* Coral */
-}
+/* ============================
+   CATEGORY COLORS
+   ============================ */
+.to-consider-subtitle:nth-of-type(1) { --accent-color: #6b93ff; } /* Blue */
+.to-consider-subtitle:nth-of-type(2) { --accent-color: #f5a623; } /* Gold/Orange */
+.to-consider-subtitle:nth-of-type(3) { --accent-color: #6acb72; } /* Green */
+.to-consider-subtitle:nth-of-type(4) { --accent-color: #b48bff; } /* Lavender */
+.to-consider-subtitle:nth-of-type(5) { --accent-color: #ff6b6b; } /* Coral */
+
 
 
 
