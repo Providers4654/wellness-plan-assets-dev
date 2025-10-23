@@ -746,16 +746,40 @@ html, body {
 
 
 
+/* ============================
+   TO CONSIDER — REFINED VERSION
+   ============================ */
+
+/* Wrapper cleanup */
+.wellness-plan .med-time-block.to-consider-block {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove any old label */
+.wellness-plan .med-time-block.to-consider-block .med-time-label {
+  display: none !important;
+}
+
+/* Each category <li> */
+#toConsider .to-consider-li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* ------------------------------
-   CATEGORY HEADER — colored + aligned
+   CATEGORY HEADER — gradient, aligned to Lifestyle
 ------------------------------- */
 .wellness-plan .to-consider-subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  background: linear-gradient(90deg, rgba(245,247,255,0.95), #ffffff);
-  border: 1px solid rgba(226, 232, 249, 0.8);
+  background: linear-gradient(90deg, rgba(247,249,255,0.95), #ffffff);
+  border: 1px solid rgba(226,232,249,0.9);
   border-radius: 14px;
   padding: 0.55rem 1rem 0.55rem 1rem;
   margin: 0.5rem 0;
@@ -765,7 +789,7 @@ html, body {
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-  overflow: hidden; /* ✅ lets gradient edge + bar hug corners */
+  overflow: hidden; /* ✅ keeps the gradient accent within corners */
 }
 
 .wellness-plan .to-consider-subtitle:hover {
@@ -773,11 +797,11 @@ html, body {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* ✅ Left accent bar hugs rounded corners perfectly */
+/* Left accent gradient that hugs the corner perfectly */
 .wellness-plan .to-consider-subtitle::before {
   content: "";
   position: absolute;
-  inset: 0; /* top, right, bottom, left */
+  inset: 0;
   border-radius: inherit;
   padding-left: 6px;
   background: linear-gradient(
@@ -785,8 +809,8 @@ html, body {
     var(--accent-color, #6b93ff) 0%,
     rgba(255,255,255,0) 60%
   );
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
@@ -802,9 +826,111 @@ html, body {
   flex-shrink: 0;
   margin-left: 6px;
 }
-
 .wellness-plan .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
+}
+
+/* Mobile scale */
+@media (max-width: 600px) {
+  .wellness-plan .to-consider-subtitle {
+    font-size: 1rem !important;
+    padding: 0.6rem 0.8rem !important;
+  }
+}
+
+/* ------------------------------
+   PANEL CONTENT (collapsible)
+------------------------------- */
+.wellness-plan .to-consider-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1.2rem;
+  margin: 0.25rem 0 0.5rem 0.4rem;
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+  border-radius: 5px;
+  background: #fff;
+}
+.wellness-plan .to-consider-content.open {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+/* ------------------------------
+   ITEMS INSIDE PANEL
+------------------------------- */
+.wellness-plan .to-consider-item {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  border-bottom: 1px dashed #e3e6f0;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+.wellness-plan .to-consider-item:hover {
+  background: #f8faff;
+  transform: translateY(-1px);
+}
+.wellness-plan .to-consider-item:last-child {
+  border-bottom: none;
+}
+
+.wellness-plan .to-consider-name {
+  font-weight: 700;
+  color: #202020;
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.wellness-plan .to-consider-blurb {
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.wellness-plan .to-consider-blurb a {
+  color: var(--accent-color, #3052ff);
+  text-decoration: underline;
+  font-style: italic;
+  transition: color 0.25s ease;
+}
+.wellness-plan .to-consider-blurb a:hover {
+  color: #1b33b6;
+}
+
+/* ------------------------------
+   CATEGORY COLORS + BACKGROUND TINTS
+------------------------------- */
+#toConsider > li:nth-child(1) .to-consider-subtitle,
+#toConsider > li:nth-child(1) .to-consider-content {
+  --accent-color: #6b93ff; /* Blue */
+  border-left-color: #6b93ff;
+  background: linear-gradient(90deg, #eef1ff, #ffffff);
+}
+#toConsider > li:nth-child(2) .to-consider-subtitle,
+#toConsider > li:nth-child(2) .to-consider-content {
+  --accent-color: #6acb72; /* Green */
+  border-left-color: #6acb72;
+  background: linear-gradient(90deg, #e9fbea, #ffffff);
+}
+#toConsider > li:nth-child(3) .to-consider-subtitle,
+#toConsider > li:nth-child(3) .to-consider-content {
+  --accent-color: #ff6b6b; /* Coral */
+  border-left-color: #ff6b6b;
+  background: linear-gradient(90deg, #ffecec, #ffffff);
+}
+#toConsider > li:nth-child(4) .to-consider-subtitle,
+#toConsider > li:nth-child(4) .to-consider-content {
+  --accent-color: #b48bff; /* Lavender */
+  border-left-color: #b48bff;
+  background: linear-gradient(90deg, #f7f0ff, #ffffff);
+}
+#toConsider > li:nth-child(5) .to-consider-subtitle,
+#toConsider > li:nth-child(5) .to-consider-content {
+  --accent-color: #f5a623; /* Gold */
+  border-left-color: #f5a623;
+  background: linear-gradient(90deg, #fff9ec, #ffffff);
 }
 
 
