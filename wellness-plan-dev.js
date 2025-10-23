@@ -5,12 +5,11 @@
 // WELLNESS PLAN DYNAMIC JS (CSV-BASED, CLEANED, FIXED)
 // ============================
 
-const root = getComputedStyle(document.documentElement);
-
-// ✅ Helper for CSS vars
 function cssVar(name) {
+  const root = getComputedStyle(document.documentElement);
   return root.getPropertyValue(name).trim();
 }
+
 
 // --- Provider-specific public CSVs ---
 const PROVIDERS = {
