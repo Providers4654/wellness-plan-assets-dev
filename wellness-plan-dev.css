@@ -752,149 +752,106 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" BLOCK (modern elevated version)
+   "TO CONSIDER" BLOCK (modern minimalist revamp)
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
-  background: linear-gradient(180deg, #ffffff, #fafcff);
+  background: #fff;
   border-left: 5px solid #6b93ff;
   border-radius: 20px;
-  padding: 1.75rem 1.5rem;
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.06),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  padding: 1.5rem 1.5rem 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
 }
 
-.wellness-plan .med-time-block.to-consider-block:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.08),
-    inset 0 1px 2px rgba(255, 255, 255, 0.9);
-}
-
-/* Hide old header if present */
+/* Hide old label */
 .wellness-plan .med-time-block.to-consider-block .med-time-label {
   display: none !important;
 }
 
-/* Container list */
-.wellness-plan .med-time-block.to-consider-block .medication-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 /* ============================
-   CATEGORY HEADER (sleek accordion)
+   CATEGORY TITLES
    ============================ */
 .to-consider-subtitle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  color: #1a1a1a;
+  margin-top: 1.2rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.4rem 0;
+  transition: color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(107, 147, 255, 0.06);
-  border: 1.5px solid rgba(107, 147, 255, 0.18);
-  border-radius: 12px;
-  padding: 0.9rem 1.1rem;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1f2d3d;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  cursor: pointer;
   user-select: none;
-  box-shadow: 0 2px 4px rgba(107, 147, 255, 0.08);
-  transition: all 0.25s ease;
-  position: relative;
-}
-
-.to-consider-subtitle::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  bottom: 6px;
-  width: 4px;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #6b93ff, #8caeff);
-  opacity: 0.8;
-}
-
-.to-consider-subtitle:hover {
-  background: rgba(107, 147, 255, 0.1);
-  box-shadow: 0 3px 8px rgba(107, 147, 255, 0.12);
-  transform: translateY(-1px);
 }
 
 .to-consider-subtitle::after {
   content: "▸";
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.2rem;
   color: #6b93ff;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0.7;
 }
 
-.to-consider-subtitle.expanded {
-  background: rgba(107, 147, 255, 0.12);
+.to-consider-subtitle:hover {
+  color: #6b93ff;
 }
 
 .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
+  opacity: 1;
+}
+
+/* Elegant divider line under each category */
+.to-consider-subtitle {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* ============================
-   ITEM CARDS (elegant + consistent)
+   MEDICATION ITEMS
    ============================ */
 .to-consider-row {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-  margin: 0.8rem 0 0.8rem 0.4rem;
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
-  transition: all 0.25s ease;
+  margin-left: 0.25rem;
+  padding: 0.75rem 0 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  animation: fadeSlideDown 0.3s ease both;
 }
 
-.to-consider-row:hover {
-  transform: translateX(4px);
-  border-color: rgba(107, 147, 255, 0.35);
-  box-shadow:
-    0 4px 10px rgba(107, 147, 255, 0.12),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+.to-consider-row:last-child {
+  border-bottom: none;
 }
 
 .to-consider-name {
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  color: #121212;
+  font-weight: 600;
+  color: #222;
   font-size: 0.98rem;
-  letter-spacing: 0.2px;
+  margin-bottom: 0.25rem;
 }
 
 .to-consider-blurb {
-  font-style: italic;
   color: #444;
-  line-height: 1.55;
   font-size: 0.92rem;
-  margin-bottom: 0.4rem;
+  line-height: 1.55;
+  font-style: italic;
 }
 
 .to-consider-blurb a {
-  color: #0069d6;
+  color: #0056d6;
   font-style: italic;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 
 .to-consider-blurb a:hover {
-  color: #004999;
+  color: #003e99;
 }
 
 /* ============================
-   BEHAVIOR
+   COLLAPSE BEHAVIOR
    ============================ */
 .to-consider-subtitle + .to-consider-row {
   display: none;
@@ -903,6 +860,21 @@ html, body {
 .to-consider-subtitle.expanded + .to-consider-row {
   display: block;
 }
+
+/* ============================
+   ANIMATIONS
+   ============================ */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
