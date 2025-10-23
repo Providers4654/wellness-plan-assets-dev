@@ -789,6 +789,8 @@ html, body {
   margin: 0.5rem 0 1.3rem 0;
   padding: 1rem 1.25rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 1;
 
   /* ✅ Full width alignment with category cards */
   width: 100%;
@@ -799,7 +801,7 @@ html, body {
 
 /* ✅ Text injection from CSS variable still works */
 .to-consider-subtext::before {
-  content: var(--to-consider-subtext, "These are optional or adjunctive therapies that may support your plan and enhance outcomes when appropriate.");
+  content: var(--to-consider-subtext);
   display: block;
 }
 
