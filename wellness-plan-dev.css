@@ -772,29 +772,41 @@ html, body {
 }
 
 /* ------------------------------
-   SECTION SUBTEXT — styled intro box
+   SECTION SUBTEXT — full width, aligned with cards
 ------------------------------- */
-
 .to-consider-subtext {
-  background: #f9fbff;
-  border: 1px solid #e3e8f4;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.55;
+  display: block;
+  width: 100%; /* ✅ same width as category cards */
+  background: linear-gradient(180deg, #ffffff, #fafafa);
+  border: 1.2px solid rgba(0, 0, 0, 0.06);
+  border-top: 3px solid rgba(107, 147, 255, 0.25); /* subtle blue accent */
+  border-radius: 10px;
+  padding: 18px 22px; /* matches Lifestyle padding */
   font-style: italic;
+  color: #222;
+  font-size: 15px;
+  line-height: 1.6;
   text-align: center;
-  margin: 0.5rem 0 1.3rem 0;
-  padding: 1rem 1.25rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: -6px 0 24px 0; /* aligns vertically with the Lifestyle version */
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.to-consider-subtext::before {
-  content: var(--to-consider-subtext);
+.to-consider-subtext:hover {
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
+
+.to-consider-subtext strong {
+  font-weight: 600;
+  color: #000;
+}
+
 
 /* ------------------------------
    CATEGORY HEADER — restored solid accent, aligned flush
@@ -974,19 +986,13 @@ html, body {
   border: 1.2px solid rgba(0, 0, 0, 0.08); /* faint neutral border */
   border-top: 3px solid rgba(123, 104, 238, 0.25); /* subtle lavender accent */
   border-radius: 10px;
-
-  /* ✅ NEW: match width + spacing to To Consider blurb */
-  max-width: calc(100% - 2rem);
-  margin: 0.75rem auto 1.2rem auto; /* centered + identical spacing */
-  padding: 1.1rem 1rem; /* slightly reduced to match the other section */
-
+  padding: 18px 22px;
   font-style: italic;
   color: #222;
   font-size: 15.5px;
   line-height: 1.65;
+  margin: -6px 0 28px 0;
   text-align: center;
-
-  /* keep your shadow stack, no change */
   box-shadow:
     0 3px 8px rgba(0, 0, 0, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04),
