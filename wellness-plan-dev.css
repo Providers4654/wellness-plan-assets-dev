@@ -1084,141 +1084,92 @@ html, body {
 
 
 /* ============================
-   GOALS + FOLLOW-UP (dynamic & polished)
+   GOALS + FOLLOW-UP — refined clean aesthetic
    ============================ */
-
 .wellness-plan .goal-block {
-  margin-bottom: 2.2rem; /* consistent rhythm between blocks */
+  margin-bottom: 2rem;
 }
 
-.wellness-plan .goals-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+/* Subheaders (e.g. Body Composition Analysis) */
+.wellness-plan .goals-subheader {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1f2d3d;
+  margin: 1.8rem 0 0.9rem;
+  letter-spacing: 0.4px;
+  text-transform: none;
 }
 
+/* Add a subtle colored underline under each subheader */
+.wellness-plan .goals-subheader::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  border-radius: 3px;
+  margin-top: 4px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* Individual goal items */
 .wellness-plan .goals-list li {
-  background: linear-gradient(180deg, #ffffff, #f9fbff);
-  border-left: 5px solid transparent;
-  border-radius: 14px;
+  border-left: 5px solid var(--accent-color, #6b93ff);
+  background: rgba(107, 147, 255, 0.05); /* light color tint */
+  border-radius: 10px;
   padding: 14px 18px;
-  margin-bottom: 16px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 14px;
+  color: #222;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
   transition: all 0.25s ease;
 }
 
+/* Remove gray look entirely — lighter and “lift” on hover */
 .wellness-plan .goals-list li:hover {
+  background: rgba(107, 147, 255, 0.08);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
+/* Strong + links */
 .wellness-plan .goals-list li strong {
   font-weight: 700;
-  color: #222;
+  color: #111;
 }
-
-/* --- Subheaders (titles like “Body Comp”, “Target Goals”) --- */
-.wellness-plan .goals-subheader {
-  font-size: 1.1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #1f2d3d;
-  margin: 1.8rem 0 0.8rem;
-  position: relative;
-}
-
-.wellness-plan .goals-subheader::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  border-radius: 3px;
-  background: currentColor;
-  opacity: 0.4;
-}
-
-/* --- Link style inside items --- */
 .wellness-plan .goals-list li a {
   color: #007bff;
   text-decoration: underline;
   font-style: italic;
-  font-weight: 500;
-  transition: color 0.25s ease;
 }
-
 .wellness-plan .goals-list li a:hover {
   color: #004999;
 }
 
-/* --- Automatic rotating accent colors for each goal block --- */
-.wellness-plan .goal-block:nth-of-type(1) .goals-list li {
-  border-left-color: #6b93ff;
-  background: linear-gradient(135deg, #eef1ff, #ffffff);
-}
-.wellness-plan .goal-block:nth-of-type(1) .goals-subheader {
-  color: #6b93ff;
-}
-
-.wellness-plan .goal-block:nth-of-type(2) .goals-list li {
-  border-left-color: #00a5b5;
-  background: linear-gradient(135deg, #e8ffff, #ffffff);
-}
-.wellness-plan .goal-block:nth-of-type(2) .goals-subheader {
-  color: #00a5b5;
-}
-
-.wellness-plan .goal-block:nth-of-type(3) .goals-list li {
-  border-left-color: #b86bff;
-  background: linear-gradient(135deg, #f8f3ff, #ffffff);
-}
-.wellness-plan .goal-block:nth-of-type(3) .goals-subheader {
-  color: #b86bff;
-}
-
-.wellness-plan .goal-block:nth-of-type(4) .goals-list li {
-  border-left-color: #28b463;
-  background: linear-gradient(135deg, #e9f7ef, #ffffff);
-}
-.wellness-plan .goal-block:nth-of-type(4) .goals-subheader {
-  color: #28b463;
-}
-
-.wellness-plan .goal-block:nth-of-type(5) .goals-list li {
-  border-left-color: #ff6f61;
-  background: linear-gradient(135deg, #fff4f4, #ffffff);
-}
-.wellness-plan .goal-block:nth-of-type(5) .goals-subheader {
-  color: #ff6f61;
-}
-
-.wellness-plan .goal-block:nth-of-type(6) .goals-list li {
-  border-left-color: #f5a623;
-  background: linear-gradient(135deg, #fff8e1, #ffffff);
-}
-.wellness-plan .goal-block:nth-of-type(6) .goals-subheader {
-  color: #f5a623;
-}
-
-/* --- Nested bullet lists (inside any goal item) --- */
+/* Nested bullet lists */
 .wellness-plan .goals-list li ul {
   list-style: disc;
   margin: 8px 0 0 22px;
   padding-left: 0;
 }
 
-.wellness-plan .goals-list li ul li {
-  background: none !important;
-  border-left: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 6px 0 !important;
-  color: inherit !important;
-  font-size: inherit !important;
-  line-height: inherit !important;
+/* Color variation per section */
+.wellness-plan .goal-block:nth-child(1) .goals-list li {
+  --accent-color: #6b93ff; /* lavender blue */
+  background: rgba(107, 147, 255, 0.06);
 }
+.wellness-plan .goal-block:nth-child(2) .goals-list li {
+  --accent-color: #00a5b5; /* aqua */
+  background: rgba(0, 165, 181, 0.05);
+}
+.wellness-plan .goal-block:nth-child(3) .goals-list li {
+  --accent-color: #b86bff; /* violet */
+  background: rgba(184, 107, 255, 0.05);
+}
+.wellness-plan .goal-block:nth-child(4) .goals-list li {
+  --accent-color: #28b463; /* green */
+  background: rgba(40, 180, 99, 0.05);
+}
+
 
 
 
