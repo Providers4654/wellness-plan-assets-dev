@@ -771,7 +771,7 @@ html, body {
 }
 
 /* ------------------------------
-   CATEGORY HEADER (compact)
+   CATEGORY HEADER (compact, aligned to Lifestyle)
 ------------------------------- */
 .wellness-plan .to-consider-subtitle {
   display: flex;
@@ -781,10 +781,10 @@ html, body {
   background: #f9fbff;
   border: 1px solid #e2e8f9;
   border-radius: 12px;
-  padding: 0.55rem 0.9rem 0.55rem 2.5rem; /* ↓ reduced padding */
-  margin: 0.4rem 0; /* ↓ tighter gap between boxes */
+  padding: 0.55rem 1rem; /* ✅ match Lifestyle left padding */
+  margin: 0.4rem 0;
   color: #121212;
-  font-size: 1.15rem; /* ↓ smaller text size */
+  font-size: 1.15rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -796,17 +796,18 @@ html, body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Left accent bar */
+/* Left accent bar — perfectly aligned to Lifestyle tips */
 .wellness-plan .to-consider-subtitle::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 0; /* ✅ flush with edge */
   top: 0;
   bottom: 0;
-  width: 5px;
-  border-radius: 12px 0 0 12px;
+  width: 4px; /* ✅ same width as Lifestyle border-left */
+  border-radius: 6px 0 0 6px;
   background: var(--accent-color, #6b93ff);
 }
+
 
 /* Chevron arrow */
 .wellness-plan .to-consider-subtitle::after {
