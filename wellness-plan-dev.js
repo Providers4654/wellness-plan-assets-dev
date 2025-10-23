@@ -192,16 +192,34 @@ document.addEventListener("click", e => {
 // ============================
 document.addEventListener("click", e => {
   const subtitle = e.target.closest(".to-consider-subtitle");
-  if (subtitle) {
-    subtitle.classList.toggle("expanded");
-    let next = subtitle.nextElementSibling;
-    while (next && !next.classList.contains("to-consider-subtitle")) {
-      next.style.display =
-        subtitle.classList.contains("expanded") ? "block" : "none";
-      next = next.nextElementSibling;
+  if (!subtitle) return;
+
+  // Collapse all other sections
+  document.querySelectorAll(".to-consider-subtitle.expanded").forEach(open => {
+    if (open !== subtitle) {
+      open.classList.remove("expanded");
+      // Hide all rows under closed categories
+      let next = open.nextElementSibling;
+      while (next && !next.classList.contains("to-consider-subtitle")) {
+        next.style.display = "none";
+        next = next.nextElementSibling;
+      }
     }
+  });
+
+  // Toggle the clicked one
+  subtitle.classList.toggle("expanded");
+
+  // Show or hide related rows
+  let next = subtitle.nextElementSibling;
+  while (next && !next.classList.contains("to-consider-subtitle")) {
+    next.style.display = subtitle.classList.contains("expanded")
+      ? "block"
+      : "none";
+    next = next.nextElementSibling;
   }
 });
+
 
 
 
