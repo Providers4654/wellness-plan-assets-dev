@@ -1648,22 +1648,24 @@ html, body {
    BUTTONS: SCHEDULE + PRINT (Refined, centered, no icon)
    ============================ */
 
-/* Center wrapper + override global left-align */
-.wellness-plan .resource-link.followup-link {
+/* Center wrapper (now standalone, not tied to .resource-link) */
+.wellness-plan .followup-link {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-/* Fix: anchor inherits left-align from global rule — override that */
-.wellness-plan .resource-link.followup-link a {
+/* Anchor alignment */
+.wellness-plan .followup-link a {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: fit-content;
   margin: 0 auto;
-  text-align: center !important;
+  text-align: center;
 }
 
+/* Schedule Follow-Up Button */
 .schedule-followup-btn {
   background: linear-gradient(145deg, #ffffff, #f5f5f5);
   color: #1f2d3d;
@@ -1733,7 +1735,7 @@ html, body {
     padding: 10px 20px;
   }
 
-  .wellness-plan .resource-link.followup-link a {
+  .wellness-plan .followup-link a {
     width: 100%;
     justify-content: center;
   }
