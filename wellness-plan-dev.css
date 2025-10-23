@@ -1128,17 +1128,11 @@ html, body {
 .wellness-plan .goals-subheader {
   font-size: 1.15rem;
   font-weight: 800;
-  margin: 1.2rem 0 0.9rem; /* 🔽 reduced top margin globally */
+  margin: 2rem 0 0.9rem; /* adds more space between goal sections */
   letter-spacing: 0.4px;
   text-transform: none;
   position: relative;
 }
-
-/* Fix: first goal block (Visit Timeline) starts too low */
-.wellness-plan .goal-block:first-of-type .goals-subheader {
-  margin-top: 0.2rem !important;
-}
-
 
 /* ============================
    GOALS SECTION SPACING CONTROL
@@ -1146,13 +1140,14 @@ html, body {
 
 /* Adds consistent vertical spacing between each goal section block */
 .wellness-plan .goal-block {
-  margin-top: 2rem; /* Adjust this for more/less space between sections */
+  margin-top: 2rem; /* Adjust for more/less space between goals */
 }
 
-/* The first goal block ("Visit Timeline") should start tighter */
+/* Keep the first goal block snug under the pill title */
 .wellness-plan .goal-block:first-of-type {
-  margin-top: 0.6rem !important; /* prevents extra gap under the pill title */
+  margin-top: 0.6rem !important;
 }
+
 
 
 
