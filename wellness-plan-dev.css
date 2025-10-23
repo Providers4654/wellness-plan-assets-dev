@@ -1651,7 +1651,7 @@ html, body {
 /* Follow-Up Button Block — with divider and extra spacing */
 .wellness-plan .followup-link {
   text-align: center;
-  margin-top: 36px;       /* more space above */
+  margin-top: 48px;       /* more space above */
   margin-bottom: 10px;
   padding-top: 16px;
   border-top: 1px solid #eee; /* subtle divider like other resource sections */
