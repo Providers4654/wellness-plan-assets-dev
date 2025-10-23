@@ -771,7 +771,7 @@ html, body {
 }
 
 /* ------------------------------
-   CATEGORY HEADER — gradient, aligned to Lifestyle
+   CATEGORY HEADER — aligned to Lifestyle (clean accent)
 ------------------------------- */
 .wellness-plan .to-consider-subtitle {
   display: flex;
@@ -781,7 +781,7 @@ html, body {
   background: linear-gradient(90deg, rgba(247,249,255,0.95), #ffffff);
   border: 1px solid rgba(226,232,249,0.9);
   border-radius: 14px;
-  padding: 0.55rem 1rem 0.55rem 1rem;
+  padding: 0.55rem 1rem;
   margin: 0.5rem 0;
   color: #121212;
   font-size: 1.15rem;
@@ -789,7 +789,7 @@ html, body {
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-  overflow: hidden; /* ✅ keeps the gradient accent within corners */
+  overflow: hidden;
 }
 
 .wellness-plan .to-consider-subtitle:hover {
@@ -797,24 +797,17 @@ html, body {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Left accent gradient that hugs the corner perfectly */
+/* Clean solid accent strip hugging rounded edge */
 .wellness-plan .to-consider-subtitle::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding-left: 6px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-color, #6b93ff) 0%,
-    rgba(255,255,255,0) 60%
-  );
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
-  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  border-radius: 14px 0 0 14px;
+  background: var(--accent-color, #6b93ff);
+  box-shadow: 0 0 6px var(--accent-color, #6b93ff, 0.25);
 }
 
 /* Chevron arrow */
@@ -830,13 +823,14 @@ html, body {
   transform: rotate(90deg);
 }
 
-/* Mobile scale */
+/* Mobile scaling */
 @media (max-width: 600px) {
   .wellness-plan .to-consider-subtitle {
     font-size: 1rem !important;
     padding: 0.6rem 0.8rem !important;
   }
 }
+
 
 /* ------------------------------
    PANEL CONTENT (collapsible)
