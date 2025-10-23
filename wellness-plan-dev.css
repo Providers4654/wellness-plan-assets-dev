@@ -808,8 +808,12 @@ html, body {
   border: 1px solid rgba(226, 232, 249, 0.9);
   border-left: 10px solid var(--accent-color, #6b93ff); /* ✅ true border accent */
   border-radius: 14px;
-  padding: 0.55rem 1rem;
+
+  /* 👇 Alignment fix for flush match with Lifestyle cards */
+  padding: 0.55rem 0.9rem; /* reduced from 1rem */
   margin: 0.5rem 0;
+  margin-left: -2px; /* visually aligns with Lifestyle border-left */
+
   color: #121212;
   font-size: 1.15rem;
   font-weight: 700;
@@ -842,13 +846,19 @@ html, body {
   transform: rotate(90deg);
 }
 
-
 /* Mobile scaling */
 @media (max-width: 600px) {
   .wellness-plan .to-consider-subtitle {
     font-size: 1rem !important;
     padding: 0.6rem 0.8rem !important;
+    margin-left: 0 !important; /* avoid shift on mobile */
   }
+}
+
+/* Align entire list flush with parent container */
+#toConsider {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 /* ------------------------------
