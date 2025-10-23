@@ -456,15 +456,17 @@ if (toConsiderList && toConsiderBlock) {
     ];
 
 toConsiderList.innerHTML = orderedCats.map(cat => `
-  <div class="to-consider-subtitle">${cat}</div>
-  <div class="to-consider-content">
-    ${grouped[cat].map(item => `
-      <div class="to-consider-item">
-        <div class="to-consider-name"><strong>${item.name}</strong></div>
-        <div class="to-consider-blurb">${normalizeCellText(item.blurb)}</div>
-      </div>
-    `).join("")}
-  </div>
+  <li class="to-consider-li">
+    <div class="to-consider-subtitle">${cat}</div>
+    <div class="to-consider-content">
+      ${grouped[cat].map(item => `
+        <div class="to-consider-item">
+          <div class="to-consider-name"><strong>${item.name}</strong></div>
+          <div class="to-consider-blurb">${normalizeCellText(item.blurb)}</div>
+        </div>
+      `).join("")}
+    </div>
+  </li>
 `).join("");
 
 
