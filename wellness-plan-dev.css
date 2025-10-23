@@ -751,22 +751,23 @@ html, body {
    ============================ */
 
 .wellness-plan .to-consider-subtitle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  background: #f9fbff;
-  border: 1px solid #e2e8f9;
-  border-radius: 14px;
-  padding: 1.25rem 1.5rem 1.25rem 2.75rem;
-  margin: 0.9rem 0;
-  color: #121212;
-  font-size: 1.25rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  background:#f9fbff;
+  border:1px solid #e2e8f9;
+  border-radius:14px;
+  padding:1.25rem 1.5rem 1.25rem 5.25rem;
+  margin:0.9rem 0;
+  color:#121212;
+  font-size:2rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:all 0.25s ease;
+  box-shadow:0 3px 10px rgba(0,0,0,0.05);
 }
+
 
 
 /* Mobile scaling */
