@@ -752,24 +752,24 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" BLOCK (enhanced, unified)
+   "TO CONSIDER" BLOCK (final polished version)
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
   background: linear-gradient(180deg, #f9faff, #f3f6ff);
   border-left: 5px solid #6b93ff;
-  padding: 1.25rem 1.25rem 0.75rem;
-  border-radius: 14px;
+  padding: 1.5rem 1.25rem;
+  border-radius: 16px;
   box-shadow:
-    0 3px 10px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.06),
     inset 0 1px 2px rgba(255, 255, 255, 0.9);
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
 }
 
 .wellness-plan .med-time-block.to-consider-block:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.08),
+    0 6px 20px rgba(0, 0, 0, 0.08),
     inset 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
@@ -778,83 +778,101 @@ html, body {
   display: none !important;
 }
 
-/* Base list formatting */
+/* Category list container */
 .wellness-plan .med-time-block.to-consider-block .medication-list {
   list-style: none;
-  padding-left: 1rem;
-  margin-top: 0.5rem;
+  padding-left: 0;
+  margin-top: 0.75rem;
 }
 
-.wellness-plan .med-time-block.to-consider-block .medication-list li {
-  margin-bottom: 1rem;
-  border-bottom: none;
-}
-
-.wellness-plan .med-time-block.to-consider-block .medication-list li strong {
-  font-size: 15.5px;
-  font-weight: 700;
-  color: #2c2c2c;
-}
-
-/* Medication rows */
-.to-consider-row {
-  margin-bottom: 12px;
-  padding-left: 16px !important;
-}
-
-.to-consider-name {
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-.to-consider-blurb {
-  font-style: italic;
-  color: #444;
-  margin-top: 3px;
-  margin-bottom: 8px;
-  line-height: 1.45;
-  font-size: 0.92rem;
-}
-
-.to-consider-blurb a {
-  font-style: italic;
-  color: #0073e6;
-  text-decoration: underline;
-}
-
-/* --- Category Subtitle (now collapsible) --- */
+/* ============================
+   CATEGORY HEADERS
+   ============================ */
 .to-consider-subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.9rem;
+  background: #f7f8ff;
+  border: 1px solid rgba(107, 147, 255, 0.25);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #30366f;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 22px;
-  margin-bottom: 4px;
-  border-bottom: 2px solid rgba(107, 147, 255, 0.2);
-  padding-bottom: 6px;
+  letter-spacing: 0.4px;
   cursor: pointer;
   user-select: none;
-  transition: color 0.25s ease;
-  position: relative;
+  box-shadow: 0 1px 3px rgba(107, 147, 255, 0.12);
+  transition: all 0.25s ease;
 }
 
 .to-consider-subtitle::after {
-  content: "❯";
-  font-size: 18px;
-  font-weight: 900;
+  content: "›";
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #6b93ff;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
+}
+
+.to-consider-subtitle.expanded {
+  background: linear-gradient(90deg, #eef2ff, #f8faff);
+  border-color: rgba(107, 147, 255, 0.4);
+  color: #2333a5;
+  box-shadow: 0 2px 8px rgba(107, 147, 255, 0.15);
 }
 
 .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-/* Toggle visibility of rows under each subtitle */
+.to-consider-subtitle:hover {
+  background: linear-gradient(90deg, #f0f3ff, #f9faff);
+  box-shadow: 0 2px 6px rgba(107, 147, 255, 0.18);
+}
+
+/* ============================
+   ITEMS INSIDE CATEGORY
+   ============================ */
+.to-consider-row {
+  margin-bottom: 14px;
+  padding: 0.75rem 1rem 0.5rem 1.5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 4px solid rgba(107, 147, 255, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.to-consider-row:hover {
+  transform: translateX(4px);
+  border-left-color: #6b93ff;
+  box-shadow: 0 2px 6px rgba(107, 147, 255, 0.12);
+}
+
+.to-consider-name {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-size: 0.96rem;
+  color: #1d1d1f;
+}
+
+.to-consider-blurb {
+  font-style: italic;
+  color: #4a4a4a;
+  line-height: 1.45;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.to-consider-blurb a {
+  color: #0069d9;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* Hide rows until expanded */
 .to-consider-subtitle + .to-consider-row {
   display: none;
 }
@@ -863,10 +881,6 @@ html, body {
   display: block;
 }
 
-/* Slight hover cue */
-.to-consider-subtitle:hover {
-  color: #6b93ff;
-}
 
 
 
