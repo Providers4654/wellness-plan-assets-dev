@@ -776,13 +776,13 @@ html, body {
   align-items: center;
   justify-content: space-between;
 
-  padding: 1.25rem 1.5rem 1.25rem 2.25rem; /* give left breathing room */
+  padding: 1.25rem 1.5rem 1.25rem 5.25rem; /* give left breathing room */
   margin: 0.9rem 0;
   background: #f9fbff;
   border: 1px solid #e2e8f9;
   border-radius: 14px;
   color: #121212;
-  font-size: 1.2rem; /* bigger for hierarchy */
+  font-size: 2.2rem; /* bigger for hierarchy */
   font-weight: 700;
   letter-spacing: 0.4px;
   cursor: pointer;
