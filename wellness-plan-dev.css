@@ -752,105 +752,122 @@ html, body {
 
 
 /* ============================
-   TO CONSIDER — Sleek Capsule Style (CSS only)
+   TO CONSIDER — Refined Sleek Design (CSS only)
    ============================ */
 
-/* Shell: keep it white & airy, no gray or jammed left edge */
-.wellness-plan .med-time-block.to-consider-block{
-  background:#fff !important;        /* kill gray */
-  border-left: none !important;       /* drop the old blue rail */
-  border-radius:20px;
-  padding: 24px 22px 18px;            /* comfy gutters on all sides */
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+.wellness-plan .med-time-block.to-consider-block {
+  background: #fff !important;
+  border: none !important;
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
 }
 
-/* Reset any inherited list styles in this block */
-#toConsider, #toConsider *{ background:transparent !important; }
-#toConsider{ list-style:none; padding:0; margin:0; }
-
-/* Category header: capsule with right chevron */
-.to-consider-subtitle{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-
-  margin: 10px 4px 8px;
-  padding: 14px 48px 14px 16px;       /* > right pad reserves space for arrow */
-  border:1px solid #e6eaff;
-  border-radius:14px;
-  background: linear-gradient(180deg,#fcfdff,#f4f7ff);
-  color:#1f2d3d;
-  font-weight:700;
-  font-size:1.02rem;
-  letter-spacing:.2px;
-  text-transform:none;
-
-  cursor:pointer;
-  user-select:none;
-  transition: border-color .2s ease, box-shadow .2s ease, transform .12s ease, color .2s ease;
-}
-.to-consider-subtitle:hover{
-  border-color:#d6dcff;
-  box-shadow:0 4px 12px rgba(107,147,255,.15);
-  transform: translateY(-1px);
-  color:#1c2a4a;
+/* Remove any leftover section label */
+.wellness-plan .med-time-block.to-consider-block .med-time-label {
+  display: none !important;
 }
 
-/* BIG crisp chevron (SVG mask) */
-.to-consider-subtitle::after{
-  content:"";
-  position:absolute;
-  right:12px; top:50%; transform: translateY(-50%);
-  width:24px; height:24px;              /* bigger arrow */
-  color:#6b93ff;                         /* accent */
-  opacity:.95;
+/* Reset list styling */
+#toConsider {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------
+   CATEGORY HEADERS (accordions)
+----------------------------- */
+.to-consider-subtitle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(180deg, #fdfdff, #f5f7ff);
+  border: 1px solid #e3e7fb;
+  border-radius: 12px;
+  padding: 14px 18px 14px 20px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+
+  color: #1b1b1b;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.to-consider-subtitle:hover {
+  background: #f1f4ff;
+  border-color: #cfd8ff;
+  box-shadow: 0 3px 10px rgba(107, 147, 255, 0.15);
+}
+
+/* Chevron icon (SVG mask, crisp & scalable) */
+.to-consider-subtitle::after {
+  content: "";
+  width: 22px;
+  height: 22px;
   background: currentColor;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / 20px 20px;
-          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center / 20px 20px;
-  transition: transform .25s ease, opacity .2s ease;
+  opacity: 0.9;
+  color: #6b93ff;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
+  transition: transform 0.25s ease;
 }
-.to-consider-subtitle.expanded::after{ transform: translateY(-50%) rotate(90deg); }
 
-/* Default collapsed state for first row after a subtitle.
-   (Your JS toggles the rest; leave this as a sane default.) */
-.to-consider-subtitle + .to-consider-row{ display:none; }
+/* Rotate arrow when expanded (JS toggles .expanded) */
+.to-consider-subtitle.expanded::after {
+  transform: rotate(90deg);
+}
 
-/* Item cards */
-.to-consider-row{
-  margin: 0 4px 10px;
+/* ----------------------------
+   MEDICATION ITEMS
+----------------------------- */
+.to-consider-row {
+  display: none; /* collapsed by default (JS opens) */
+  background: #fff;
+  border: 1px solid #e7eaf8;
+  border-radius: 10px;
   padding: 14px 16px;
-  border:1px solid #edf0fe;
-  border-radius:12px;
-  background:#fff !important;          /* ensure no gray */
-  box-shadow:0 2px 8px rgba(107,147,255,.08);
-  transition: box-shadow .2s ease, transform .12s ease, border-color .2s ease;
+  margin: 6px 0 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
 }
-.to-consider-row:hover{
+
+.to-consider-row:hover {
+  border-color: #d7dfff;
+  box-shadow: 0 4px 12px rgba(107, 147, 255, 0.12);
   transform: translateY(-1px);
-  border-color:#dfe5ff;
-  box-shadow:0 6px 16px rgba(107,147,255,.12);
 }
 
-/* Item text */
-.to-consider-name{
-  font-weight:700;
-  color:#111;
-  font-size:.96rem;
-  margin-bottom:4px;
+/* Item content */
+.to-consider-name {
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+  font-size: 0.96rem;
 }
-.to-consider-blurb{
-  color:#404040;
-  font-size:.92rem;
-  line-height:1.55;
-  font-style:italic;
-}
-.to-consider-blurb a{
-  color:#0a61ff; text-decoration:underline;
-}
-.to-consider-blurb a:hover{ color:#0647b8; }
 
+.to-consider-blurb {
+  color: #444;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.to-consider-blurb a {
+  color: #0056d6;
+  text-decoration: underline;
+}
+
+.to-consider-blurb a:hover {
+  color: #003e99;
+}
 
 
 
