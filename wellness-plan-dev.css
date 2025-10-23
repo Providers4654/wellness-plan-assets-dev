@@ -772,46 +772,43 @@ html, body {
 }
 
 /* ------------------------------
-   SECTION SUBTEXT — full width, aligned with cards
+   SECTION SUBTEXT — styled intro box (full width + visible text)
 ------------------------------- */
+
 .to-consider-subtext {
+  position: relative;
   display: block;
-  width: 100%;
-  background: linear-gradient(180deg, #ffffff, #fafafa);
-  border: 1.2px solid rgba(0, 0, 0, 0.06);
-  border-top: 3px solid rgba(107, 147, 255, 0.25); /* subtle blue accent */
-  border-radius: 10px;
-  padding: 18px 22px;
+  background: #f9fbff;
+  border: 1px solid #e3e8f4;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.55;
   font-style: italic;
-  color: #222;
-  font-size: 15px;
-  line-height: 1.6;
   text-align: center;
-  margin: -6px 0 24px 0;
-  box-shadow:
-    0 3px 8px rgba(0, 0, 0, 0.05),
-    0 1px 3px rgba(0, 0, 0, 0.03),
-    inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  margin: 0.5rem 0 1.3rem 0;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+
+  /* ✅ Full width alignment with category cards */
+  width: 100%;
+  max-width: 100%; 
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* ✅ This ensures your text actually appears */
+/* ✅ Text injection from CSS variable still works */
 .to-consider-subtext::before {
   content: var(--to-consider-subtext, "These are optional or adjunctive therapies that may support your plan and enhance outcomes when appropriate.");
+  display: block;
 }
 
-/* Hover lift */
+/* Hover polish */
 .to-consider-subtext:hover {
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
   transform: translateY(-1px);
 }
 
-.to-consider-subtext strong {
-  font-weight: 600;
-  color: #000;
-}
 
 
 
