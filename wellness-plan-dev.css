@@ -797,7 +797,7 @@ html, body {
 }
 
 /* ------------------------------
-   CATEGORY HEADER — gradient accent aligned exactly with Lifestyle
+   CATEGORY HEADER — restored solid accent, aligned flush
 ------------------------------- */
 .wellness-plan .to-consider-subtitle {
   display: flex;
@@ -806,10 +806,9 @@ html, body {
   position: relative;
   background: #ffffff;
   border: 1px solid rgba(226, 232, 249, 0.9);
+  border-left: 8px solid var(--accent-color, #6b93ff); /* ✅ restored solid accent */
   border-radius: 14px;
-
-  /* ✅ match Lifestyle internal spacing */
-  padding: 0.55rem 1rem 0.55rem 1rem;
+  padding: 0.55rem 0.9rem; /* ✅ matches Lifestyle spacing */
   margin: 0.5rem 0;
   color: #121212;
   font-size: 1.15rem;
@@ -820,24 +819,14 @@ html, body {
   overflow: hidden;
 }
 
-/* Hover lift */
 .wellness-plan .to-consider-subtitle:hover {
   transform: translateY(-1px);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* ✅ new accent strip inside the card */
+/* Clean — no gradient or pseudo-element */
 .wellness-plan .to-consider-subtitle::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    var(--accent-color, #6b93ff) 0%,
-    rgba(255, 255, 255, 0) 8%
-  );
-  pointer-events: none;
+  content: none;
 }
 
 /* Chevron arrow */
@@ -861,11 +850,12 @@ html, body {
   }
 }
 
-/* Align list flush with parent container */
+/* Align the entire list flush */
 #toConsider {
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
+
 
 
 /* ------------------------------
@@ -984,13 +974,19 @@ html, body {
   border: 1.2px solid rgba(0, 0, 0, 0.08); /* faint neutral border */
   border-top: 3px solid rgba(123, 104, 238, 0.25); /* subtle lavender accent */
   border-radius: 10px;
-  padding: 18px 22px;
+
+  /* ✅ NEW: match width + spacing to To Consider blurb */
+  max-width: calc(100% - 2rem);
+  margin: 0.75rem auto 1.2rem auto; /* centered + identical spacing */
+  padding: 1.1rem 1rem; /* slightly reduced to match the other section */
+
   font-style: italic;
   color: #222;
   font-size: 15.5px;
   line-height: 1.65;
-  margin: -6px 0 28px 0;
   text-align: center;
+
+  /* keep your shadow stack, no change */
   box-shadow:
     0 3px 8px rgba(0, 0, 0, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04),
