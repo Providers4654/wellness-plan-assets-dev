@@ -1128,7 +1128,7 @@ html, body {
 .wellness-plan .goals-subheader {
   font-size: 1.15rem;
   font-weight: 800;
-  margin: 1.7rem 0 0.9rem; /* 🔽 reduced top margin globally */
+  margin: 2rem 0 0.9rem; /* 🔽 reduced top margin globally */
   letter-spacing: 0.4px;
   text-transform: none;
   position: relative;
