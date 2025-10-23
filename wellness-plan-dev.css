@@ -1221,6 +1221,24 @@ html, body {
 }
 
 
+/* ============================
+   Link Styling — Keep standard link color
+   ============================ */
+
+.wellness-plan a {
+  color: #0073e6; /* standard accessible blue */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.wellness-plan a:hover,
+.wellness-plan a:focus {
+  color: #0056b3; /* darker blue on hover */
+  text-decoration-thickness: 2px; /* slightly thicker underline on hover */
+}
+
+
+
 
 
 
