@@ -752,7 +752,7 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — refined modern version
+   "TO CONSIDER" — elevated refined version
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
@@ -760,8 +760,8 @@ html, body {
   border: none !important;
   border-left: 4px solid #6b93ff !important;
   border-radius: 18px;
-  padding: 1.5rem 1.25rem;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
 
@@ -770,40 +770,52 @@ html, body {
   display: none !important;
 }
 
-/* CATEGORY HEADER */
+/* ------------------------------
+   CATEGORY HEADER (accordion)
+------------------------------- */
 .to-consider-subtitle {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.9rem 1rem;
-  margin: 0.25rem 0;
-  font-size: 1rem;
+
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0;
+  background: linear-gradient(180deg, #f9fbff, #f4f6ff);
+  border: 1px solid #dee4fb;
+  border-radius: 14px;
+  color: #1b263b;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #1f2d3d;
-  background: #f9fbff;
-  border: 1px solid #e3e9f7;
-  border-radius: 12px;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(107, 147, 255, 0.05);
 }
 
 .to-consider-subtitle:hover {
-  background: #f1f5ff;
-  border-color: #d0dcff;
-  color: #3052ff;
+  background: #f0f3ff;
+  border-color: #ccd8ff;
+  color: #2d45c5;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 147, 255, 0.12);
 }
 
+/* Chevron icon */
 .to-consider-subtitle::after {
-  content: "›";
-  font-size: 1.4rem;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: currentColor;
   color: #6b93ff;
+  opacity: 0.9;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
   transition: transform 0.25s ease;
 }
 
 .to-consider-subtitle.expanded {
-  background: #eef3ff;
+  background: #eef2ff;
   border-color: #cbd8ff;
   color: #2d45c5;
 }
@@ -812,58 +824,86 @@ html, body {
   transform: rotate(90deg);
 }
 
-/* PANEL CONTENT */
+/* ------------------------------
+   PANEL CONTENT (collapsible)
+------------------------------- */
 .to-consider-content {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  padding: 0 1rem;
-  border-left: 2px solid #e5ebff;
-  margin: 0.5rem 0 0.75rem 0.5rem;
-  border-radius: 6px;
+  padding: 0 1.25rem;
+  border-left: 2px solid #e3e9ff;
+  margin: 0.5rem 0 0.75rem 0.75rem;
+  border-radius: 8px;
   transition: all 0.35s ease;
 }
 
 .to-consider-content.open {
-  max-height: 600px;
+  max-height: 800px;
   opacity: 1;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
   padding-bottom: 0.25rem;
 }
 
-/* ITEMS INSIDE CONTENT */
+/* ------------------------------
+   ITEMS INSIDE PANEL
+------------------------------- */
 .to-consider-item {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed #e3e3e3;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed #e3e6f0;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.to-consider-item:hover {
+  background: #f8faff;
+  transform: translateY(-1px);
 }
 
 .to-consider-item:last-child {
   border-bottom: none;
 }
 
+/* Name & blurb text */
 .to-consider-name {
-  font-weight: 600;
-  color: #222;
+  font-weight: 700;
+  color: #202020;
   margin-bottom: 0.25rem;
-  font-size: 0.97rem;
+  font-size: 0.98rem;
 }
 
 .to-consider-blurb {
   font-size: 0.9rem;
-  color: #555;
-  line-height: 1.5;
+  color: #444;
+  line-height: 1.55;
   font-style: italic;
 }
 
 .to-consider-blurb a {
   color: #3052ff;
   text-decoration: underline;
+  font-style: italic;
+  transition: color 0.25s ease;
 }
 .to-consider-blurb a:hover {
   color: #1b33b6;
 }
 
-
+/* ------------------------------
+   ANIMATION ENHANCEMENT
+------------------------------- */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.to-consider-content.open .to-consider-item {
+  animation: slideFadeIn 0.4s ease both;
+}
 
 
 
