@@ -752,7 +752,7 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — final elevated version
+   "TO CONSIDER" — final cohesive version
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
@@ -767,30 +767,32 @@ html, body {
   display: none !important;
 }
 
-/* CATEGORY HEADER */
+/* ------------------------------
+   CATEGORY HEADER
+------------------------------- */
 .to-consider-subtitle {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 1.25rem 1.5rem 1.25rem 2rem; /* increased left padding */
+  padding: 1.25rem 1.5rem 1.25rem 2.25rem; /* give left breathing room */
   margin: 0.9rem 0;
   background: #f9fbff;
   border: 1px solid #e2e8f9;
   border-radius: 14px;
-  color: #1a1a1a;
-  font-size: 1.12rem; /* bigger title text */
+  color: #121212;
+  font-size: 1.2rem; /* bigger for hierarchy */
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(107, 147, 255, 0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .to-consider-subtitle:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(107, 147, 255, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 /* Left accent bar */
@@ -805,7 +807,7 @@ html, body {
   background: var(--accent-color, #6b93ff);
 }
 
-/* Arrow icon */
+/* Arrow */
 .to-consider-subtitle::after {
   content: "";
   width: 28px;
@@ -821,9 +823,9 @@ html, body {
   transform: rotate(90deg);
 }
 
-/* ============================
+/* ------------------------------
    PANEL CONTENT
-   ============================ */
+------------------------------- */
 .to-consider-content {
   overflow: hidden;
   max-height: 0;
@@ -831,7 +833,7 @@ html, body {
   padding: 0 1.75rem;
   margin: 0.25rem 0 0.75rem 0.5rem;
   transition: all 0.35s ease;
-  border-left: 3px solid var(--accent-color, #6b93ff); /* MATCHES CATEGORY */
+  border-left: 3px solid transparent; /* will update dynamically */
   border-radius: 6px;
   background: #fff;
 }
@@ -843,11 +845,11 @@ html, body {
   padding-bottom: 0.25rem;
 }
 
-/* ============================
-   ITEMS INSIDE CONTENT
-   ============================ */
+/* ------------------------------
+   ITEMS INSIDE PANEL
+------------------------------- */
 .to-consider-item {
-  padding: 0.9rem 0 0.9rem 0.5rem;
+  padding: 0.9rem 0 0.9rem 0.75rem;
   border-bottom: 1px dashed #e3e6f0;
   transition: background 0.25s ease, transform 0.2s ease;
 }
@@ -885,15 +887,38 @@ html, body {
   color: #1b33b6;
 }
 
-/* ============================
-   CATEGORY COLORS
-   ============================ */
-.to-consider-subtitle:nth-of-type(1) { --accent-color: #6b93ff; } /* Blue */
-.to-consider-subtitle:nth-of-type(2) { --accent-color: #f5a623; } /* Gold/Orange */
-.to-consider-subtitle:nth-of-type(3) { --accent-color: #6acb72; } /* Green */
-.to-consider-subtitle:nth-of-type(4) { --accent-color: #b48bff; } /* Lavender */
-.to-consider-subtitle:nth-of-type(5) { --accent-color: #ff6b6b; } /* Coral */
+/* ------------------------------
+   CATEGORY COLORS (auto-applied)
+------------------------------- */
+.to-consider-subtitle:nth-of-type(1),
+.to-consider-subtitle:nth-of-type(1) + .to-consider-content {
+  --accent-color: #6b93ff; /* Blue */
+  border-left-color: #6b93ff;
+}
 
+.to-consider-subtitle:nth-of-type(2),
+.to-consider-subtitle:nth-of-type(2) + .to-consider-content {
+  --accent-color: #f5a623; /* Gold */
+  border-left-color: #f5a623;
+}
+
+.to-consider-subtitle:nth-of-type(3),
+.to-consider-subtitle:nth-of-type(3) + .to-consider-content {
+  --accent-color: #6acb72; /* Green */
+  border-left-color: #6acb72;
+}
+
+.to-consider-subtitle:nth-of-type(4),
+.to-consider-subtitle:nth-of-type(4) + .to-consider-content {
+  --accent-color: #b48bff; /* Lavender */
+  border-left-color: #b48bff;
+}
+
+.to-consider-subtitle:nth-of-type(5),
+.to-consider-subtitle:nth-of-type(5) + .to-consider-content {
+  --accent-color: #ff6b6b; /* Coral */
+  border-left-color: #ff6b6b;
+}
 
 
 
