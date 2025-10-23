@@ -724,10 +724,10 @@ html, body {
    RESPONSIVE: MOBILE FONT TWEAKS
    ============================ */
 @media (max-width: 600px) {
-  /* Section Titles (📋 Personalized Wellness Plan, 💊 Treatment Summary, etc.) */
   .wellness-plan .section-title {
-    font-size: 18px !important;   /* smaller on mobile */
-    padding: 4px 14px !important; /* tighter pill padding */
+    font-size: 16px !important;      /* 🔹 Slightly larger text */
+    padding: 6px 18px !important;    /* 🔹 Adds height and width to the pill */
+    border-radius: 999px !important; /* keeps smooth rounded ends */
   }
 
   /* Treatment Summary blocks (Daily, Evening, Weekly, PRN) */
