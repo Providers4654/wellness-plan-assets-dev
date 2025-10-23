@@ -455,16 +455,18 @@ if (toConsiderList && toConsiderBlock) {
       ...Object.keys(grouped).filter(cat => !CATEGORY_ORDER.includes(cat)),
     ];
 
-    toConsiderList.innerHTML = orderedCats.map(cat => {
-const items = grouped[cat].map(item => `
-  <li class="to-consider-row">
-    <div class="to-consider-name"><strong>${item.name}</strong></div>
-    <div class="to-consider-blurb">${normalizeCellText(item.blurb)}</div>
-  </li>
+toConsiderList.innerHTML = orderedCats.map(cat => `
+  <li class="to-consider-subtitle">${cat}</li>
+  <div class="to-consider-content">
+    ${grouped[cat].map(item => `
+      <div class="to-consider-item">
+        <div class="to-consider-name"><strong>${item.name}</strong></div>
+        <div class="to-consider-blurb">${normalizeCellText(item.blurb)}</div>
+      </div>
+    `).join("")}
+  </div>
 `).join("");
 
-      return `<li class="to-consider-subtitle">${cat}</li>${items}`;
-    }).join("");
 
     toConsiderBlock.style.display = "block";
   } else {
