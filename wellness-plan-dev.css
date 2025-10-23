@@ -781,7 +781,7 @@ html, body {
   background: #f9fbff;
   border: 1px solid #e2e8f9;
   border-radius: 12px;
-  padding: 0.55rem 0.9rem 0.55rem 3.2rem; /* ↓ reduced padding */
+  padding: 0.55rem 0.9rem 0.55rem 2.5rem; /* ↓ reduced padding */
   margin: 0.4rem 0; /* ↓ tighter gap between boxes */
   color: #121212;
   font-size: 1.15rem; /* ↓ smaller text size */
