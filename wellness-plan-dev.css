@@ -1168,6 +1168,7 @@ html, body {
   background: #6b93ff;
 }
 #visitTimeline li {
+  color: #6b93ff; /* <— added */
   background: linear-gradient(to right, rgba(107, 147, 255, 0.15), rgba(255, 255, 255, 0));
 }
 #visitTimeline li:hover {
@@ -1182,6 +1183,7 @@ html, body {
   background: #00a5b5;
 }
 #bodyComp li {
+  color: #00a5b5; /* <— added */
   background: linear-gradient(to right, rgba(0, 165, 181, 0.15), rgba(255, 255, 255, 0));
 }
 #bodyComp li:hover {
@@ -1196,6 +1198,7 @@ html, body {
   background: #b86bff;
 }
 #targetGoals li {
+  color: #b86bff; /* <— added */
   background: linear-gradient(to right, rgba(184, 107, 255, 0.15), rgba(255, 255, 255, 0));
 }
 #targetGoals li:hover {
@@ -1210,11 +1213,13 @@ html, body {
   background: #28b463;
 }
 #otherItems li {
+  color: #28b463; /* <— added */
   background: linear-gradient(to right, rgba(40, 180, 99, 0.15), rgba(255, 255, 255, 0));
 }
 #otherItems li:hover {
   background: linear-gradient(to right, rgba(40, 180, 99, 0.25), rgba(255, 255, 255, 0));
 }
+
 
 
 
