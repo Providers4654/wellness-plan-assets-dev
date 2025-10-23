@@ -1103,8 +1103,8 @@ html, body {
 
 /* Base neutral fallback (for new or undefined sections) */
 .wellness-plan .goals-list li {
-  border-left: 5px solid #cdd7ff;
-  background: rgba(205, 215, 255, 0.08);
+  border-left: none;
+  background: linear-gradient(to right, rgba(205, 215, 255, 0.15), rgba(255, 255, 255, 0));
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 14px;
@@ -1113,9 +1113,15 @@ html, body {
   transition: all 0.25s ease;
 }
 .wellness-plan .goals-list li:hover {
-  background: rgba(205, 215, 255, 0.12);
+  background: linear-gradient(to right, rgba(205, 215, 255, 0.25), rgba(255, 255, 255, 0));
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* Ensure <strong> elements inherit section color */
+.wellness-plan .goals-list strong {
+  color: inherit !important;
+  font-weight: 700;
 }
 
 /* Section title styling */
@@ -1162,11 +1168,10 @@ html, body {
   background: #6b93ff;
 }
 #visitTimeline li {
-  border-left-color: #6b93ff;
-  background: rgba(107, 147, 255, 0.06);
+  background: linear-gradient(to right, rgba(107, 147, 255, 0.15), rgba(255, 255, 255, 0));
 }
 #visitTimeline li:hover {
-  background: rgba(107, 147, 255, 0.1);
+  background: linear-gradient(to right, rgba(107, 147, 255, 0.25), rgba(255, 255, 255, 0));
 }
 
 /* --- 2. Body Composition Analysis --- */
@@ -1177,11 +1182,10 @@ html, body {
   background: #00a5b5;
 }
 #bodyComp li {
-  border-left-color: #00a5b5;
-  background: rgba(0, 165, 181, 0.06);
+  background: linear-gradient(to right, rgba(0, 165, 181, 0.15), rgba(255, 255, 255, 0));
 }
 #bodyComp li:hover {
-  background: rgba(0, 165, 181, 0.1);
+  background: linear-gradient(to right, rgba(0, 165, 181, 0.25), rgba(255, 255, 255, 0));
 }
 
 /* --- 3. Target Goals --- */
@@ -1192,11 +1196,10 @@ html, body {
   background: #b86bff;
 }
 #targetGoals li {
-  border-left-color: #b86bff;
-  background: rgba(184, 107, 255, 0.06);
+  background: linear-gradient(to right, rgba(184, 107, 255, 0.15), rgba(255, 255, 255, 0));
 }
 #targetGoals li:hover {
-  background: rgba(184, 107, 255, 0.1);
+  background: linear-gradient(to right, rgba(184, 107, 255, 0.25), rgba(255, 255, 255, 0));
 }
 
 /* --- 4. Other Goals / Follow-Up --- */
@@ -1207,12 +1210,12 @@ html, body {
   background: #28b463;
 }
 #otherItems li {
-  border-left-color: #28b463;
-  background: rgba(40, 180, 99, 0.06);
+  background: linear-gradient(to right, rgba(40, 180, 99, 0.15), rgba(255, 255, 255, 0));
 }
 #otherItems li:hover {
-  background: rgba(40, 180, 99, 0.1);
+  background: linear-gradient(to right, rgba(40, 180, 99, 0.25), rgba(255, 255, 255, 0));
 }
+
 
 
 
