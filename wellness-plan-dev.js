@@ -187,6 +187,21 @@ document.addEventListener("click", e => {
 }); // ✅ properly closes the event listener
 
 
+// ============================
+// To Consider Collapsible Categories
+// ============================
+document.addEventListener("click", e => {
+  const subtitle = e.target.closest(".to-consider-subtitle");
+  if (subtitle) {
+    subtitle.classList.toggle("expanded");
+    let next = subtitle.nextElementSibling;
+    while (next && !next.classList.contains("to-consider-subtitle")) {
+      next.style.display =
+        subtitle.classList.contains("expanded") ? "block" : "none";
+      next = next.nextElementSibling;
+    }
+  }
+});
 
 
 
