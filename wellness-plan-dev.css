@@ -1171,6 +1171,20 @@ html, body {
 }
 
 
+/* Remove the gray background + padding from editable spans in goals section */
+.wellness-plan .goals-list .editable {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: inline !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+
+
 
 
 
