@@ -800,7 +800,7 @@ html, body {
 }
 
 /* ✅ Text injection from CSS variable still works */
-.to-consider-subtext::before {
+.wellness-plan .wellness-bubble .section-subtext.to-consider-subtext::before {
   content: var(--to-consider-subtext);
   display: block;
 }
