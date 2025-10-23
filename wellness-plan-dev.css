@@ -1104,7 +1104,7 @@ html, body {
 /* Base neutral fallback (for new or undefined sections) */
 .wellness-plan .goals-list li {
   border-left: none;
-  background: linear-gradient(to right, rgba(205, 215, 255, 0.15), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.65), rgba(205, 215, 255, 0.15));
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 14px;
@@ -1113,7 +1113,7 @@ html, body {
   transition: all 0.25s ease;
 }
 .wellness-plan .goals-list li:hover {
-  background: linear-gradient(to right, rgba(205, 215, 255, 0.25), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(205, 215, 255, 0.25));
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
@@ -1168,11 +1168,11 @@ html, body {
   background: #6b93ff;
 }
 #visitTimeline li {
-  color: #6b93ff; /* <— added */
-  background: linear-gradient(to right, rgba(107, 147, 255, 0.15), rgba(255, 255, 255, 0));
+  color: #6b93ff;
+  background: linear-gradient(to right, rgba(255,255,255,0.65), rgba(107,147,255,0.15));
 }
 #visitTimeline li:hover {
-  background: linear-gradient(to right, rgba(107, 147, 255, 0.25), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(107,147,255,0.25));
 }
 
 /* --- 2. Body Composition Analysis --- */
@@ -1183,11 +1183,11 @@ html, body {
   background: #00a5b5;
 }
 #bodyComp li {
-  color: #00a5b5; /* <— added */
-  background: linear-gradient(to right, rgba(0, 165, 181, 0.15), rgba(255, 255, 255, 0));
+  color: #00a5b5;
+  background: linear-gradient(to right, rgba(255,255,255,0.65), rgba(0,165,181,0.15));
 }
 #bodyComp li:hover {
-  background: linear-gradient(to right, rgba(0, 165, 181, 0.25), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(0,165,181,0.25));
 }
 
 /* --- 3. Target Goals --- */
@@ -1198,11 +1198,11 @@ html, body {
   background: #b86bff;
 }
 #targetGoals li {
-  color: #b86bff; /* <— added */
-  background: linear-gradient(to right, rgba(184, 107, 255, 0.15), rgba(255, 255, 255, 0));
+  color: #b86bff;
+  background: linear-gradient(to right, rgba(255,255,255,0.65), rgba(184,107,255,0.15));
 }
 #targetGoals li:hover {
-  background: linear-gradient(to right, rgba(184, 107, 255, 0.25), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(184,107,255,0.25));
 }
 
 /* --- 4. Other Goals / Follow-Up --- */
@@ -1213,11 +1213,11 @@ html, body {
   background: #28b463;
 }
 #otherItems li {
-  color: #28b463; /* <— added */
-  background: linear-gradient(to right, rgba(40, 180, 99, 0.15), rgba(255, 255, 255, 0));
+  color: #28b463;
+  background: linear-gradient(to right, rgba(255,255,255,0.65), rgba(40,180,99,0.15));
 }
 #otherItems li:hover {
-  background: linear-gradient(to right, rgba(40, 180, 99, 0.25), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(40,180,99,0.25));
 }
 
 
