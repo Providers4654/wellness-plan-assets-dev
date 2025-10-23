@@ -92,6 +92,8 @@ function setTextIfAvailable(selector, cssVarName, fallback) {
 
 function injectResourceLinksAndTitles() {
   console.log("🔗 Injecting resource links & titles");
+console.log("✅ title-summary =", cssVar("--title-summary"));
+console.log("✅ fullscript-url =", cssVar("--fullscript-url"));
 
   // Resource links
   [
@@ -135,6 +137,8 @@ setTextIfAvailable(".title-goals", "--title-goals", "Goals & Follow-Up");
     }
   });
 }
+
+
 
 
 // ============================
@@ -727,23 +731,18 @@ async function loadPatientData() {
 
     const patientBlock = getPatientBlock(patientRows, patientId);
 
-    if (patientBlock.length > 0) {
-      injectPatientData(patientBlock, lifestyleData, medsData, bodyCompData, toConsiderData);
-    } else {
-      console.warn(`⚠️ No rows found for Patient ID=${patientId}`);
-    }
+if (patientBlock.length > 0) {
+  injectPatientData(patientBlock, lifestyleData, medsData, bodyCompData, toConsiderData);
+  injectResourceLinksAndTitles();  // ✅ ADD THIS BACK HERE
+} else {
+  console.warn(`⚠️ No rows found for Patient ID=${patientId}`);
+}
 
     console.log(`✅ Total load time: ${(performance.now() - start).toFixed(2)} ms`);
   } catch (err) {
     console.error("❌ Error in loadPatientData:", err);
   }
 }
-
-
-// Re-inject titles after DOM & CSS load
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => injectResourceLinksAndTitles(), 100);
-});
 
 
 
