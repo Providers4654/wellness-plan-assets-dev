@@ -752,85 +752,88 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — Sleek Premium Design
+   "TO CONSIDER" — refined modern version
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
-  background: #fff !important;
+  background: #ffffff !important;
+  border: none !important;
   border-left: 4px solid #6b93ff !important;
   border-radius: 18px;
-  padding: 1.75rem 1.5rem 1.25rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
-/* CATEGORY HEADERS */
+/* Hide old label */
+.wellness-plan .med-time-block.to-consider-block .med-time-label {
+  display: none !important;
+}
+
+/* CATEGORY HEADER */
 .to-consider-subtitle {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;               /* ⬅️ more internal breathing room */
-  margin: 0.75rem 0;
-  font-size: 1.05rem;
+  padding: 0.9rem 1rem;
+  margin: 0.25rem 0;
+  font-size: 1rem;
   font-weight: 700;
   color: #1f2d3d;
-  background: linear-gradient(180deg, #f9fbff 0%, #f1f4ff 100%);
-  border: 1px solid #e0e6f9;
+  background: #f9fbff;
+  border: 1px solid #e3e9f7;
   border-radius: 12px;
   cursor: pointer;
-  user-select: none;
   transition: all 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .to-consider-subtitle:hover {
-  background: linear-gradient(180deg, #f1f5ff 0%, #e7ecff 100%);
-  border-color: #cdd9ff;
+  background: #f1f5ff;
+  border-color: #d0dcff;
   color: #3052ff;
   transform: translateY(-1px);
 }
 
 .to-consider-subtitle::after {
   content: "›";
-  font-size: 1.8rem;                   /* ⬆️ bigger arrow */
-  line-height: 1;
+  font-size: 1.4rem;
   color: #6b93ff;
   transition: transform 0.25s ease;
-  margin-left: 12px;
 }
 
 .to-consider-subtitle.expanded {
-  background: linear-gradient(180deg, #eef3ff 0%, #e7edff 100%);
-  border-color: #c5d3ff;
-  color: #2a47c7;
+  background: #eef3ff;
+  border-color: #cbd8ff;
+  color: #2d45c5;
 }
 
 .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-/* CONTENT PANEL */
+/* PANEL CONTENT */
 .to-consider-content {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  padding: 0 1.25rem;
-  margin: 0 0 0.75rem;
-  border-left: 2px solid #e3e9ff;
-  border-radius: 0 0 12px 12px;
+  padding: 0 1rem;
+  border-left: 2px solid #e5ebff;
+  margin: 0.5rem 0 0.75rem 0.5rem;
+  border-radius: 6px;
   transition: all 0.35s ease;
 }
 
 .to-consider-content.open {
-  max-height: 800px;
+  max-height: 600px;
   opacity: 1;
-  padding-top: 0.75rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
 }
 
-/* ITEM ROWS */
+/* ITEMS INSIDE CONTENT */
 .to-consider-item {
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px dashed #e3e3e3;
 }
 
@@ -840,40 +843,25 @@ html, body {
 
 .to-consider-name {
   font-weight: 600;
-  color: #111;
-  font-size: 0.98rem;
+  color: #222;
   margin-bottom: 0.25rem;
+  font-size: 0.97rem;
 }
 
 .to-consider-blurb {
   font-size: 0.9rem;
-  color: #444;
-  line-height: 1.55;
+  color: #555;
+  line-height: 1.5;
   font-style: italic;
 }
 
 .to-consider-blurb a {
   color: #3052ff;
   text-decoration: underline;
-  transition: color 0.2s ease;
 }
-
 .to-consider-blurb a:hover {
   color: #1b33b6;
 }
-
-/* ANIMATION */
-@keyframes fadeSlideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 
 
 
