@@ -1151,10 +1151,15 @@ html, body {
   border-radius: 0 !important;
   box-shadow: none !important;
   display: inline !important;
-  color: inherit !important;
   font-size: inherit !important;
   line-height: inherit !important;
 }
+
+/* Keep text inheriting color, but not for links */
+.wellness-plan .goals-list .editable:not(a) {
+  color: inherit !important;
+}
+
 
 /* ============================
    INDIVIDUAL SECTION THEMES
@@ -1220,22 +1225,6 @@ html, body {
   background: linear-gradient(to right, rgba(29,145,78,0.2), rgba(255,255,255,0));
 }
 
-
-/* ============================
-   Link Styling — Keep standard link color
-   ============================ */
-
-.wellness-plan .goals-list a,
-.wellness-plan .goals-list a.editable {
-  color: #0073e6 !important;  /* standard link blue */
-  text-decoration: underline;
-  transition: color 0.2s ease;
-}
-.wellness-plan .goals-list a:hover,
-.wellness-plan .goals-list a:focus {
-  color: #0056b3 !important;
-  text-decoration-thickness: 2px;
-}
 
 
 
