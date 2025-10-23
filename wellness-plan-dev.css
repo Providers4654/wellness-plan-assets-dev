@@ -752,15 +752,16 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" BLOCK (modern minimalist revamp)
+   "TO CONSIDER" BLOCK (final clean version)
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
-  background: #fff;
-  border-left: 5px solid #6b93ff;
+  background: #ffffff !important;              /* pure white, overrides inherited gray */
+  border: none !important;                     /* removes boxy border */
+  border-left: 4px solid #6b93ff !important;   /* subtle brand accent */
   border-radius: 20px;
   padding: 1.5rem 1.5rem 1rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);  /* soft depth only */
   transition: all 0.3s ease;
 }
 
@@ -775,26 +776,27 @@ html, body {
 .to-consider-subtitle {
   font-weight: 700;
   font-size: 1.05rem;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   color: #1a1a1a;
   margin-top: 1.2rem;
   margin-bottom: 0.8rem;
   cursor: pointer;
   position: relative;
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
   user-select: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .to-consider-subtitle::after {
   content: "▸";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #6b93ff;
   transition: transform 0.25s ease, opacity 0.25s ease;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .to-consider-subtitle:hover {
@@ -806,19 +808,19 @@ html, body {
   opacity: 1;
 }
 
-/* Elegant divider line under each category */
-.to-consider-subtitle {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
 /* ============================
    MEDICATION ITEMS
    ============================ */
 .to-consider-row {
+  display: none; /* hidden by default */
   margin-left: 0.25rem;
-  padding: 0.75rem 0 0.75rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   animation: fadeSlideDown 0.3s ease both;
+}
+
+.to-consider-subtitle.expanded ~ .to-consider-row {
+  display: block; /* show all sibling rows until next subtitle */
 }
 
 .to-consider-row:last-child {
@@ -851,17 +853,6 @@ html, body {
 }
 
 /* ============================
-   COLLAPSE BEHAVIOR
-   ============================ */
-.to-consider-subtitle + .to-consider-row {
-  display: none;
-}
-
-.to-consider-subtitle.expanded + .to-consider-row {
-  display: block;
-}
-
-/* ============================
    ANIMATIONS
    ============================ */
 @keyframes fadeSlideDown {
@@ -874,6 +865,7 @@ html, body {
     transform: translateY(0);
   }
 }
+
 
 
 
