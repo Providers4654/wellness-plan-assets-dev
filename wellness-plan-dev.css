@@ -752,123 +752,127 @@ html, body {
 
 
 /* ============================
-   TO CONSIDER — Refined Sleek Design (CSS only)
+   "TO CONSIDER" — Sleek Premium Design
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
   background: #fff !important;
-  border: none !important;
+  border-left: 4px solid #6b93ff !important;
   border-radius: 18px;
-  padding: 1.5rem 1.75rem;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+  padding: 1.75rem 1.5rem 1.25rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-/* Remove any leftover section label */
-.wellness-plan .med-time-block.to-consider-block .med-time-label {
-  display: none !important;
-}
-
-/* Reset list styling */
-#toConsider {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* ----------------------------
-   CATEGORY HEADERS (accordions)
------------------------------ */
+/* CATEGORY HEADERS */
 .to-consider-subtitle {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: linear-gradient(180deg, #fdfdff, #f5f7ff);
-  border: 1px solid #e3e7fb;
-  border-radius: 12px;
-  padding: 14px 18px 14px 20px;
-  margin-top: 12px;
-  margin-bottom: 8px;
-
-  color: #1b1b1b;
-  font-size: 1rem;
+  padding: 1rem 1.25rem;               /* ⬅️ more internal breathing room */
+  margin: 0.75rem 0;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  color: #1f2d3d;
+  background: linear-gradient(180deg, #f9fbff 0%, #f1f4ff 100%);
+  border: 1px solid #e0e6f9;
+  border-radius: 12px;
   cursor: pointer;
   user-select: none;
   transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-/* Hover effect */
 .to-consider-subtitle:hover {
-  background: #f1f4ff;
-  border-color: #cfd8ff;
-  box-shadow: 0 3px 10px rgba(107, 147, 255, 0.15);
+  background: linear-gradient(180deg, #f1f5ff 0%, #e7ecff 100%);
+  border-color: #cdd9ff;
+  color: #3052ff;
+  transform: translateY(-1px);
 }
 
-/* Chevron icon (SVG mask, crisp & scalable) */
 .to-consider-subtitle::after {
-  content: "";
-  width: 22px;
-  height: 22px;
-  background: currentColor;
-  opacity: 0.9;
+  content: "›";
+  font-size: 1.8rem;                   /* ⬆️ bigger arrow */
+  line-height: 1;
   color: #6b93ff;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
-          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
   transition: transform 0.25s ease;
+  margin-left: 12px;
 }
 
-/* Rotate arrow when expanded (JS toggles .expanded) */
+.to-consider-subtitle.expanded {
+  background: linear-gradient(180deg, #eef3ff 0%, #e7edff 100%);
+  border-color: #c5d3ff;
+  color: #2a47c7;
+}
+
 .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-/* ----------------------------
-   MEDICATION ITEMS
------------------------------ */
-.to-consider-row {
-  display: none; /* collapsed by default (JS opens) */
-  background: #fff;
-  border: 1px solid #e7eaf8;
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin: 6px 0 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease;
+/* CONTENT PANEL */
+.to-consider-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1.25rem;
+  margin: 0 0 0.75rem;
+  border-left: 2px solid #e3e9ff;
+  border-radius: 0 0 12px 12px;
+  transition: all 0.35s ease;
 }
 
-.to-consider-row:hover {
-  border-color: #d7dfff;
-  box-shadow: 0 4px 12px rgba(107, 147, 255, 0.12);
-  transform: translateY(-1px);
+.to-consider-content.open {
+  max-height: 800px;
+  opacity: 1;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
 }
 
-/* Item content */
+/* ITEM ROWS */
+.to-consider-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed #e3e3e3;
+}
+
+.to-consider-item:last-child {
+  border-bottom: none;
+}
+
 .to-consider-name {
-  font-weight: 700;
+  font-weight: 600;
   color: #111;
-  margin-bottom: 4px;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
 }
 
 .to-consider-blurb {
+  font-size: 0.9rem;
   color: #444;
-  font-size: 0.92rem;
-  line-height: 1.5;
+  line-height: 1.55;
   font-style: italic;
 }
 
 .to-consider-blurb a {
-  color: #0056d6;
+  color: #3052ff;
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
 
 .to-consider-blurb a:hover {
-  color: #003e99;
+  color: #1b33b6;
 }
 
+/* ANIMATION */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
