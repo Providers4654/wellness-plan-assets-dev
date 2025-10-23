@@ -752,17 +752,15 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — polished + breathable
+   "TO CONSIDER" — minimalist, color-linked, no outer box
    ============================ */
 
+/* Remove outer box */
 .wellness-plan .med-time-block.to-consider-block {
-  background: #ffffff !important;
+  background: transparent !important;
   border: none !important;
-  border-left: 4px solid #6b93ff !important;
-  border-radius: 18px;
-  padding: 1.75rem 1.75rem;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Hide old label */
@@ -770,16 +768,14 @@ html, body {
   display: none !important;
 }
 
-/* ------------------------------
-   CATEGORY HEADER (accordion)
-------------------------------- */
+/* CATEGORY HEADER */
 .to-consider-subtitle {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 1.15rem 1.5rem;      /* more interior breathing room */
+  padding: 1rem 1.25rem 1rem 1.75rem; /* more left padding for space from accent */
   margin: 0.75rem 0;
   background: #f9fbff;
   border: 1px solid #e2e8f9;
@@ -794,49 +790,47 @@ html, body {
 }
 
 .to-consider-subtitle:hover {
-  background: #f0f3ff;
-  border-color: #ccd8ff;
-  color: #2d45c5;
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(107, 147, 255, 0.1);
+  box-shadow: 0 6px 14px rgba(107, 147, 255, 0.08);
 }
 
-/* Arrow: larger, spaced, elegant */
+/* Left accent bar */
+.to-consider-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 14px 0 0 14px;
+  background: var(--accent-color, #6b93ff);
+}
+
+/* Arrow styling */
 .to-consider-subtitle::after {
   content: "";
-  width: 26px;  /* bigger */
+  width: 26px;
   height: 26px;
-  margin-left: 0.75rem;
-  background: currentColor;
-  color: #6b93ff;
-  opacity: 0.9;
+  margin-left: 1rem;
+  background: var(--accent-color, #6b93ff);
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
           mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
   transition: transform 0.25s ease;
-}
-
-.to-consider-subtitle.expanded {
-  background: #eef2ff;
-  border-color: #cbd8ff;
-  color: #2d45c5;
 }
 
 .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-/* ------------------------------
-   PANEL CONTENT (collapsible)
-------------------------------- */
+/* PANEL CONTENT */
 .to-consider-content {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  padding: 0 1.5rem;
-  border-left: 2px solid #e3e9ff;
-  margin: 0.5rem 0 0.75rem 0.75rem;
-  border-radius: 8px;
+  padding: 0 1.75rem;
+  margin: 0.25rem 0 0.75rem 0.5rem;
   transition: all 0.35s ease;
+  border-left: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .to-consider-content.open {
@@ -846,9 +840,7 @@ html, body {
   padding-bottom: 0.25rem;
 }
 
-/* ------------------------------
-   ITEMS INSIDE PANEL
-------------------------------- */
+/* ITEM STYLES */
 .to-consider-item {
   padding: 0.75rem 0;
   border-bottom: 1px dashed #e3e6f0;
@@ -888,15 +880,28 @@ html, body {
   color: #1b33b6;
 }
 
-/* ------------------------------
-   OPTIONAL CATEGORY COLOR TINTS
-   (remove or adjust for uniqueness)
-------------------------------- */
-.to-consider-subtitle:nth-of-type(1) { border-left: 5px solid #6b93ff; }
-.to-consider-subtitle:nth-of-type(2) { border-left: 5px solid #f8b84e; }
-.to-consider-subtitle:nth-of-type(3) { border-left: 5px solid #8bc48a; }
-.to-consider-subtitle:nth-of-type(4) { border-left: 5px solid #b28aff; }
-.to-consider-subtitle:nth-of-type(5) { border-left: 5px solid #ff7a7a; }
+/* CATEGORY COLOR ASSIGNMENTS */
+.to-consider-subtitle:nth-of-type(1) {
+  --accent-color: #6b93ff; /* Blue */
+}
+.to-consider-subtitle:nth-of-type(2) {
+  --accent-color: #f5a623; /* Gold/Orange */
+}
+.to-consider-subtitle:nth-of-type(3) {
+  --accent-color: #6acb72; /* Green */
+}
+.to-consider-subtitle:nth-of-type(4) {
+  --accent-color: #b48bff; /* Lavender */
+}
+.to-consider-subtitle:nth-of-type(5) {
+  --accent-color: #ff6b6b; /* Coral */
+}
+
+
+
+
+
+
 
 
 
