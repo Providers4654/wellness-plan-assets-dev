@@ -752,7 +752,7 @@ html, body {
 
 
 /* ============================
-   "TO CONSIDER" — elevated refined version
+   "TO CONSIDER" — polished + breathable
    ============================ */
 
 .wellness-plan .med-time-block.to-consider-block {
@@ -760,7 +760,7 @@ html, body {
   border: none !important;
   border-left: 4px solid #6b93ff !important;
   border-radius: 18px;
-  padding: 1.75rem 1.5rem;
+  padding: 1.75rem 1.75rem;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
@@ -779,10 +779,10 @@ html, body {
   align-items: center;
   justify-content: space-between;
 
-  padding: 1rem 1.25rem;
-  margin: 0.5rem 0;
-  background: linear-gradient(180deg, #f9fbff, #f4f6ff);
-  border: 1px solid #dee4fb;
+  padding: 1.15rem 1.5rem;      /* more interior breathing room */
+  margin: 0.75rem 0;
+  background: #f9fbff;
+  border: 1px solid #e2e8f9;
   border-radius: 14px;
   color: #1b263b;
   font-size: 1.05rem;
@@ -790,7 +790,7 @@ html, body {
   letter-spacing: 0.3px;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgba(107, 147, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(107, 147, 255, 0.05);
 }
 
 .to-consider-subtitle:hover {
@@ -798,19 +798,20 @@ html, body {
   border-color: #ccd8ff;
   color: #2d45c5;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(107, 147, 255, 0.12);
+  box-shadow: 0 6px 14px rgba(107, 147, 255, 0.1);
 }
 
-/* Chevron icon */
+/* Arrow: larger, spaced, elegant */
 .to-consider-subtitle::after {
   content: "";
-  width: 22px;
-  height: 22px;
+  width: 26px;  /* bigger */
+  height: 26px;
+  margin-left: 0.75rem;
   background: currentColor;
   color: #6b93ff;
   opacity: 0.9;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
-          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" fill="none" stroke="%23000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/contain no-repeat;
   transition: transform 0.25s ease;
 }
 
@@ -831,7 +832,7 @@ html, body {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
   border-left: 2px solid #e3e9ff;
   margin: 0.5rem 0 0.75rem 0.75rem;
   border-radius: 8px;
@@ -863,7 +864,6 @@ html, body {
   border-bottom: none;
 }
 
-/* Name & blurb text */
 .to-consider-name {
   font-weight: 700;
   color: #202020;
@@ -889,21 +889,15 @@ html, body {
 }
 
 /* ------------------------------
-   ANIMATION ENHANCEMENT
+   OPTIONAL CATEGORY COLOR TINTS
+   (remove or adjust for uniqueness)
 ------------------------------- */
-@keyframes slideFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.to-consider-content.open .to-consider-item {
-  animation: slideFadeIn 0.4s ease both;
-}
+.to-consider-subtitle:nth-of-type(1) { border-left: 5px solid #6b93ff; }
+.to-consider-subtitle:nth-of-type(2) { border-left: 5px solid #f8b84e; }
+.to-consider-subtitle:nth-of-type(3) { border-left: 5px solid #8bc48a; }
+.to-consider-subtitle:nth-of-type(4) { border-left: 5px solid #b28aff; }
+.to-consider-subtitle:nth-of-type(5) { border-left: 5px solid #ff7a7a; }
+
 
 
 
