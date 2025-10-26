@@ -100,7 +100,7 @@ html, body {
   color: #222;       /* clean dark text */
   max-width: 960px;
   margin: 0 auto;
- padding: 0 20px 20px; /* remove top padding */
+ padding: 20px 20px 20px; /* remove top padding */
   line-height: 1.45;
   width: 100%;
   box-sizing: border-box;
@@ -111,8 +111,7 @@ html, body {
     width: 95% !important;     /* make it a little narrower than 100% */
     max-width: none !important;
     margin: 0 auto;            /* center horizontally */
-    padding: 12px;             /* ✅ tighter padding so content isn’t squeezed */
-     padding-top: 20px; /* 👈 add this line */
+    padding: 20px 12px 12px;
     box-sizing: border-box;
     padding-top: 80px;
   }
