@@ -825,13 +825,14 @@ function bootstrapWellnessPlanSafe(attempt = 1) {
 // Adjust top padding dynamically based on header height
 // ============================
 function adjustHeaderSpacing() {
-  const header = document.querySelector("header, .site-header, .mtn-header"); // 👈 adjust this selector if your GitHub header uses a different class/id
+  const header = document.querySelector("header, .site-header, .mtn-header");
   const content = document.querySelector(".printable-content");
   if (!header || !content) return;
 
   function updateSpacing() {
     const height = header.offsetHeight || 0;
-    content.style.paddingTop = `${height + 25}px`; // +10px for breathing room
+    // 🧩 Apply with !important priority so it always overrides CSS
+    content.style.setProperty("padding-top", `${height + 25}px`, "important");
   }
 
   // Initial run
@@ -840,6 +841,7 @@ function adjustHeaderSpacing() {
   // Watch for window resizes (for mobile/desktop adjustments)
   window.addEventListener("resize", updateSpacing);
 }
+
 
 
 
