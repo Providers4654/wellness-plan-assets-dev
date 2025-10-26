@@ -816,8 +816,14 @@ function bootstrapWellnessPlanSafe(attempt = 1) {
   }
 }
 
+// ============================
+// Ensure DOM is ready before firing
+// ============================
 
-
-
-// Ensure DOM is ready before firing if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", () => bootstrapWellnessPlanSafe()); } else { bootstrapWellnessPlanSafe(); }
-
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    bootstrapWellnessPlanSafe();
+  });
+} else {
+  bootstrapWellnessPlanSafe();
+}
