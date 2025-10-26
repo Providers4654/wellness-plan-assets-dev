@@ -822,7 +822,7 @@ function bootstrapWellnessPlanSafe(attempt = 1) {
 
 
 // ============================
-// Adjust top padding dynamically based on header height
+// Adjust printable-content to sit exactly below the header
 // ============================
 function adjustHeaderSpacing() {
   const header = document.querySelector("header, .site-header, .mtn-header");
@@ -830,17 +830,23 @@ function adjustHeaderSpacing() {
   if (!header || !content) return;
 
   function updateSpacing() {
-    const height = header.offsetHeight || 0;
-    // 🧩 Apply with !important priority so it always overrides CSS
-    content.style.setProperty("padding-top", `${height + 30}px`, "important");
+    // Get the distance from the top of the viewport to the bottom of the header
+    const rect = header.getBoundingClientRect();
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const headerBottom = rect.bottom + scrollTop;
+
+    // Apply that as top padding with !important priority
+    content.style.setProperty("padding-top", `${headerBottom}px`, "important");
   }
 
-  // Initial run
+  // Run once on load
   updateSpacing();
 
-  // Watch for window resizes (for mobile/desktop adjustments)
+  // Re-run on resize or if the header height changes
   window.addEventListener("resize", updateSpacing);
+  window.addEventListener("scroll", updateSpacing); // in case header animates or shrinks
 }
+
 
 
 
