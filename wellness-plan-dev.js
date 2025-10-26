@@ -816,9 +816,41 @@ function bootstrapWellnessPlanSafe(attempt = 1) {
   }
 }
 
+
+
+
+
+
+// ============================
+// Adjust top padding dynamically based on header height
+// ============================
+function adjustHeaderSpacing() {
+  const header = document.querySelector("header, .site-header, .mtn-header"); // 👈 adjust this selector if your GitHub header uses a different class/id
+  const content = document.querySelector(".printable-content");
+  if (!header || !content) return;
+
+  function updateSpacing() {
+    const height = header.offsetHeight || 0;
+    content.style.paddingTop = `${height + 10}px`; // +10px for breathing room
+  }
+
+  // Initial run
+  updateSpacing();
+
+  // Watch for window resizes (for mobile/desktop adjustments)
+  window.addEventListener("resize", updateSpacing);
+}
+
+
+
 // Ensure DOM is ready before firing
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => bootstrapWellnessPlanSafe());
+  document.addEventListener("DOMContentLoaded", () => {
+    bootstrapWellnessPlanSafe();
+    adjustHeaderSpacing(); // 👈 dynamically fix spacing once everything loads
+  });
 } else {
   bootstrapWellnessPlanSafe();
+  adjustHeaderSpacing(); // 👈 also run immediately if DOM is already loaded
 }
+
