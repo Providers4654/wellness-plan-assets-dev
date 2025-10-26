@@ -831,7 +831,7 @@ function adjustHeaderSpacing() {
 
   function updateSpacing() {
     const height = header.offsetHeight || 0;
-    content.style.paddingTop = `${height + 10}px`; // +10px for breathing room
+    content.style.paddingTop = `${height + 25}px`; // +10px for breathing room
   }
 
   // Initial run
