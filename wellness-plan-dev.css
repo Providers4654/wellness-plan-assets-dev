@@ -1773,7 +1773,7 @@ html, body {
 
   /* Add comfortable side padding only inside the plan */
   .wellness-plan {
-    padding: 12px 12px;  /* left/right gutters for readability */
+    padding: 80px 12px 12px;  /* left/right gutters for readability */
   }
 }
 
@@ -1991,4 +1991,10 @@ body {
   margin-top: 0 !important;
 }
 */
+
+
+
+
+
+
 
