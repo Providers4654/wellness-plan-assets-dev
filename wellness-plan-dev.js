@@ -832,7 +832,7 @@ function adjustHeaderSpacing() {
   function updateSpacing() {
     const height = header.offsetHeight || 0;
     // Add a bit of extra breathing room (adjust number as needed)
-    content.style.setProperty("padding-top", `${height + 25}px`, "important");
+    content.style.setProperty("padding-top", `${height + 15}px`, "important");
   }
 
   // Initial run
