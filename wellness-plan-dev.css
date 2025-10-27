@@ -655,8 +655,8 @@ html, body {
   color: #444;
 }
 
-/* Default bold stays the same color and inline */
-.wellness-plan .learn-more-content strong {
+/* Default bold stays the same color and inline (excludes teal headers) */
+.wellness-plan .learn-more-content strong:not(.lm) {
   color: inherit;
   font-weight: 600;
   display: inline;
@@ -664,14 +664,14 @@ html, body {
   line-height: inherit;
 }
 
-/* Teal labels — use <strong class="lm">Label:</strong> in the sheet */
-.wellness-plan .learn-more-content strong.lm,
+/* Teal labels — manually tagged in spreadsheet as <strong class="lm">Label:</strong> */
 .wellness-plan .learn-more-content .lm {
-  color: #2F6B82;     /* teal/steel blue */
+  color: #2F6B82 !important;   /* muted steel blue */
   font-weight: 700;
+  display: inline;
 }
 
-/* No automatic margins; spacing is fully controlled by your <br> in the cell */
+/* All spacing controlled manually via <br> in spreadsheet cells */
 
 
 
@@ -1449,8 +1449,8 @@ html, body {
 
 
 /* ===== LEARN-MORE BLURB KEEP STRONG/B CONSISTENT (learn-more + dose) ===== */
-.wellness-plan .medication-list li .learn-more-content strong,
-.wellness-plan .learn-more-content strong,
+.wellness-plan .medication-list li .learn-more-content strong:not(.lm),
+.wellness-plan .learn-more-content strong:not(.lm),
 .wellness-plan .medication-list li .dose strong,
 .wellness-plan .medication-list li .dose b {
   font-size: inherit;    /* same size as surrounding dose text */
