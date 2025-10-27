@@ -645,39 +645,34 @@ html, body {
 
 
 /* ============================================
-   LEARN MORE DROPDOWN CONTENT HEADER STYLING
+   LEARN MORE DROPDOWN CONTENT HEADER STYLING (Simplified)
    ============================================ */
 
-/* Base text reset (so inline bold inside paragraphs stays black) */
+/* Base reset for blurbs */
+.wellness-plan .learn-more-content {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+}
+
+/* Default bold stays the same color and inline */
 .wellness-plan .learn-more-content strong {
   color: inherit;
   font-weight: 600;
+  display: inline;
+  margin: 0;
+  line-height: inherit;
 }
 
-/* Section titles (added by markLearnMoreHeaders) */
-.wellness-plan .learn-more-content .lm-header {
-  color: #2F6B82;           /* muted steel blue */
-  display: block;           /* full line */
+/* Teal labels — use <strong class="lm">Label:</strong> in the sheet */
+.wellness-plan .learn-more-content strong.lm,
+.wellness-plan .learn-more-content .lm {
+  color: #2F6B82;     /* teal/steel blue */
   font-weight: 700;
-  margin-top: 16px;         /* space above each header */
-  margin-bottom: 6px;       /* space below before paragraph text */
-  line-height: 1.4;
 }
 
-/* Slightly less top margin for the very first header */
-.wellness-plan .learn-more-content .lm-header:first-child {
-  margin-top: 8px;
-}
+/* No automatic margins; spacing is fully controlled by your <br> in the cell */
 
-/* Add breathing room between whole sections (after each paragraph block) */
-.wellness-plan .learn-more-content br + .lm-header {
-  margin-top: 18px !important;
-}
-
-/* Remove any leftover <br> immediately after the headers */
-.wellness-plan .learn-more-content .lm-header + br {
-  display: none;
-}
 
 
 
