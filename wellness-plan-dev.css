@@ -621,42 +621,36 @@ html, body {
 
 
 /* ============================
-   LEARN-MORE CONTENT TEXT NORMALIZATION
-   (ensures bold/italics only change weight/style, not size)
+   LEARN-MORE CONTENT TEXT NORMALIZATION (global)
    ============================ */
 .wellness-plan .learn-more-content {
-  font-size: 14px;        /* 👈 optional: shrink whole blurb slightly */
+  font-size: 14px;
   line-height: 1.5;
   color: #444;
 }
-
-.wellness-plan .learn-more-content strong {
+.wellness-plan .learn-more-content strong:not(.lm) {
   font-weight: 700;
-  font-size: inherit;     /* 👈 force same size as parent text */
-  color: inherit;
+  font-size: inherit;   /* keep same size as surrounding text */
+  color: inherit;       /* don't force a color */
 }
-
 .wellness-plan .learn-more-content em {
   font-style: italic;
-  font-size: inherit;     /* 👈 same size as parent text */
+  font-size: inherit;
   color: inherit;
 }
 
-
-
 /* ============================================
-   LEARN MORE DROPDOWN CONTENT HEADER STYLING (Simplified)
+   MEDICATION LEARN-MORE: teal headers only
+   (requires <strong class="lm">Label:</strong> in the sheet)
    ============================================ */
-
-/* Base reset for blurbs */
-.wellness-plan .learn-more-content {
-  font-size: 14px;
-  line-height: 1.55;
-  color: #444;
+.wellness-plan .medication-list li .learn-more-content .lm {
+  color: #2F6B82 !important;  /* teal/steel blue */
+  font-weight: 700;
+  display: inline;
 }
 
-/* Default bold stays the same color and inline (excludes teal headers) */
-.wellness-plan .learn-more-content strong:not(.lm) {
+/* Meds learn-more: keep non-header bold text normal */
+.wellness-plan .medication-list li .learn-more-content strong:not(.lm) {
   color: inherit;
   font-weight: 600;
   display: inline;
@@ -664,14 +658,7 @@ html, body {
   line-height: inherit;
 }
 
-/* Teal labels — manually tagged in spreadsheet as <strong class="lm">Label:</strong> */
-.wellness-plan .learn-more-content .lm {
-  color: #2F6B82 !important;   /* muted steel blue */
-  font-weight: 700;
-  display: inline;
-}
-
-/* All spacing controlled manually via <br> in spreadsheet cells */
+/* Spacing is controlled by inline <br> in your spreadsheet cells */
 
 
 
