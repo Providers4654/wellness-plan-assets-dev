@@ -266,28 +266,6 @@ function getField(row, keys) {
 
 
 
-// ========== Learn-more header tagger ==========
-function markLearnMoreHeaders(scope = document) {
-  const LABELS = [
-    "How it works:", "Common side effects:", "What to expect:",
-    "For men:", "For women:", "Resources:"
-  ];
-
-  scope.querySelectorAll(".learn-more-content").forEach(blurb => {
-    blurb.querySelectorAll("strong").forEach(s => {
-      const txt = (s.textContent || "").trim();
-      if (LABELS.includes(txt)) {
-        s.classList.add("lm-header");
-        // remove the manual <br> right after the label to kill extra gap
-        const br = s.nextElementSibling;
-        if (br && br.tagName === "BR") br.remove();
-      }
-    });
-  });
-}
-
-
-
 
 
 // --- Inject Patient Data ---
@@ -375,7 +353,6 @@ const medInfo = medsData.find(m => (m["Medication"] || "").trim() === med.trim()
         html += `<li class="med-subtitle"><span>SUPPLEMENTS</span></li>${supps.join("")}`;
       }
       list.innerHTML = html;
-      markLearnMoreHeaders(list);
     } else {
       block.remove();
     }
@@ -551,7 +528,6 @@ tips.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })); // 
     }); // ✅ end forEach
 
     lifestyleBlock.innerHTML = html;
-    markLearnMoreHeaders(lifestyleBlock);
   }
 } // ✅ end if(lifestyleBlock)
 
@@ -664,8 +640,6 @@ if (name.includes(":")) {
 
 
 
-
-  markLearnMoreHeaders(document);
   console.groupEnd();
 }
 
