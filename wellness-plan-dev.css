@@ -618,6 +618,27 @@ html, body {
 
 
 
+/* ============================
+   LIFESTYLE TIP UPDATED LABEL
+   ============================ */
+.tip-updated {
+  font-size: 11.5px;
+  color: #666;
+  margin-top: 3px;
+  margin-left: 2px;
+  font-style: italic;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+/* Optional polish: fade slightly when the tip is expanded */
+.tip-name.expanded + .tip-updated {
+  opacity: 0.6;
+}
+
+
+
+
 
 
 
