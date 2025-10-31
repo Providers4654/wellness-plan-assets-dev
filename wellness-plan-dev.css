@@ -620,33 +620,32 @@ html, body {
 
 /* ============================
    LIFESTYLE TIP UPDATED LABEL
-   (compact version)
+   (compact stacked version)
    ============================ */
 .tip-updated {
-  display: inline-block;
-  margin-left: 6px;
   font-size: 11px;
   color: #666;
+  margin-top: 1px;
+  margin-left: 2px;
   font-style: italic;
-  opacity: 0.8;
-  line-height: 1.3;
+  opacity: 0.75;
+  line-height: 1.2;
   transition: opacity 0.2s ease;
 }
 
-/* Fade slightly when expanded for subtle hierarchy */
+.tip-name {
+  margin-bottom: 2px; /* smaller gap before updated line */
+}
+
+.lifestyle-row {
+  margin-bottom: 6px;  /* tighter spacing between rows */
+  padding: 10px 12px;
+}
+
 .tip-name.expanded + .tip-updated {
   opacity: 0.6;
 }
 
-/* Compact overall spacing for tip blocks */
-.lifestyle-row {
-  margin-bottom: 6px;   /* reduced vertical gap */
-  padding: 10px 12px;
-}
-
-.tip-name {
-  margin-bottom: 0;     /* no extra gap below title */
-}
 
 
 
