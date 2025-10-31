@@ -488,44 +488,52 @@ if (lifestyleBlock) {
 tips.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })); // ✅ alphabetical, case-insensitive
 
 
-  console.log("Lifestyle tips (all rows):", tips);
-  if (tips.length > 0) {
-    let html = "";
-    tips.forEach(tipName => {
-      const tipInfo = lifestyleData.find(r => (r["Tip"] || "").trim() === tipName.trim());
+console.log("Lifestyle tips (all rows):", tips);
+if (tips.length > 0) {
+  let html = "";
+  tips.forEach(tipName => {
+    const tipInfo = lifestyleData.find(r => (r["Tip"] || "").trim() === tipName.trim());
 
-      if (tipInfo) {
-        // ✅ Known tip from library
-        html += `
-          <li class="lifestyle-row">
-            <div class="tip-name">
-              <strong>${tipInfo["Tip"]}</strong>
-              ${tipInfo["Blurb"] ? `<span class="info-icon">i</span>` : ""}
-            </div>
-            ${tipInfo["Blurb"] ? `<div class="lifestyle-learn-more">${normalizeCellText(tipInfo["Blurb"])}</div>` : ""}
-          </li>`;
-      } else {
-        // ✅ Custom free-text tip (split on colon)
-        let raw = String(tipName).trim();
-        let title = raw;
-        let blurb = "";
+    if (tipInfo) {
+      // ✅ Known tip from library
+      const blurb = tipInfo["Blurb"] || "";
+      const updated = (tipInfo["Updated"] || "").trim();
 
-        const colonIndex = raw.indexOf(":");
-        if (colonIndex !== -1) {
-          title = raw.slice(0, colonIndex).trim();
-          blurb = raw.slice(colonIndex + 1).trim();
-        }
+      html += `
+        <li class="lifestyle-row">
+          <div class="tip-name">
+            <strong>${tipInfo["Tip"]}</strong>
+            ${blurb ? `<span class="info-icon">i</span>` : ""}
+          </div>
+          ${updated ? `<div class="tip-updated">Updated: ${normalizeCellText(updated)}</div>` : ""}
+          ${blurb ? `<div class="lifestyle-learn-more">${normalizeCellText(blurb)}</div>` : ""}
+        </li>`;
+    } else {
+      // ✅ Custom free-text tip (split on colon)
+      let raw = String(tipName).trim();
+      let title = raw;
+      let blurb = "";
 
-        html += `
-          <li class="lifestyle-row">
-            <div class="tip-name">
-              <strong>${normalizeCellText(title)}</strong>
-              ${blurb ? `<span class="info-icon">i</span>` : ""}
-            </div>
-            ${blurb ? `<div class="lifestyle-learn-more">${normalizeCellText(blurb)}</div>` : ""}
-          </li>`;
+      const colonIndex = raw.indexOf(":");
+      if (colonIndex !== -1) {
+        title = raw.slice(0, colonIndex).trim();
+        blurb = raw.slice(colonIndex + 1).trim();
       }
-    }); // ✅ end forEach
+
+      html += `
+        <li class="lifestyle-row">
+          <div class="tip-name">
+            <strong>${normalizeCellText(title)}</strong>
+            ${blurb ? `<span class="info-icon">i</span>` : ""}
+          </div>
+          ${blurb ? `<div class="lifestyle-learn-more">${normalizeCellText(blurb)}</div>` : ""}
+        </li>`;
+    }
+  }); // ✅ end forEach
+
+  lifestyleBlock.innerHTML = html;
+}
+
 
     lifestyleBlock.innerHTML = html;
   }
