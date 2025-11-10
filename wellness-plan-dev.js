@@ -20,11 +20,12 @@ const PROVIDERS = {
 
 
 const TABS = {
-  meds:       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Bi2xiUKiVQaoTioPuFRR80FnErpRYewmt9bHTrkFW7KSUeiXBoZM3bJZHGzFgDWA3lYrb5_6T5WO/pub?gid=1442071508&single=true&output=csv",
-  lifestyle:  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Bi2xiUKiVQaoTioPuFRR80FnErpRYewmt9bHTrkFW7KSUeiXBoZM3bJZHGzFgDWA3lYrb5_6T5WO/pub?gid=1970185497&single=true&output=csv",
-  bodycomp:   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Bi2xiUKiVQaoTioPuFRR80FnErpRYewmt9bHTrkFW7KSUeiXBoZM3bJZHGzFgDWA3lYrb5_6T5WO/pub?gid=1795189157&single=true&output=csv",
-  toconsider: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ7Bi2xiUKiVQaoTioPuFRR80FnErpRYewmt9bHTrkFW7KSUeiXBoZM3bJZHGzFgDWA3lYrb5_6T5WO/pub?gid=1041049772&single=true&output=csv"
+  meds:       "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCa-5eqBw4TypkJQ3jvutLX6LYy5IMvPF1NdUo925Y8s2nXVuiQKldGoGrT3LyVRo2F-kam2MKsERe/pub?gid=0&single=true&output=csv",
+  lifestyle:  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCa-5eqBw4TypkJQ3jvutLX6LYy5IMvPF1NdUo925Y8s2nXVuiQKldGoGrT3LyVRo2F-kam2MKsERe/pub?gid=891747208&single=true&output=csv",
+  bodycomp:   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCa-5eqBw4TypkJQ3jvutLX6LYy5IMvPF1NdUo925Y8s2nXVuiQKldGoGrT3LyVRo2F-kam2MKsERe/pub?gid=1768438502&single=true&output=csv",
+  toconsider: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCa-5eqBw4TypkJQ3jvutLX6LYy5IMvPF1NdUo925Y8s2nXVuiQKldGoGrT3LyVRo2F-kam2MKsERe/pub?gid=1961242551&single=true&output=csv"
 };
+
 
 // ============================
 // CSV FETCH + PARSER
