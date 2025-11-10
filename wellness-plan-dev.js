@@ -225,12 +225,19 @@ document.addEventListener("click", e => {
 // ============================
 function normalizeCellText(text) {
   if (!text) return "";
+
   return text
-    .trim() // safe to trim here now
-    .replace(/\\n/g, "<br>")        // literal \n
-    .replace(/(\r\n|\r|\n)/g, "<br>") 
-    .replace(/&lt;br&gt;/g, "<br>");
+    .trim()
+    // 1️⃣ Handle literal escaped newlines (\n)
+    .replace(/\\n/g, "<br>")
+    // 2️⃣ Handle actual line breaks (Enter in cell)
+    .replace(/(\r\n|\r|\n)+/g, "<br>")
+    // 3️⃣ Handle HTML-encoded <br> variants
+    .replace(/&lt;br\s*\/?&gt;/gi, "<br>")
+    // 4️⃣ Normalize any multiple <br>s in a row to consistent spacing
+    .replace(/(<br>\s*){2,}/g, "<br><br>");
 }
+
 
 
 // Normalize header names (strip hidden chars, unify variations)
