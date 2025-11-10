@@ -228,15 +228,14 @@ function normalizeCellText(text) {
 
   return text
     .trim()
-    // 1️⃣ Handle literal escaped newlines (\n)
+    // Convert literal \n (typed into CSV or Sheets) to <br>
     .replace(/\\n/g, "<br>")
-    // 2️⃣ Handle actual line breaks (Enter in cell)
-    .replace(/(\r\n|\r|\n)+/g, "<br>")
-    // 3️⃣ Handle HTML-encoded <br> variants
-    .replace(/&lt;br\s*\/?&gt;/gi, "<br>")
-    // 4️⃣ Normalize any multiple <br>s in a row to consistent spacing
-    .replace(/(<br>\s*){2,}/g, "<br><br>");
+    // Convert real line breaks (pressing Return)
+    .replace(/(\r\n|\r|\n)/g, "<br>")
+    // Convert encoded HTML <br> text
+    .replace(/&lt;br\s*\/?&gt;/gi, "<br>");
 }
+
 
 
 
