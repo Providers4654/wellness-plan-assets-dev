@@ -66,15 +66,33 @@ function normalizeHeader(h) {
 
 async function fetchCsv(url) {
   const text = await fetch(url).then(r => r.text());
-  const [headerLine, ...lines] = text.trim().split("\n");
-  const headers = parseCsvLine(headerLine).map(normalizeHeader);  // ✅ normalize headers
-  return lines.map(line => {
+  const lines = text.split(/\r?\n/);
+  const rows = [];
+  let current = "";
+  let insideQuotes = false;
+
+  // ✅ Recombine multi-line rows safely
+  for (let line of lines) {
+    if (!insideQuotes) current = line;
+    else current += "\n" + line;
+
+    const quoteCount = (current.match(/"/g) || []).length;
+    insideQuotes = quoteCount % 2 !== 0;
+
+    if (!insideQuotes) rows.push(current);
+  }
+
+  const [headerLine, ...dataLines] = rows;
+  const headers = parseCsvLine(headerLine).map(normalizeHeader);
+
+  return dataLines.map(line => {
     const cells = parseCsvLine(line);
     const obj = {};
     headers.forEach((h, i) => (obj[h] = cells[i] || ""));
     return obj;
   });
 }
+
 
 
 
@@ -225,16 +243,13 @@ document.addEventListener("click", e => {
 // ============================
 function normalizeCellText(text) {
   if (!text) return "";
-
   return text
     .trim()
-    // Convert literal \n (typed into CSV or Sheets) to <br>
     .replace(/\\n/g, "<br>")
-    // Convert real line breaks (pressing Return)
     .replace(/(\r\n|\r|\n)/g, "<br>")
-    // Convert encoded HTML <br> text
     .replace(/&lt;br\s*\/?&gt;/gi, "<br>");
 }
+
 
 
 
