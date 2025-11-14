@@ -924,6 +924,28 @@ html, body {
 
 
 
+
+/* ======================================================
+   XX. GLOBAL PAGE SPACING FIXES FOR NEW HEADER HEIGHT
+   Ensures content never clips beneath taller header
+   Applies to desktop + half-screen desktop/tablet widths
+====================================================== */
+
+@media (min-width: 1101px) {
+  .printable-content {
+    padding-top: 140px !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .printable-content {
+    padding-top: 150px !important;
+  }
+}
+
+
+
+
 /* ============================
    SECTION BUBBLES (MOBILE SPACING FIX)
    ============================ */
