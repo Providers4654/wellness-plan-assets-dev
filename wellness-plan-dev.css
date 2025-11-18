@@ -2105,6 +2105,20 @@ ul li,
 
 
 
+/* Remove bullets & reset spacing for Goals & Follow-Up lists */
+.wellness-plan .goals-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+
+/* Remove dashed medication borders from To Consider category rows */
+.wellness-plan #toConsider .to-consider-li {
+  border-bottom: none !important;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 
 
 
