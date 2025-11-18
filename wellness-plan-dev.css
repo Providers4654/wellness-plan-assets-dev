@@ -1712,8 +1712,9 @@ html, body {
 
 /* ============================================
    RESOURCE LINKS — BUTTON STYLE (LEFT-ALIGNED)
-   Matches Follow-Up button styling
+   Matches Follow-Up button styling (neutral, elevated)
    ============================================ */
+
 .wellness-plan .resource-link {
   border-top: 1px solid #eee;
   padding: 18px 0;
@@ -1722,23 +1723,27 @@ html, body {
 
 /* Turn ALL resource links into buttons */
 .wellness-plan .resource-link a {
-  display: inline-block;             /* <-- LEFT aligned */
-  padding: 10px 18px;
+  display: inline-block;             /* LEFT aligned */
+  padding: 12px 20px;
   background: #ffffff;
   border: 2px solid #dcdcdc;
-  border-radius: 8px;
+  border-radius: 10px;
+
   font-weight: 600;
-  font-size: 14px;
-  color: #333;
+  font-size: 15px;
+  color: #222;
   text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-  transition: background 0.2s, border-color 0.2s;
-  margin-bottom: 6px;                 /* space before note */
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+  margin-bottom: 6px;                /* space above note */
 }
 
+/* Hover / active */
 .wellness-plan .resource-link a:hover {
-  background: #f7f7f7;
-  border-color: #c7c7c7;
+  background: #fafafa;
+  border-color: #c9c9c9;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
 
 /* Notes beneath button */
@@ -1746,9 +1751,9 @@ html, body {
   display: block;
   font-size: 14px;
   color: #666;
-  line-height: 1.45;
+  line-height: 1.5;
   font-style: italic;
-  max-width: 600px;                 /* keeps lines tidy */
+  max-width: 650px;                 /* keeps text tidy */
 }
 
 /* First/last spacing inside bubbles */
@@ -1766,7 +1771,7 @@ html, body {
   text-align: left;
 }
 
-/* Mobile: full width button, still left-aligned visually */
+/* Mobile: full-width button but still visually left aligned */
 @media (max-width: 600px) {
   .wellness-plan .resource-link a {
     width: 100%;
@@ -1775,6 +1780,7 @@ html, body {
     max-width: 100%;
   }
 }
+
 
 
 
