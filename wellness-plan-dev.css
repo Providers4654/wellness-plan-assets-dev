@@ -1273,6 +1273,35 @@ html, body {
 
 
 
+/* ============================================
+   FIX: Body Composition section bullet styling
+   Overrides goal-card styles that were leaking in
+   ============================================ */
+
+#bodyComp li {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 4px 0 !important;
+  margin: 2px 0 !important;
+  border-radius: 0 !important;
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+}
+
+#bodyComp li .editable {
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  display: inline !important;
+}
+
+
+
+
+
+
 
 .wellness-plan .goals-subheader::after {
   content: "";
