@@ -1969,12 +1969,6 @@ html, body {
   .wellness-plan .medication-list li { font-size: 13.5px !important; }
   .wellness-plan .medication-list li strong { font-size: 14px !important; }
   .wellness-plan .dose { font-size: 13px !important; padding: 5px 8px !important; }
-
-/* Resource links + notes (mobile sizing) */
-.wellness-plan .resource-link a,
-.wellness-plan .resource-link .resource-note {
-  font-size: 13px;
-}
 }
 
 
