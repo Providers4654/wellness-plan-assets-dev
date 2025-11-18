@@ -2108,32 +2108,6 @@ ul li,
 
 
 
-/* ============================================
-   FIX #1 — Remove unwanted bullets in Goals & Follow-Up
-   ============================================ */
-/* FIX: Remove unwanted bullets/dots from Goals & Follow-Up lists */
-.goal-block ul.goals-list,
-.goal-block ul.goals-list li {
-  list-style: none !important;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
-
-
-/* ============================================
-   FIX #2 — Remove dotted borders in To Consider accordion
-   ============================================ */
-/* FIX: Remove dotted borders inside To Consider accordion */
-#toConsider .to-consider-li,
-#toConsider .to-consider-li *,
-#toConsider .to-consider-subtitle,
-#toConsider .to-consider-content {
-  border: none !important;
-  border-bottom: none !important;
-  background-image: none !important;
-}
-
-
 
 
 
