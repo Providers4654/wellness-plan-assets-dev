@@ -1807,6 +1807,21 @@ html, body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================================
    RESOURCE & SCHEDULE BUTTONS — Unified Premium Style
    ============================================================ */
@@ -1865,15 +1880,22 @@ html, body {
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-/* Applies to resource links (button itself) */
-.wellness-plan .resource-link a {
+/* ============================================================
+   APPLY PREMIUM STYLES TO BUTTON ELEMENT (Schedule Follow-Up)
+   ============================================================ */
+
+.schedule-followup-btn {
+  all: unset; /* remove default button behavior */
+  cursor: pointer;
   display: inline-flex;
+  align-items: center;
   justify-content: center;
+  gap: 8px;
 }
 
-/* Schedule button simply reuses the premium styling */
-.schedule-followup-btn {
-  /* no styles needed — inherits 100% from .premium-btn */
+/* When combined with .premium-btn, this gives full styling */
+.schedule-followup-btn.premium-btn {
+  /* No extra styles — inherits 100% from .premium-btn */
 }
 
 /* ============================================================
