@@ -1966,14 +1966,6 @@ html, body {
   }
 }
 
-/* ============================================================
-   FIX: Add top spacing ONLY when Lifestyle Tips end
-   ============================================================ */
-
-/* Adds matching spacing to the Basic HLTH Standards area */
-.lifestyle-tips-list + .resource-link {
-  margin-top: 60px !important;
-}
 
 
 
@@ -2253,6 +2245,35 @@ body {
 */
 
 
+
+
+
+/* ============================================================
+   FINAL OVERRIDES — MUST BE LAST
+   Ensures desktop button width + spacing below Lifestyle Tips
+   ============================================================ */
+
+/* Force correct desktop layout no matter what came earlier */
+@media (min-width: 601px) {
+  .wellness-plan .resource-link {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .wellness-plan .premium-btn {
+    width: 320px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+/* Fix spacing between Lifestyle Tips and the first resource-link */
+.lifestyle-tips-list + .resource-link {
+  margin-top: 60px !important;
+}
 
 
 
