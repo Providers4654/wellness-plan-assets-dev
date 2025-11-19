@@ -2278,7 +2278,7 @@ body {
 
 /* Fix spacing between Lifestyle Tips and the first resource-link */
 .lifestyle-tips-list + .resource-link {
-  margin-top: 45px !important;
+  margin-top: 50px !important;
 }
 
 
