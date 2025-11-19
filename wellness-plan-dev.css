@@ -1959,9 +1959,13 @@ html, body {
 }
 
 
-/* Fix spacing above Basic HLTH Standards specifically */
+/* Fix spacing above the Basic HLTH Standards divider */
 #dynamicStandardsLink.premium-btn {
-  margin-top: 22px !important;
+  display: block;
+}
+
+#dynamicStandardsLink.premium-btn {
+  margin-top: 32px !important;
 }
 
 
