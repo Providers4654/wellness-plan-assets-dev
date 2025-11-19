@@ -120,7 +120,7 @@ console.log("✅ fullscript-url =", cssVar("--fullscript-url"));
     ["dynamicFullscriptLink", "--fullscript-url", "fullscriptText", "--fullscript-text", "fullscriptNote", "--fullscript-note"],
     ["dynamicAddOnsLink", "--treatment-addons-url", "addonsText", "--addons-text", "addonsNote", "--addons-note"],
     ["dynamicStandardsLink", "--basic-standards-url", "standardsText", "--standards-text", "standardsNote", "--standards-note"],
-    ["dynamicCoachingLink", "--health-coaching-url", "dynamicCoachingLink", "--coaching-text", "coachingNote", "--coaching-note"],
+    ["dynamicCoachingLink", "--health-coaching-url", "coachingText", "--coaching-text", "coachingNote", "--coaching-note"],
     ["dynamicFollowUpLink", "--followup-url", "followupText", "--followup-text", null, null],
   ]
 .forEach(([aId, hrefVar, textId, textVar, noteId, noteVar]) => {
