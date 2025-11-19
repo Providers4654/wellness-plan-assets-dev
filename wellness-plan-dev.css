@@ -1863,16 +1863,34 @@ html, body {
   margin-bottom: 10px;
   padding-top: 16px;
   border-top: 1px solid #eee;
+  text-align: center;
+}
+
+/* Print button wrapper */
+.wellness-plan .print-plan-wrapper {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Resource notes */
+.wellness-plan .resource-link .resource-note {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #666;
+  font-style: italic;
+  max-width: 650px;
 }
 
 /* ============================================================
-   UNIVERSAL PREMIUM BUTTON STYLE
-   Applies to BOTH <a class="premium-btn"> and <button class="premium-btn">
+   UNIVERSAL BUTTON STYLE — applies to <a> and <button>
    ============================================================ */
 
-.premium-btn,
-.premium-btn:visited,
-.premium-btn:focus {
+.wellness-plan .premium-btn,
+.wellness-plan .premium-btn:visited,
+.wellness-plan .premium-btn:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1887,6 +1905,7 @@ html, body {
   font-size: 15px;
   font-weight: 700;
   font-family: "Helvetica Neue", Arial, sans-serif;
+
   color: #1f2d3d !important;
   text-decoration: none !important;
 
@@ -1899,7 +1918,7 @@ html, body {
 }
 
 /* Hover */
-.premium-btn:hover {
+.wellness-plan .premium-btn:hover {
   background: linear-gradient(135deg, #fafafa, #e8e8e8);
   border-color: #bfbfbf;
   transform: translateY(-2px);
@@ -1908,53 +1927,17 @@ html, body {
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-/* ============================================================
-   BUTTON RESETS — keep only what's necessary
-   ============================================================ */
-
-.schedule-followup-btn,
-.print-plan-btn {
-  all: unset;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+/* Center buttons inside their wrappers */
+.wellness-plan .resource-link a.premium-btn,
+.wellness-plan .followup-link a.premium-btn,
+.wellness-plan .print-plan-wrapper .premium-btn {
+  margin: 0 auto;
 }
 
-/* These still inherit .premium-btn styling */
-.schedule-followup-btn.premium-btn,
-.print-plan-btn.premium-btn {}
-
-/* ============================================================
-   Resource Link Button Behavior
-   ============================================================ */
-
-.wellness-plan .resource-link a {
-  display: inline-flex;
-  justify-content: center;
-}
-
-/* Resource notes */
-.wellness-plan .resource-link .resource-note {
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-  line-height: 1.55;
-  color: #666;
-  font-style: italic;
-  max-width: 650px;
-}
-
-/* Desktop centering */
+/* Desktop: center resource notes too */
 @media (min-width: 601px) {
-  .wellness-plan .resource-link,
-  .wellness-plan .followup-link {
+  .wellness-plan .resource-link {
     text-align: center;
-  }
-
-  .wellness-plan .resource-link a,
-  .wellness-plan .followup-link a {
-    margin: 0 auto;
   }
 
   .wellness-plan .resource-link .resource-note {
@@ -1966,7 +1949,7 @@ html, body {
 
 /* Mobile */
 @media (max-width: 600px) {
-  .premium-btn {
+  .wellness-plan .premium-btn {
     width: 100%;
     min-width: unset;
     padding: 14px 20px;
@@ -1982,12 +1965,13 @@ html, body {
     font-size: 13px;
   }
 
-  .wellness-plan .followup-link a {
+  .wellness-plan .followup-link a.premium-btn {
     width: 100%;
     margin: 0;
     justify-content: center;
   }
 }
+
 
 
 
