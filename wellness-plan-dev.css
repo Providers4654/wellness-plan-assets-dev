@@ -1821,16 +1821,6 @@ html, body {
 
 
 
-/* ============================================================
-   TO CONSIDER SECTION SPACING
-   ============================================================ */
-
-.wellness-plan .to-consider-section {
-  padding-bottom: 32px;   /* matches spacing above other resource blocks */
-}
-
-
-
 
 
 
@@ -1905,6 +1895,8 @@ html, body {
 
   transition: all 0.25s ease;
   cursor: pointer;
+   
+  flex: 0 0 380px;   /* Gives all buttons equal width without breaking text */
 }
 
 /* Hover */
@@ -1964,6 +1956,12 @@ html, body {
 
 
 
+
+
+/* Fix spacing above Basic HLTH Standards block */
+#dynamicStandardsLink.premium-btn {
+  margin-top: 32px;
+}
 
 
 
