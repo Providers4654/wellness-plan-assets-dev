@@ -1842,10 +1842,12 @@ html, body {
 }
 
 /* ============================================================
-   UNIVERSAL BUTTON STYLE — applies to ALL major buttons
+   UNIVERSAL BUTTON STYLE — applies to <a> and <button>
    ============================================================ */
 
-.premium-btn {
+.premium-btn,
+.premium-btn:visited,
+.premium-btn:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1868,6 +1870,8 @@ html, body {
     inset 0 1px 0 rgba(255,255,255,0.9);
 
   transition: all 0.25s ease;
+  cursor: pointer;
+  border: none; /* overridden below if needed */
 }
 
 /* Hover for all premium buttons */
@@ -1881,21 +1885,25 @@ html, body {
 }
 
 /* ============================================================
-   APPLY PREMIUM STYLES TO BUTTON ELEMENT (Schedule Follow-Up)
+   BUTTON ELEMENT RESET (because your schedule button is <button>)
    ============================================================ */
 
 .schedule-followup-btn {
-  all: unset; /* remove default button behavior */
-  cursor: pointer;
+  all: unset; /* remove browser button defaults */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  cursor: pointer;
 }
 
-/* When combined with .premium-btn, this gives full styling */
-.schedule-followup-btn.premium-btn {
-  /* No extra styles — inherits 100% from .premium-btn */
+/* Apply premium styles to the button inside <a> */
+.schedule-followup-btn.premium-btn {}
+
+/* Keep resource link <a> buttons aligned */
+.wellness-plan .resource-link a {
+  display: inline-flex;
+  justify-content: center;
 }
 
 /* ============================================================
@@ -1958,6 +1966,7 @@ html, body {
     justify-content: center;
   }
 }
+
 
 
 
