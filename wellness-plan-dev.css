@@ -1835,7 +1835,13 @@ html, body {
   border-top: 1px solid #eee;
   padding: 22px 0;
   margin: 0;
+
+  /* NEW FIX */
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 /* Follow-Up section wrapper */
 .wellness-plan .followup-link {
@@ -1959,9 +1965,10 @@ html, body {
 
 
 /* Fix spacing above Basic HLTH Standards block */
-#dynamicStandardsLink.premium-btn {
-  margin-top: 32px;
+.accordion-grid + .resource-link {
+  margin-top: 40px;
 }
+
 
 
 
