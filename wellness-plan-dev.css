@@ -1959,10 +1959,11 @@ html, body {
 }
 
 
-/* Fix spacing above Basic HLTH Standards block */
-.accordion-grid + .resource-link {
-  margin-top: 40px;
+/* Fix spacing above Basic HLTH Standards specifically */
+#dynamicStandardsLink.premium-btn {
+  margin-top: 22px !important;
 }
+
 
 
 
