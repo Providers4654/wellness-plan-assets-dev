@@ -1840,14 +1840,20 @@ html, body {
   margin-right: auto;
 }
 
-/* Follow-Up section wrapper */
+/* Follow-Up section wrapper — now matches resource-link width */
 .wellness-plan .followup-link {
   margin-top: 48px;
   margin-bottom: 10px;
   padding-top: 16px;
   border-top: 1px solid #eee;
   text-align: center;
+
+  /* 🔥 match all other resource sections */
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 /* Print button wrapper */
 .wellness-plan .print-plan-wrapper {
