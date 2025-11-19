@@ -1835,13 +1835,10 @@ html, body {
   border-top: 1px solid #eee;
   padding: 22px 0;
   margin: 0;
-
-  /* NEW FIX */
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 /* Follow-Up section wrapper */
 .wellness-plan .followup-link {
@@ -1868,6 +1865,7 @@ html, body {
   color: #666;
   font-style: italic;
   max-width: 650px;
+  text-align: center;
 }
 
 /* ============================================================
@@ -1887,7 +1885,6 @@ html, body {
   border-radius: 14px;
 
   padding: 14px 26px;
-  min-width: 0;
   font-size: 15px;
   font-weight: 700;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -1920,20 +1917,31 @@ html, body {
   margin: 0 auto;
 }
 
-/* Desktop: center resource notes too */
+/* ============================================================
+   DESKTOP — Clean button layout & text flow
+   ============================================================ */
 @media (min-width: 601px) {
+
+  /* Button / Note are stacked and centered */
   .wellness-plan .resource-link {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  .wellness-plan .resource-link .resource-note {
-    margin-left: auto;
-    margin-right: auto;
+  /* Consistent desktop button width */
+  .wellness-plan .premium-btn {
+    width: 320px;   /* ⭐ Change to 300 / 320 / 360 if you want */
+    max-width: 100%;
+    white-space: normal;
     text-align: center;
   }
 }
 
-/* Mobile */
+/* ============================================================
+   MOBILE — full width buttons
+   ============================================================ */
 @media (max-width: 600px) {
   .wellness-plan .premium-btn {
     width: 100%;
@@ -1958,15 +1966,15 @@ html, body {
   }
 }
 
+/* ============================================================
+   FIX: Add top spacing ONLY when Lifestyle Tips end
+   ============================================================ */
 
-/* Fix spacing above the Basic HLTH Standards divider */
-#dynamicStandardsLink.premium-btn {
-  display: block;
+/* Adds matching spacing to the Basic HLTH Standards area */
+.lifestyle-tips-list + .resource-link {
+  margin-top: 60px !important;
 }
 
-#dynamicStandardsLink.premium-btn {
-  margin-top: 32px !important;
-}
 
 
 
