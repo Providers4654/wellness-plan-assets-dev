@@ -1866,7 +1866,8 @@ html, body {
 }
 
 /* ============================================================
-   UNIVERSAL BUTTON STYLE — applies to <a> and <button>
+   UNIVERSAL PREMIUM BUTTON STYLE
+   Applies to BOTH <a class="premium-btn"> and <button class="premium-btn">
    ============================================================ */
 
 .premium-btn,
@@ -1907,7 +1908,10 @@ html, body {
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-/* Reset for <button> elements */
+/* ============================================================
+   BUTTON RESETS — keep only what's necessary
+   ============================================================ */
+
 .schedule-followup-btn,
 .print-plan-btn {
   all: unset;
@@ -1917,11 +1921,14 @@ html, body {
   cursor: pointer;
 }
 
-/* They get premium look by ALSO having class="premium-btn" */
+/* These still inherit .premium-btn styling */
 .schedule-followup-btn.premium-btn,
 .print-plan-btn.premium-btn {}
 
-/* Resource buttons inside <a> */
+/* ============================================================
+   Resource Link Button Behavior
+   ============================================================ */
+
 .wellness-plan .resource-link a {
   display: inline-flex;
   justify-content: center;
@@ -1981,7 +1988,6 @@ html, body {
     justify-content: center;
   }
 }
-
 
 
 
