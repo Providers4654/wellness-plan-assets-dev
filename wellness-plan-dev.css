@@ -1901,8 +1901,6 @@ html, body {
 
   transition: all 0.25s ease;
   cursor: pointer;
-   
-  flex: 0 0 380px;   /* Gives all buttons equal width without breaking text */
 }
 
 /* Hover */
@@ -1961,13 +1959,11 @@ html, body {
 }
 
 
-
-
-
 /* Fix spacing above Basic HLTH Standards block */
 .accordion-grid + .resource-link {
   margin-top: 40px;
 }
+
 
 
 
