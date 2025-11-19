@@ -1858,7 +1858,7 @@ html, body {
   border-radius: 14px;
 
   padding: 14px 26px;
-  min-width: 380px; /* desktop uniform width */
+  min-width: 380px;
   font-size: 15px;
   font-weight: 700;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -1871,10 +1871,9 @@ html, body {
 
   transition: all 0.25s ease;
   cursor: pointer;
-  border: none; /* overridden below if needed */
 }
 
-/* Hover for all premium buttons */
+/* Hover */
 .premium-btn:hover {
   background: linear-gradient(135deg, #fafafa, #e8e8e8);
   border-color: #bfbfbf;
@@ -1884,31 +1883,27 @@ html, body {
     inset 0 1px 0 rgba(255,255,255,0.95);
 }
 
-/* ============================================================
-   BUTTON ELEMENT RESET (because your schedule button is <button>)
-   ============================================================ */
-
-.schedule-followup-btn {
-  all: unset; /* remove browser button defaults */
+/* Reset for <button> elements */
+.schedule-followup-btn,
+.print-plan-btn {
+  all: unset;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   cursor: pointer;
 }
 
-/* Apply premium styles to the button inside <a> */
-.schedule-followup-btn.premium-btn {}
+/* They get premium look by ALSO having class="premium-btn" */
+.schedule-followup-btn.premium-btn,
+.print-plan-btn.premium-btn {}
 
-/* Keep resource link <a> buttons aligned */
+/* Resource buttons inside <a> */
 .wellness-plan .resource-link a {
   display: inline-flex;
   justify-content: center;
 }
 
-/* ============================================================
-   RESOURCE LINK NOTES (below each button)
-   ============================================================ */
+/* Resource notes */
 .wellness-plan .resource-link .resource-note {
   display: block;
   margin-top: 8px;
@@ -1919,9 +1914,7 @@ html, body {
   max-width: 650px;
 }
 
-/* ============================================================
-   DESKTOP ONLY: Center buttons & notes
-   ============================================================ */
+/* Desktop centering */
 @media (min-width: 601px) {
   .wellness-plan .resource-link,
   .wellness-plan .followup-link {
@@ -1940,9 +1933,7 @@ html, body {
   }
 }
 
-/* ============================================================
-   MOBILE ONLY: Full-width, left-aligned
-   ============================================================ */
+/* Mobile */
 @media (max-width: 600px) {
   .premium-btn {
     width: 100%;
@@ -1966,6 +1957,7 @@ html, body {
     justify-content: center;
   }
 }
+
 
 
 
