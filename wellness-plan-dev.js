@@ -246,12 +246,12 @@ document.addEventListener("click", e => {
 // ============================
 function normalizeCellText(text) {
   if (!text) return "";
-  return text
-    .trim()
+  return String(text)
     .replace(/\\n/g, "<br>")
     .replace(/(\r\n|\r|\n)/g, "<br>")
     .replace(/&lt;br\s*\/?&gt;/gi, "<br>");
 }
+
 
 
 
@@ -404,7 +404,8 @@ function parseHybridValues(rows, fieldNames, knownOptions = []) {
       return;
     }
 
-    const cleanVal = val.trim();
+    const cleanVal = val.replace(/\r?$/, "");
+
 
     // Try splitting by comma
     const parts = cleanVal.split(",").map(v => v.trim()).filter(Boolean);
@@ -531,17 +532,16 @@ if (tipInfo) {
     </li>`;
 } else {
   // ✅ Custom free-text tip (split on colon)
-  let raw = String(tipName).trim();
+  let raw = String(tipName);
   let title = raw;
   let blurb = "";
 
 
         const colonIndex = raw.indexOf(":");
         if (colonIndex !== -1) {
-title = raw.slice(0, colonIndex).trim();
-blurb = raw.slice(colonIndex + 1).trim();
+title = raw.slice(0, colonIndex).trim();   // keep this trim (titles should be clean)
+blurb = raw.slice(colonIndex + 1);         // REMOVE trim here
 
-blurb = normalizeCellText(blurb);   // <-- This preserves line breaks
 
         }
 
