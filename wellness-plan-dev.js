@@ -414,14 +414,9 @@ function parseHybridValues(rows, fieldNames, knownOptions = []) {
       console.log("✅ All parts are KNOWN dropdown items:", parts);
       values.push(...parts);
     } else {
-      console.log("↩️ Treating as free-text → splitting only on returns");
-      cleanVal.split(/\r\n|\r|\n/).forEach(v => {
-        const t = v.trim();
-        if (t) {
-          console.log("  ➡️ Added:", t);
-          values.push(t);
-        }
-      });
+console.log("↩️ Treating as free-text → keeping entire string with line breaks");
+values.push(cleanVal);
+
     }
     console.groupEnd();
   });
@@ -543,8 +538,11 @@ if (tipInfo) {
 
         const colonIndex = raw.indexOf(":");
         if (colonIndex !== -1) {
-          title = raw.slice(0, colonIndex).trim();
-          blurb = raw.slice(colonIndex + 1).trim();
+title = raw.slice(0, colonIndex).trim();
+blurb = raw.slice(colonIndex + 1).trim();
+
+blurb = normalizeCellText(blurb);   // <-- This preserves line breaks
+
         }
 
         html += `
