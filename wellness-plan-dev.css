@@ -53,16 +53,17 @@
 
   --injectables-text: 🔗 Order Advanced Rx Therapies;
   --injectables-url: https://www.mtnhlth.com/prescription-order-form;
-  --injectables-note: Pharmacy-compounded injectables, peptides, pain creams <span class="new-flag">(NEW)</span>, GLP-1s, and medical-grade skin treatments <span class="new-flag">(NEW)</span>.;  
+  --injectables-note: Pharmacy-compounded injectables, peptides, pain creams <span class="new-flag">(NEW)</span>, GLP-1s <span class="new-flag">(NEW)</span>, and medical-grade skin treatments <span class="new-flag">(NEW)</span>.;  
 
+/* === NEW FLAG TAG (Highlights "(NEW)" in resource notes) === */
 .new-flag{
-  background:rgba(0,0,0,.06);
-  padding:1px 6px;
-  border-radius:6px;
   font-weight:700;
   color:#0a3a41;
-  opacity:.85;
+  opacity:.75;
+  font-style:normal !important;
 }
+
+
 
 
 
