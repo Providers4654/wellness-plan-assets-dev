@@ -565,6 +565,7 @@ blurb = raw.slice(colonIndex + 1);         // REMOVE trim here
 // --- Visit Timeline (row 1 only) ---
 const visitTimelineList = document.getElementById("visitTimeline");
 const visitTimelineTitle = document.getElementById("visitTimelineTitle");
+const followUpBtn = document.getElementById("dynamicFollowUpLink");
 
 if (visitTimelineList && visitTimelineTitle) {
   visitTimelineTitle.textContent =
@@ -591,33 +592,28 @@ if (visitTimelineList && visitTimelineTitle) {
     }
 
     if (next) {
-      const followupText =
-        cssVar("--followup-text") || "Set Up Your Next Check-In";
-      const followupUrl =
-        cssVar("--followup-url") || "#";
-
       html += `
-        <li class="next-visit-row">
+        <li>
           <span class="editable">
             <strong>${cssVar("--visit-next-label")}</strong> ${next}
           </span>
-
-          <a
-            href="${followupUrl}"
-            class="inline-followup-btn"
-          >
-            ${followupText}
-          </a>
         </li>`;
     }
 
     visitTimelineList.innerHTML = html;
 
+    // Show follow-up button ONLY if there is a next visit
+    if (followUpBtn) {
+      followUpBtn.style.display = next ? "inline-flex" : "none";
+    }
+
   } else {
     visitTimelineTitle.remove();
     visitTimelineList.remove();
+    if (followUpBtn) followUpBtn.remove();
   }
 }
+
 
 
 
