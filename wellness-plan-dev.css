@@ -1452,39 +1452,66 @@ html, body {
 
 
 /* ============================
-   VISIT TIMELINE — INLINE FOLLOW-UP CTA
+   VISIT TIMELINE — INLINE NEXT VISIT CTA
    ============================ */
 
 .visit-timeline-block {
   position: relative;
 }
 
-/* CTA wrapper */
-.visit-followup-cta {
-  margin-top: 18px;
+/* Inline CTA wrapper — aligns with "Next visit" row */
+.next-visit-inline-cta {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  margin-top: -46px;   /* pulls CTA into Next Visit row */
+  margin-right: 14px;
 }
 
-/* Slightly smaller than resource buttons */
-.visit-followup-cta .premium-btn {
-  width: auto;
-  padding: 10px 18px;
-  font-size: 14px;
-  border-radius: 14px;
+/* Compact inline button (NOT full premium style) */
+.inline-followup-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+
+  background: linear-gradient(145deg, #ffffff, #f2f4f8);
+  color: #1f2d3d !important;
+
+  border: 1.5px solid #cfd6e0;
+  border-radius: 999px;
+
+  box-shadow:
+    0 3px 8px rgba(0,0,0,0.12),
+    inset 0 1px 1px rgba(255,255,255,0.6);
+
+  white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
-/* Mobile: full width, aligned with card */
+.inline-followup-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.16),
+    inset 0 1px 2px rgba(255,255,255,0.7);
+}
+
+/* Mobile: stack under Next Visit naturally */
 @media (max-width: 600px) {
-  .visit-followup-cta {
-    margin-top: 14px;
+  .next-visit-inline-cta {
+    margin-top: 12px;
+    margin-right: 0;
+    justify-content: flex-start;
   }
 
-  .visit-followup-cta .premium-btn {
+  .inline-followup-btn {
     width: 100%;
     justify-content: center;
   }
 }
+
 
 
 
