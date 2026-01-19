@@ -589,9 +589,11 @@ if (prev || next) {
   // 🔹 Move follow-up button into Next Visit row
   const nextRow = visitTimelineList.querySelector(".next-visit-row");
   const followUpBtn = document.getElementById("dynamicFollowUpLink");
-  if (nextRow && followUpBtn) {
-    nextRow.appendChild(followUpBtn);
-  }
+if (nextRow && followUpBtn) {
+  nextRow.appendChild(followUpBtn);
+  followUpBtn.style.display = "inline-flex";
+}
+
 }
  else {
     visitTimelineTitle.remove();
