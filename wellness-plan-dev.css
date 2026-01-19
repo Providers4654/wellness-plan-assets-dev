@@ -1459,21 +1459,20 @@ html, body {
   position: relative;
 }
 
-/* Inline CTA wrapper — aligns with "Next visit" row */
-.next-visit-inline-cta {
+/* Make Visit Timeline rows support inline content */
+#visitTimeline li {
   display: flex;
-  justify-content: flex-end;
-  margin-top: -46px;   /* pulls CTA into Next Visit row */
-  margin-right: 14px;
+  align-items: center;
+  gap: 10px; /* small space between date text and button */
 }
 
-/* Compact inline button (NOT full premium style) */
+/* Compact inline button (height-matched to blue pill) */
 .inline-followup-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 
-  padding: 8px 14px;
+  padding: 6px 12px;        /* 👈 reduced to fit pill height */
   font-size: 13px;
   font-weight: 700;
 
@@ -1484,7 +1483,7 @@ html, body {
   border-radius: 999px;
 
   box-shadow:
-    0 3px 8px rgba(0,0,0,0.12),
+    0 2px 6px rgba(0,0,0,0.12),
     inset 0 1px 1px rgba(255,255,255,0.6);
 
   white-space: nowrap;
@@ -1494,23 +1493,23 @@ html, body {
 .inline-followup-btn:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 6px 14px rgba(0,0,0,0.16),
+    0 4px 10px rgba(0,0,0,0.16),
     inset 0 1px 2px rgba(255,255,255,0.7);
 }
 
-/* Mobile: stack under Next Visit naturally */
+/* Mobile: allow natural wrap under date */
 @media (max-width: 600px) {
-  .next-visit-inline-cta {
-    margin-top: 12px;
-    margin-right: 0;
-    justify-content: flex-start;
+  #visitTimeline li {
+    flex-wrap: wrap;
   }
 
   .inline-followup-btn {
+    margin-top: 6px;
     width: 100%;
     justify-content: center;
   }
 }
+
 
 
 
