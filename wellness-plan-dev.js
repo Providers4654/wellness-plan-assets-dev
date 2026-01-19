@@ -571,12 +571,29 @@ if (visitTimelineList && visitTimelineTitle) {
   const prev = normalizeCellText(getField(rows[0], ["Previous Visit","Prev Visit","﻿Previous Visit"]) || "");
   const next = normalizeCellText(getField(rows[0], ["Next Visit","Follow-Up","﻿Next Visit"]) || "");
 
-  if (prev || next) {
-    let html = "";
-    if (prev) html += `<li><span class="editable"><strong>${cssVar("--visit-prev-label")}</strong> ${prev}</span></li>`;
-    if (next) html += `<li><span class="editable"><strong>${cssVar("--visit-next-label")}</strong> ${next}</span></li>`;
-    visitTimelineList.innerHTML = html;
-  } else {
+if (prev || next) {
+  let html = "";
+  if (prev) {
+    html += `<li><span class="editable"><strong>${cssVar("--visit-prev-label")}</strong> ${prev}</span></li>`;
+  }
+  if (next) {
+    html += `
+      <li class="next-visit-row">
+        <span class="editable">
+          <strong>${cssVar("--visit-next-label")}</strong> ${next}
+        </span>
+      </li>`;
+  }
+  visitTimelineList.innerHTML = html;
+
+  // 🔹 Move follow-up button into Next Visit row
+  const nextRow = visitTimelineList.querySelector(".next-visit-row");
+  const followUpBtn = document.getElementById("dynamicFollowUpLink");
+  if (nextRow && followUpBtn) {
+    nextRow.appendChild(followUpBtn);
+  }
+}
+ else {
     visitTimelineTitle.remove();
     visitTimelineList.remove();
   }
