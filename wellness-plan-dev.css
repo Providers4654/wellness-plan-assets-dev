@@ -1454,44 +1454,40 @@ html, body {
 
 
 /* ============================
-   VISIT TIMELINE — FOLLOW-UP CTA (LEFT-ALIGNED, ATTACHED)
+   VISIT TIMELINE — FOLLOW-UP CTA (FLUSH, ATTACHED)
    ============================ */
 
 .visit-timeline-block {
   position: relative;
 }
 
-/* Timeline rows stay simple */
+/* Timeline rows remain simple */
 #visitTimeline li {
   display: block;
 }
 
-/* Follow-up CTA visually attached to Next visit */
+/* Follow-up CTA directly under Next visit */
 .wellness-plan .followup-link {
-  margin-top: 10px;          /* close to Next visit */
-  margin-left: 18px;         /* aligns with visit text padding */
+  margin-top: 10px;      /* tight vertical attachment */
   text-align: left;
   max-width: none;
 }
 
-/* Slightly soften the button so it reads as a contextual action */
+/* Slightly softer than primary resource buttons */
 .wellness-plan .followup-link .premium-btn {
   width: auto;
   padding: 10px 20px;
   font-size: 14px;
 }
 
-/* Mobile: full width but still left-attached */
+/* Mobile: full width, still left-aligned */
 @media (max-width: 600px) {
-  .wellness-plan .followup-link {
-    margin-left: 0;
-  }
-
   .wellness-plan .followup-link .premium-btn {
     width: 100%;
     justify-content: center;
   }
 }
+
 
 
 
