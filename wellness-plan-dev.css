@@ -1448,6 +1448,52 @@ html, body {
 }
 
 
+
+
+
+/* ============================
+   VISIT TIMELINE — INLINE FOLLOW-UP CTA
+   ============================ */
+
+.visit-timeline-block {
+  position: relative;
+}
+
+/* CTA wrapper */
+.visit-followup-cta {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Slightly smaller than resource buttons */
+.visit-followup-cta .premium-btn {
+  width: auto;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 14px;
+}
+
+/* Mobile: full width, aligned with card */
+@media (max-width: 600px) {
+  .visit-followup-cta {
+    margin-top: 14px;
+  }
+
+  .visit-followup-cta .premium-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
 /* ============================
    INDIVIDUAL SECTION THEMES
    ============================ */
@@ -1988,18 +2034,7 @@ html, body {
   margin-right: auto;
 }
 
-/* Follow-Up section wrapper — matches resource-link width */
-.wellness-plan .followup-link {
-  margin-top: 48px;
-  margin-bottom: 10px;
-  padding-top: 16px;
-  border-top: 1px solid #eee;
-  text-align: center;
 
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /* Print button wrapper */
 .wellness-plan .print-plan-wrapper {
