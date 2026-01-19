@@ -565,41 +565,60 @@ blurb = raw.slice(colonIndex + 1);         // REMOVE trim here
 // --- Visit Timeline (row 1 only) ---
 const visitTimelineList = document.getElementById("visitTimeline");
 const visitTimelineTitle = document.getElementById("visitTimelineTitle");
+
 if (visitTimelineList && visitTimelineTitle) {
-  visitTimelineTitle.textContent = cssVar("--visit-timeline-title") || "Visit Timeline";
+  visitTimelineTitle.textContent =
+    cssVar("--visit-timeline-title") || "Visit Timeline";
 
-  const prev = normalizeCellText(getField(rows[0], ["Previous Visit","Prev Visit","﻿Previous Visit"]) || "");
-  const next = normalizeCellText(getField(rows[0], ["Next Visit","Follow-Up","﻿Next Visit"]) || "");
+  const prev = normalizeCellText(
+    getField(rows[0], ["Previous Visit", "Prev Visit", "﻿Previous Visit"]) || ""
+  );
 
-if (prev || next) {
-  let html = "";
-  if (prev) {
-    html += `<li><span class="editable"><strong>${cssVar("--visit-prev-label")}</strong> ${prev}</span></li>`;
-  }
-  if (next) {
-    html += `
-      <li class="next-visit-row">
-        <span class="editable">
-          <strong>${cssVar("--visit-next-label")}</strong> ${next}
-        </span>
-      </li>`;
-  }
-  visitTimelineList.innerHTML = html;
+  const next = normalizeCellText(
+    getField(rows[0], ["Next Visit", "Follow-Up", "﻿Next Visit"]) || ""
+  );
 
-  // 🔹 Move follow-up button into Next Visit row
-  const nextRow = visitTimelineList.querySelector(".next-visit-row");
-  const followUpBtn = document.getElementById("dynamicFollowUpLink");
-if (nextRow && followUpBtn) {
-  nextRow.appendChild(followUpBtn);
-  followUpBtn.style.display = "inline-flex";
-}
+  if (prev || next) {
+    let html = "";
 
-}
- else {
+    if (prev) {
+      html += `
+        <li>
+          <span class="editable">
+            <strong>${cssVar("--visit-prev-label")}</strong> ${prev}
+          </span>
+        </li>`;
+    }
+
+    if (next) {
+      const followupText =
+        cssVar("--followup-text") || "Set Up Your Next Check-In";
+      const followupUrl =
+        cssVar("--followup-url") || "#";
+
+      html += `
+        <li class="next-visit-row">
+          <span class="editable">
+            <strong>${cssVar("--visit-next-label")}</strong> ${next}
+          </span>
+
+          <a
+            href="${followupUrl}"
+            class="inline-followup-btn"
+          >
+            ${followupText}
+          </a>
+        </li>`;
+    }
+
+    visitTimelineList.innerHTML = html;
+
+  } else {
     visitTimelineTitle.remove();
     visitTimelineList.remove();
   }
 }
+
 
 
 
