@@ -882,7 +882,6 @@ function bootstrapWellnessPlanSafe(attempt = 1) {
       document.getElementById("dynamicAddOnsLink"),
       document.getElementById("dynamicStandardsLink"),
       document.getElementById("dynamicCoachingLink"),
-      document.getElementById("dynamicFollowUpLink"),
     ];
 
     const missing = requiredEls.filter(el => !el);
