@@ -883,20 +883,12 @@ if (patientBlock.length > 0) {
 // Bootstrap with retry
 // ============================
 
-function bootstrapWellnessPlanSafe(attempt = 1) {
-  try {
-    console.log(`🚀 bootstrapWellnessPlanSafe attempt ${attempt}`);
-    loadPatientData();
-
-    // Check for key DOM blocks that should exist
-const requiredEls = Array.from(
-  document.querySelectorAll("[data-required]")
-);
-
-
-console.log("✅ Bootstrap completed (no retries)");
-
+function bootstrapWellnessPlanSafe() {
+  console.log("🚀 bootstrapWellnessPlanSafe");
+  loadPatientData();
+  console.log("✅ Bootstrap completed (single pass)");
 }
+
 
 // ============================
 // Ensure DOM is ready before firing
