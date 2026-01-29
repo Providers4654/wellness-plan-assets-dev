@@ -574,11 +574,11 @@ if (visitTimelineList && visitTimelineTitle) {
   const nextRaw = getField(rows[0], ["Next Visit","Follow-Up","﻿Next Visit"]) || "";
 
   const prev = normalizeCellText(prevRaw);
-  let next = normalizeCellText(nextRaw);
 
-  // 🔒 HARD STOP FOR AS-NEEDED / PROSE VALUES
-  if (nextRaw && !/^\s*[A-Za-z]{3}\s\d{4}\s*$/.test(nextRaw)) {
-    // treat as human text, not timeline date
+  let next = "";
+  if (nextRaw === "AS_NEEDED") {
+    next = "As needed — reach out to your provider the next time you would like to do blood work";
+  } else {
     next = normalizeCellText(nextRaw);
   }
 
@@ -609,6 +609,7 @@ if (visitTimelineList && visitTimelineTitle) {
     visitTimelineList.remove();
   }
 }
+
 
 
 
@@ -888,13 +889,10 @@ function bootstrapWellnessPlanSafe(attempt = 1) {
     loadPatientData();
 
     // Check for key DOM blocks that should exist
-    const requiredEls = [
-      document.getElementById("toConsiderBlock"),
-      document.getElementById("dynamicFullscriptLink"),
-      document.getElementById("dynamicAddOnsLink"),
-      document.getElementById("dynamicStandardsLink"),
-      document.getElementById("dynamicCoachingLink"),
-    ];
+const requiredEls = Array.from(
+  document.querySelectorAll("[data-required]")
+);
+
 
     const missing = requiredEls.filter(el => !el);
     if (missing.length > 0 && attempt < 3) {
