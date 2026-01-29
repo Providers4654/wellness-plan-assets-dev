@@ -565,19 +565,22 @@ blurb = raw.slice(colonIndex + 1);         // REMOVE trim here
 // --- Visit Timeline (row 1 only) ---
 const visitTimelineList = document.getElementById("visitTimeline");
 const visitTimelineTitle = document.getElementById("visitTimelineTitle");
-const followUpBtn = document.getElementById("dynamicFollowUpLink");
 
 if (visitTimelineList && visitTimelineTitle) {
   visitTimelineTitle.textContent =
     cssVar("--visit-timeline-title") || "Visit Timeline";
 
-  const prev = normalizeCellText(
-    getField(rows[0], ["Previous Visit", "Prev Visit", "﻿Previous Visit"]) || ""
-  );
+  const prevRaw = getField(rows[0], ["Previous Visit","Prev Visit","﻿Previous Visit"]) || "";
+  const nextRaw = getField(rows[0], ["Next Visit","Follow-Up","﻿Next Visit"]) || "";
 
-  const next = normalizeCellText(
-    getField(rows[0], ["Next Visit", "Follow-Up", "﻿Next Visit"]) || ""
-  );
+  const prev = normalizeCellText(prevRaw);
+  let next = normalizeCellText(nextRaw);
+
+  // 🔒 HARD STOP FOR AS-NEEDED / PROSE VALUES
+  if (nextRaw && !/^\s*[A-Za-z]{3}\s\d{4}\s*$/.test(nextRaw)) {
+    // treat as human text, not timeline date
+    next = normalizeCellText(nextRaw);
+  }
 
   if (prev || next) {
     let html = "";
@@ -601,18 +604,12 @@ if (visitTimelineList && visitTimelineTitle) {
     }
 
     visitTimelineList.innerHTML = html;
-
-    // Show follow-up button ONLY if there is a next visit
-    if (followUpBtn) {
-      followUpBtn.style.display = next ? "inline-flex" : "none";
-    }
-
   } else {
     visitTimelineTitle.remove();
     visitTimelineList.remove();
-    if (followUpBtn) followUpBtn.remove();
   }
 }
+
 
 
 
