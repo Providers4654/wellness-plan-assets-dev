@@ -894,18 +894,8 @@ const requiredEls = Array.from(
 );
 
 
-    const missing = requiredEls.filter(el => !el);
-    if (missing.length > 0 && attempt < 3) {
-      console.warn(`⚠️ Missing ${missing.length} critical elements. Retrying in 200ms...`);
-      setTimeout(() => bootstrapWellnessPlanSafe(attempt + 1), 200);
-    } else if (missing.length === 0) {
-      console.log("✅ All critical blocks loaded on attempt", attempt);
-    } else {
-      console.warn("❌ Some elements never appeared:", missing);
-    }
-  } catch (err) {
-    console.error("❌ bootstrapWellnessPlanSafe failed:", err);
-  }
+console.log("✅ Bootstrap completed (no retries)");
+
 }
 
 // ============================
