@@ -2792,14 +2792,13 @@ body {
 
 
 /* ============================================================
-   ✅ FINAL OVERRIDE — TO CONSIDER ONLY (LIVE SAFE)
-   Reduces extra bottom space only in that section
-   NO :has(), works on mobile + Safari
+   ✅ FINAL PATCH — TO CONSIDER LAST CARD GAP REMOVAL
    ============================================================ */
 
-.wellness-plan .med-time-block.to-consider-block .wellness-bubble::after {
-  height: 18px !important;
+#toConsider > li:last-of-type {
+  margin-bottom: 0 !important;
 }
+
 
 
 
