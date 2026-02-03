@@ -44,10 +44,9 @@
   --prn-bg:        #f5f5f5;
 
   /* Top buttons */
-  --top-btn1-text: MTN HLTH Website;
-  --top-btn1-url: https://www.mtnhlth.com;
-  --top-btn2-text: Patient Portal;
-  --top-btn2-url: https://mtnhlthclient.md-hq.com;
+--top-btn2-text: Patient Portal;
+--top-btn2-url: https://mtnhlthclient.md-hq.com;
+
 
   /* Resource links */
 
@@ -202,83 +201,74 @@ html, body {
 
 
 /* ============================
-   TOP BUTTONS UNDER LOGO
+   TOP BUTTON (Patient Portal Only)
    ============================ */
-.top-buttons {
+
+.top-buttons.single-portal {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin-top: 22px;
+  margin-bottom: 55px;
   padding: 0 16px;
-  flex-wrap: nowrap;
 }
 
-.wellness-plan .top-link-btn {
+/* Portal Button = Primary CTA */
+.top-buttons.single-portal .portal-btn {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  /* upgraded gradient */
-  background: linear-gradient(145deg, #ffffff, #f3f3f3);
-  color: #1f2d3d;
+  width: 360px;
+  height: 58px;
 
-  padding: 12px 28px;
-  width: 220px;
-  height: 48px;
-  text-align: center;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
 
-  border: 1px solid #bbb;
-  border-radius: 10px;
-
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-
+  border-radius: 14px;
   text-decoration: none;
-  transition: all 0.25s ease;
+
+  /* Strong emphasis border */
+  border: 2px solid rgba(0, 140, 160, 0.55);
+
+  /* Premium highlight background */
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #f1fbfc 45%,
+    #ffffff 100%
+  );
+
+  /* Standout glow + depth */
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.20),
+    0 0 22px rgba(0, 140, 160, 0.28),
+    inset 0 1px 2px rgba(255,255,255,0.65);
+
+  color: #1f2d3d;
   cursor: pointer;
 
-  /* stronger depth */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), inset 0 1px 0 #fff;
-  white-space: nowrap;
-  box-sizing: border-box;
+  transition: all 0.25s ease;
 }
 
-.wellness-plan .top-link-btn:hover {
-  background: linear-gradient(145deg, #f9f9f9, #ececec);
-  border-color: #999;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16), inset 0 1px 0 #fff;
+/* Hover lift */
+.top-buttons.single-portal .portal-btn:hover {
   transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.24),
+    0 0 28px rgba(0, 140, 160, 0.34);
 }
 
-/* Desktop alignment tweak */
-@media (min-width: 769px) {
-  .top-buttons {
-    justify-content: center;
-    transform: translateX(0);
-  }
-}
-
-/* Mobile sizing of top buttons */
+/* Mobile: Full-width obvious CTA */
 @media (max-width: 600px) {
-  .top-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: nowrap;
+  .top-buttons.single-portal .portal-btn {
     width: 100%;
-  }
-
-  .wellness-plan .top-link-btn {
-    flex: 1 1 48%;   /* take up equal width side by side */
-    height: 40px;
-    font-size: 13px;
-    padding: 8px;
-    max-width: none; /* don’t cap at 160px */
+    height: 54px;
+    font-size: 16px;
   }
 }
+
 
 
 
