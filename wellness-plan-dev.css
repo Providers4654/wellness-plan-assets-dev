@@ -1011,26 +1011,40 @@ html, body {
 
 
 /* ============================
-   RESPONSIVE: MOBILE FONT TWEAKS
+   RESPONSIVE: MOBILE FONT + PILL BOOST
    ============================ */
 @media (max-width: 600px) {
+
+  /* ✅ Section title pills (Treatment Summary, Lifestyle, etc.) */
   .wellness-plan .section-title {
-    font-size: 16px !important;      /* 🔹 Slightly larger text */
-    padding: 6px 18px !important;    /* 🔹 Adds height and width to the pill */
-    border-radius: 999px !important; /* keeps smooth rounded ends */
+    font-size: 18px !important;       /* bigger + more noticeable */
+    font-weight: 900 !important;      /* stronger header feel */
+
+    padding: 10px 22px !important;    /* taller + wider pill */
+    border-radius: 999px !important;
+
+    /* stronger outline + depth */
+    border: 2px solid #bfc5cc !important;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.12) !important;
+
+    /* slightly deeper overlap into the bubble */
+    top: -26px !important;
+    left: 18px !important;
   }
 
-  /* Treatment Summary blocks (Daily, Evening, Weekly, PRN) */
+  /* ✅ Treatment Summary block labels (Daily, Evening, Weekly, PRN) */
   .wellness-plan .med-time-label {
-    font-size: 16px !important;   /* smaller block headings */
-    padding: 8px 12px !important; /* reduced padding */
+    font-size: 16px !important;
+    padding: 10px 14px !important;   /* slightly bigger for readability */
   }
 
-  /* Optional: shrink med rows too for tighter fit */
+  /* ✅ Medication rows (keep compact but readable) */
   .wellness-plan .medication-list li {
     font-size: 14px !important;
+    line-height: 1.4 !important;
   }
 }
+
 
 
 
@@ -2340,33 +2354,43 @@ html, body {
 
 
 /* ============================
-   MOBILE GLOBAL SCALE-DOWN
+   MOBILE GLOBAL SCALE-DOWN (SAFE)
    ============================ */
 @media (max-width: 600px) {
-  /* Shrink base text */
+
+  /* Base text shrink */
   .wellness-plan {
-    font-size: 14px !important;   /* down from 16px */
+    font-size: 14px !important;
     line-height: 1.4 !important;
   }
 
   /* Header banner */
-  .plan-header .intro-text::before { font-size: 20px !important; }
-  .plan-header .intro-text::after  { font-size: 14px !important; }
-
-  /* Section titles */
-  .wellness-plan .section-title { font-size: 14px !important; }
-
-  /* Med block labels */
-  .wellness-plan .med-time-label {
-    font-size: 15px !important;
-    padding: 6px 10px !important;
+  .plan-header .intro-text::before {
+    font-size: 20px !important;
   }
 
+  .plan-header .intro-text::after {
+    font-size: 14px !important;
+  }
+
+  /* ❌ Removed section-title override (handled by pill boost block) */
+  /* ❌ Removed med-time-label override (handled by pill boost block) */
+
   /* Med list */
-  .wellness-plan .medication-list li { font-size: 13.5px !important; }
-  .wellness-plan .medication-list li strong { font-size: 14px !important; }
-  .wellness-plan .dose { font-size: 13px !important; padding: 5px 8px !important; }
+  .wellness-plan .medication-list li {
+    font-size: 13.5px !important;
+  }
+
+  .wellness-plan .medication-list li strong {
+    font-size: 14px !important;
+  }
+
+  .wellness-plan .dose {
+    font-size: 13px !important;
+    padding: 5px 8px !important;
+  }
 }
+
 
 
 
