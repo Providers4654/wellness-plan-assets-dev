@@ -216,10 +216,36 @@ html, body {
    ============================ */
 .wellness-plan .section-wrapper {
   position: relative;
-  margin-bottom: 70px; /* spacing between full sections */
+  margin-bottom: 55px; /* spacing between full sections */
 }
 
 
+
+
+
+/* ============================
+   SECTION DIVIDER LINE (Minimal)
+   ============================ */
+
+/* Adds a centered divider between main sections */
+.wellness-plan .section-wrapper::after {
+  content: "";
+  display: block;
+
+  /* Divider width matches content, not full page */
+  width: 82%;
+  max-width: 720px;
+
+  height: 1px;
+  margin: 55px auto 0 auto; /* equal space above divider */
+
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Remove divider after last section */
+.wellness-plan .section-wrapper:last-of-type::after {
+  display: none;
+}
 
 
 
