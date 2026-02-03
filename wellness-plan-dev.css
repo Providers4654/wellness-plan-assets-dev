@@ -200,75 +200,6 @@ html, body {
 
 
 
-/* ============================
-   TOP BUTTON (Patient Portal Only)
-   ============================ */
-
-.top-buttons.single-portal {
-  display: flex;
-  justify-content: center;
-  margin-top: 22px;
-  margin-bottom: 55px;
-  padding: 0 16px;
-}
-
-/* Portal Button = Primary CTA */
-.top-buttons.single-portal .portal-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 360px;
-  height: 58px;
-
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-
-  border-radius: 14px;
-  text-decoration: none;
-
-  /* Strong emphasis border */
-  border: 2px solid rgba(0, 140, 160, 0.55);
-
-  /* Premium highlight background */
-  background: linear-gradient(
-    145deg,
-    #ffffff 0%,
-    #f1fbfc 45%,
-    #ffffff 100%
-  );
-
-  /* Standout glow + depth */
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.20),
-    0 0 22px rgba(0, 140, 160, 0.28),
-    inset 0 1px 2px rgba(255,255,255,0.65);
-
-  color: #1f2d3d;
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-/* Hover lift */
-.top-buttons.single-portal .portal-btn:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 18px 36px rgba(0, 0, 0, 0.24),
-    0 0 28px rgba(0, 140, 160, 0.34);
-}
-
-/* Mobile: Full-width obvious CTA */
-@media (max-width: 600px) {
-  .top-buttons.single-portal .portal-btn {
-    width: 100%;
-    height: 54px;
-    font-size: 16px;
-  }
-}
-
 
 
 
@@ -342,6 +273,119 @@ html, body {
     font-size: 15px;
   }
 }
+
+
+
+/* ============================
+   PATIENT PORTAL ACCESS BOX
+   (Under Wellness Plan Header)
+   ============================ */
+
+.portal-access-box {
+  max-width: 760px;
+  margin: 28px auto 0 auto;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+
+  padding: 26px 28px;
+  text-align: center;
+
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+.portal-access-box h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #1f2d3d;
+}
+
+.portal-access-box p {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.portal-access-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 18px auto;
+  max-width: 520px;
+  text-align: left;
+}
+
+.portal-access-box ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #222;
+  padding-left: 20px;
+  position: relative;
+}
+
+.portal-access-box ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+  color: rgba(0, 140, 160, 0.85);
+}
+
+/* Portal Button */
+.portal-access-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 800;
+
+  border-radius: 14px;
+  text-decoration: none;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f1fbfc
+  );
+
+  border: 2px solid rgba(0, 140, 160, 0.45);
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.16),
+    0 0 18px rgba(0, 140, 160, 0.25);
+
+  color: #1f2d3d;
+  transition: all 0.25s ease;
+}
+
+.portal-access-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.20),
+    0 0 24px rgba(0, 140, 160, 0.30);
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+  .portal-access-box {
+    padding: 20px 18px;
+    text-align: left;
+  }
+
+  .portal-access-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .portal-access-box ul {
+    text-align: left;
+  }
+}
+
 
 
 
