@@ -2757,3 +2757,35 @@ body {
 
 
 
+
+
+
+
+
+
+
+/* ============================================================
+   ✅ FINAL GLOBAL FIX — UNIVERSAL BUBBLE BOTTOM RHYTHM
+   Forces consistent bottom spacing in EVERY section bubble
+   regardless of last-child margins or accordion cleanup
+   ============================================================ */
+
+.wellness-plan .wellness-bubble::after {
+  content: "";
+  display: block;
+  height: 28px; /* <-- your global bottom breathing room */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
