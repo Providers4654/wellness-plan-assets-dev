@@ -1137,6 +1137,19 @@ html, body {
   padding: 0;
 }
 
+/* ===============================
+   ✅ EDIT: Remove global <ul><li> spacing
+   (Prevents huge blank space at bottom)
+   =============================== */
+#toConsider > li {
+  margin-bottom: 12px !important;
+}
+
+#toConsider > li:last-child {
+  margin-bottom: 0 !important;
+}
+
+
 /* ------------------------------
    SECTION SUBTEXT — styled intro box (full width + visible text)
 ------------------------------- */
