@@ -369,7 +369,6 @@ html, body {
 
 @media (max-width: 600px) {
 
-  /* Strip becomes stacked and full-width */
   .portal-access-mini {
     flex-direction: column;
     align-items: flex-start;
@@ -377,9 +376,8 @@ html, body {
     padding: 10px 14px;
     gap: 10px;
 
-    /* ✅ Mobile spacing:
-       Slight space above, strong separation below */
-    margin: 10px auto 34px auto;
+    /* ✅ Double spacing BELOW strip */
+    margin: 10px auto 68px auto;
   }
 
   .portal-access-text {
@@ -392,6 +390,7 @@ html, body {
     justify-content: center;
   }
 }
+
 
 
 
