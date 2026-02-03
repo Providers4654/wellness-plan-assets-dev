@@ -2160,6 +2160,22 @@ html, body {
   text-indent: 0;
 }
 
+
+
+
+/* ============================================================
+   ✅ ADDITION — TRUE FINAL GOALS ITEM SPACING FIX (Squarespace-safe)
+   ============================================================ */
+
+.wellness-plan .goals-list > li:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+
+
+
+
+
 /* Mobile adjustment */
 @media (max-width: 600px) {
   .wellness-plan ul {
