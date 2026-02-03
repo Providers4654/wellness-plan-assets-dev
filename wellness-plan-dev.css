@@ -49,8 +49,9 @@
    Patient Portal Button
    ============================ */
 
---portal-btn-text: Open Patient Portal →
+--portal-btn-text: Open Patient Portal;
 --portal-btn-url: https://mtnhlthclient.md-hq.com;
+
 
 
 
@@ -283,114 +284,77 @@ html, body {
 
 
 /* ============================
-   PATIENT PORTAL ACCESS BOX
-   (Under Wellness Plan Header)
+   MINIMAL PATIENT PORTAL BANNER
    ============================ */
 
-.portal-access-box {
+.portal-access-mini {
   max-width: 760px;
-  margin: 28px auto 0 auto;
+  margin: 18px auto 0 auto;
 
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 
-  padding: 26px 28px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
 
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+  padding: 14px 18px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-.portal-access-box h3 {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #1f2d3d;
+/* One-line portal description */
+.portal-access-text {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #333;
+  flex: 1;
 }
 
-.portal-access-box p {
-  font-size: 15.5px;
-  line-height: 1.55;
-  color: #444;
-  margin-bottom: 14px;
-}
-
-.portal-access-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto 18px auto;
-  max-width: 520px;
-  text-align: left;
-}
-
-.portal-access-box ul li {
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: #222;
-  padding-left: 20px;
-  position: relative;
-}
-
-.portal-access-box ul li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  font-weight: 800;
-  color: rgba(0, 140, 160, 0.85);
-}
-
-/* Portal Button */
+/* Small clean button */
 .portal-access-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 14px 28px;
-  font-size: 15px;
-  font-weight: 800;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
 
-  border-radius: 14px;
+  border-radius: 12px;
   text-decoration: none;
 
-  background: linear-gradient(
-    145deg,
-    #ffffff,
-    #f1fbfc
-  );
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 140, 160, 0.35);
 
-  border: 2px solid rgba(0, 140, 160, 0.45);
-
-  box-shadow:
-    0 10px 22px rgba(0, 0, 0, 0.16),
-    0 0 18px rgba(0, 140, 160, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
 
   color: #1f2d3d;
-  transition: all 0.25s ease;
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
 }
 
 .portal-access-btn:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.20),
-    0 0 24px rgba(0, 140, 160, 0.30);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
 }
 
-/* Mobile Friendly */
+/* Mobile: stack */
 @media (max-width: 600px) {
-  .portal-access-box {
-    padding: 20px 18px;
-    text-align: left;
+  .portal-access-mini {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .portal-access-btn {
     width: 100%;
-    margin-top: 10px;
-  }
-
-  .portal-access-box ul {
-    text-align: left;
+    justify-content: center;
   }
 }
+
 
 
 
