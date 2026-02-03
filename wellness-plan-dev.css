@@ -844,6 +844,16 @@ html, body {
   border-radius: 6px;
 }
 
+/* ============================================================
+   ✅ EDIT: Remove extra bottom gap after final Lifestyle tip
+   Prevents last <li> margin from stacking with bubble padding
+   ============================================================ */
+
+.wellness-plan .lifestyle-tips-list > li:last-child {
+  margin-bottom: 0 !important;
+}
+
+
 /* Links inside lifestyle tips inherit color/underline */
 .wellness-plan .lifestyle-tips-list > li a {
   font-style: italic;
@@ -2028,24 +2038,41 @@ html, body {
 
 
 /* ============================
-   LISTS & TEXT UTILITIES
+   LISTS & TEXT UTILITIES (FIXED)
    ============================ */
-.wellness-plan ul { padding-left: 20px; margin: 0; }
 
-/* BULLETS IN GOALS SECTION */
-.wellness-plan ul li {
+/* Default UL indentation (safe baseline) */
+.wellness-plan ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* ============================================================
+   ✅ EDIT: REMOVE GLOBAL <li> SPACING
+   This was causing extra blank space under Lifestyle + To Consider
+   ============================================================ */
+
+/* Only Goals lists should have large vertical spacing */
+.wellness-plan .goals-list li {
   list-style-position: outside;
   margin-left: 0;
-  padding-left: 1px;    /* room for bullet */
+  padding-left: 1px;
   margin-bottom: 25px;
   font-size: 16px;
   text-indent: 0;
 }
 
+/* Mobile adjustment */
 @media (max-width: 600px) {
-  .wellness-plan ul { padding-left: 16px; }
-  .wellness-plan ul li { margin-left: 0; }
+  .wellness-plan ul {
+    padding-left: 16px;
+  }
+
+  .wellness-plan .goals-list li {
+    margin-left: 0;
+  }
 }
+
 
 /* ============================================================
    Global links inside wellness plan
