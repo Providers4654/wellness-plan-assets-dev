@@ -238,7 +238,7 @@ html, body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 
   /* ✅ IMPORTANT: keeps blue visible below portal strip */
-  padding-bottom: 34px;
+  padding-bottom: 18px;
 }
 
 
@@ -286,23 +286,22 @@ html, body {
 
 .portal-access-mini {
   max-width: 760px;
-  margin: 8px auto 0 auto;
+  margin: -14px auto 40px auto; /* 👈 pulls it upward slightly */
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
 
-  /* Minimal glass strip */
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
 
-  /* ✅ Shorter height */
-  padding: 7px 14px;
+  padding: 9px 16px;
 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
+
 
 
 /* Portal strip text */
