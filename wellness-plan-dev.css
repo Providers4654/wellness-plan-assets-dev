@@ -2793,12 +2793,12 @@ body {
 
 
 /* ============================================================
-   ✅ FIX — REMOVE EXTRA SPACE AFTER BODY COMP WHEN LAST
-   Works without :has()
+   ✅ FIX — GOALS SECTION SHOULD NOT ADD EXTRA FLOOR
+   Removes the global spacer only in Goals & Follow-Up
    ============================================================ */
 
-.wellness-plan #bodyComp:last-child::after,
-.wellness-plan #bodyComp + .wellness-bubble::after {
+.wellness-plan .section-wrapper:has(.goals-list) .wellness-bubble::after {
+  height: 0px !important;
   display: none !important;
 }
 
