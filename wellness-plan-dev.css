@@ -227,8 +227,9 @@ html, body {
    SECTION DIVIDER LINE (Minimal)
    ============================ */
 
-/* Adds a centered divider between main sections */
-.wellness-plan .section-wrapper::after {
+/* Adds a centered divider between all main sections
+   EXCEPT the header/banner section */
+.wellness-plan .section-wrapper:not(.plan-header)::after {
   content: "";
   display: block;
 
@@ -237,7 +238,9 @@ html, body {
   max-width: 720px;
 
   height: 1px;
-  margin: 55px auto 0 auto; /* equal space above divider */
+
+  /* Equal spacing above divider */
+  margin: 55px auto 0 auto;
 
   background: rgba(0, 0, 0, 0.08);
 }
@@ -246,6 +249,7 @@ html, body {
 .wellness-plan .section-wrapper:last-of-type::after {
   display: none;
 }
+
 
 
 
