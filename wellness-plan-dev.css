@@ -224,23 +224,19 @@ html, body {
 
 
 /* ============================
-   SECTION DIVIDER LINE (Minimal)
+   SECTION DIVIDER LINE (Even Spacing)
    ============================ */
 
-/* Adds a centered divider between all main sections
-   EXCEPT the header/banner section */
 .wellness-plan .section-wrapper:not(.plan-header)::after {
   content: "";
   display: block;
 
-  /* Divider width matches content, not full page */
   width: 82%;
   max-width: 720px;
-
   height: 1px;
 
-  /* Equal spacing above divider */
-  margin: 55px auto 0 auto;
+  /* ✅ Equal space above AND below divider */
+  margin: 50px auto 50px auto;
 
   background: rgba(0, 0, 0, 0.08);
 }
@@ -249,6 +245,16 @@ html, body {
 .wellness-plan .section-wrapper:last-of-type::after {
   display: none;
 }
+
+/* Mobile: slightly tighter but still equal */
+@media (max-width: 600px) {
+  .wellness-plan .section-wrapper:not(.plan-header)::after {
+    width: 90%;
+    margin: 38px auto 38px auto;
+    opacity: 0.6;
+  }
+}
+
 
 
 
@@ -394,7 +400,7 @@ html, body {
 
 
 /* ============================
-   MOBILE OPTIMIZATION
+   MOBILE OPTIMIZATION (Portal Strip)
    ============================ */
 
 @media (max-width: 600px) {
@@ -406,8 +412,8 @@ html, body {
     padding: 10px 14px;
     gap: 10px;
 
-    /* ✅ Double spacing BELOW strip */
-    margin: 10px auto 68px auto;
+    /* ✅ More space BELOW before Treatment Summary */
+    margin: 12px auto 95px auto;
   }
 
   .portal-access-text {
@@ -420,6 +426,7 @@ html, body {
     justify-content: center;
   }
 }
+
 
 
 
