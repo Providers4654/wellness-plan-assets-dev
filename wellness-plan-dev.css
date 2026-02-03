@@ -2779,21 +2779,32 @@ body {
 
 
 
-
 /* ============================================================
    ✅ FINAL GLOBAL FIX — UNIVERSAL BUBBLE BOTTOM RHYTHM
-   Forces consistent bottom spacing in EVERY section bubble
-   regardless of last-child margins or accordion cleanup
+   Applies to ALL bubbles
    ============================================================ */
 
 .wellness-plan .wellness-bubble::after {
   content: "";
   display: block;
-  height: 28px; /* <-- your global bottom breathing room */
+  height: 28px;
 }
 
 
+/* ============================================================
+   ✅ FINAL OVERRIDE — TO CONSIDER MATCHES OTHER BUBBLES
+   Reduces only the extra bottom space in that one section
+   ============================================================ */
 
+.wellness-plan .section-wrapper:has(#toConsider) .wellness-bubble {
+  padding-bottom: 18px !important; /* same as global bubble */
+}
+
+.wellness-plan .section-wrapper:has(#toConsider) .wellness-bubble::after {
+  height: 18px !important;  /* slightly smaller than 28px */
+  display: block !important;
+  content: "" !important;
+}
 
 
 
