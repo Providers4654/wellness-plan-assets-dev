@@ -230,17 +230,23 @@ html, body {
    ============================ */
 
 .plan-header {
-  width: 100vw;               /* span full viewport */
-  margin-left: calc(-50vw + 50%); /* break out of centered container */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   background: linear-gradient(135deg, #e9f4ff, #fdfdfd);
+
   border-bottom: 2px solid #cfd9e3;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* ✅ IMPORTANT: keeps blue visible below portal strip */
+  padding-bottom: 34px;
 }
 
+
+/* Intro text block */
 .plan-header .intro-text {
-  max-width: 960px;           /* match main content width */
-  margin: 0 auto;             /* center inside header */
-  padding: 28px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 26px 20px 14px;
   text-align: center;
 
   font-size: 18px;
@@ -248,66 +254,137 @@ html, body {
   color: #2a2a2a;
 }
 
+
 /* Title */
 .plan-header .intro-text::before {
   content: "Your Personalized Wellness Plan";
   display: block;
+
   font-size: 28px;
   font-weight: 800;
   margin-bottom: 6px;
   color: #1f2d3d;
 }
 
+
 /* Subtitle */
 .plan-header .intro-text::after {
   content: var(--intro-message);
   display: block;
+
   margin-top: 6px;
   font-size: 16px;
   line-height: 1.4;
   color: #444;
 }
 
-/* Mobile tweaks */
-@media (max-width: 600px) {
-  .plan-header .intro-text {
-    padding: 20px 12px;
-  }
-  .plan-header .intro-text::before {
-    font-size: 22px;
-  }
-  .plan-header .intro-text::after {
-    font-size: 15px;
-  }
-}
-
 
 
 /* ============================
-   MINIMAL PATIENT PORTAL STRIP (Tighter)
+   MINIMAL PATIENT PORTAL STRIP
    ============================ */
 
 .portal-access-mini {
   max-width: 760px;
-
-  /* Pull it upward closer to subtitle */
-  margin: 10px auto 26px auto;
+  margin: 8px auto 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
 
-  /* Subtle glass strip */
+  /* Minimal glass strip */
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 12px;
 
-  /* Reduced height */
-  padding: 8px 14px;
+  /* ✅ Shorter height */
+  padding: 7px 14px;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
+
+/* Portal strip text */
+.portal-access-text {
+  font-size: 13.5px;
+  line-height: 1.25;
+  color: #333;
+  flex: 1;
+
+  /* ✅ Prevent ugly multi-line wrap on desktop */
+  max-width: 520px;
+}
+
+
+/* Button stays compact */
+.portal-access-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  border-radius: 11px;
+  text-decoration: none;
+
+  background: #fff;
+  border: 1.5px solid rgba(0, 140, 160, 0.30);
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+  color: #1f2d3d;
+
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.portal-access-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.14);
+}
+
+
+
+/* ============================
+   MOBILE OPTIMIZATION
+   ============================ */
+
+@media (max-width: 600px) {
+
+  .plan-header .intro-text {
+    padding: 20px 12px 10px;
+  }
+
+  .plan-header .intro-text::before {
+    font-size: 22px;
+  }
+
+  .plan-header .intro-text::after {
+    font-size: 15px;
+  }
+
+  /* Strip becomes stacked and full-width */
+  .portal-access-mini {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .portal-access-text {
+    max-width: 100%;
+    font-size: 13.5px;
+  }
+
+  .portal-access-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 
 
