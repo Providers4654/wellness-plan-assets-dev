@@ -2791,14 +2791,6 @@ body {
 }
 
 
-/* ============================================================
-   ✅ FINAL PATCH — TO CONSIDER LAST CARD GAP REMOVAL
-   ============================================================ */
-
-#toConsider > li:last-of-type {
-  margin-bottom: 0 !important;
-}
-
 
 
 
