@@ -2792,19 +2792,15 @@ body {
 
 
 /* ============================================================
-   ✅ FINAL OVERRIDE — TO CONSIDER MATCHES OTHER BUBBLES
-   Reduces only the extra bottom space in that one section
+   ✅ FINAL OVERRIDE — TO CONSIDER ONLY (LIVE SAFE)
+   Reduces extra bottom space only in that section
+   NO :has(), works on mobile + Safari
    ============================================================ */
 
-.wellness-plan .section-wrapper:has(#toConsider) .wellness-bubble {
-  padding-bottom: 18px !important; /* same as global bubble */
+.wellness-plan .med-time-block.to-consider-block .wellness-bubble::after {
+  height: 18px !important;
 }
 
-.wellness-plan .section-wrapper:has(#toConsider) .wellness-bubble::after {
-  height: 18px !important;  /* slightly smaller than 28px */
-  display: block !important;
-  content: "" !important;
-}
 
 
 
