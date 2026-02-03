@@ -284,76 +284,31 @@ html, body {
 
 
 /* ============================
-   MINIMAL PATIENT PORTAL BANNER
+   MINIMAL PATIENT PORTAL STRIP (Tighter)
    ============================ */
 
 .portal-access-mini {
   max-width: 760px;
-  margin: 18px auto 0 auto;
+
+  /* Pull it upward closer to subtitle */
+  margin: 10px auto 26px auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
 
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 14px;
-
-  padding: 14px 18px;
-
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-}
-
-/* One-line portal description */
-.portal-access-text {
-  font-size: 14px;
-  line-height: 1.35;
-  color: #333;
-  flex: 1;
-}
-
-/* Small clean button */
-.portal-access-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 700;
-
+  /* Subtle glass strip */
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 12px;
-  text-decoration: none;
 
-  background: #ffffff;
-  border: 1.5px solid rgba(0, 140, 160, 0.35);
+  /* Reduced height */
+  padding: 8px 14px;
 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
-
-  color: #1f2d3d;
-  white-space: nowrap;
-
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.portal-access-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
-}
-
-/* Mobile: stack */
-@media (max-width: 600px) {
-  .portal-access-mini {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .portal-access-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
 
 
 
