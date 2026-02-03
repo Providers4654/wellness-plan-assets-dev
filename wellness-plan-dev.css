@@ -270,7 +270,7 @@ html, body {
     height: 2px;
 
     /* Equal spacing, slightly tighter than desktop */
-    margin: 52px auto 52px auto;
+    margin: 52px auto 68px auto;
 
     opacity: 0.75;
   }
