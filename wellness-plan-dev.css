@@ -242,6 +242,17 @@ html, body {
 }
 
 
+
+/* ============================
+   HEADER SPACING OVERRIDE
+   (Prevents huge gap below banner)
+   ============================ */
+
+.wellness-plan .section-wrapper.plan-header {
+  margin-bottom: 18px; /* was inheriting 70px */
+}
+
+
 /* Intro text block */
 .plan-header .intro-text {
   max-width: 960px;
@@ -280,6 +291,9 @@ html, body {
 
 
 
+
+
+
 /* ============================
    MINIMAL PATIENT PORTAL STRIP
    ============================ */
@@ -288,7 +302,7 @@ html, body {
   max-width: 760px;
 
   /* ✅ Move it UP closer to blue header */
-  margin: -22px auto 22px auto;
+  margin: -14px auto 28px auto;
 
   display: flex;
   align-items: center;
