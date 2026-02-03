@@ -1574,6 +1574,26 @@ html, body {
 }
 
 
+/* ============================================================
+   ✅ ADDITION — GOALS SECTION FINAL BLOCK BOTTOM FIX
+   Keeps spacing between goal blocks,
+   but removes extra space at the very bottom of the bubble
+   ============================================================ */
+
+/* Keep your existing spacing model (do NOT override margin-top) */
+.wellness-plan .goal-block {
+  margin-top: 3rem; /* unchanged */
+}
+
+/* ✅ Only remove trailing space inside the LAST goal-block */
+.wellness-plan .goal-block:last-child > *:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+
+
 
 
 
@@ -2248,6 +2268,14 @@ html, body {
   max-width: 650px;
   text-align: center;
 }
+
+
+/* Remove bottom padding from last button/resource link */
+
+.wellness-plan .resource-link:last-child {
+  padding-bottom: 0;
+}
+
 
 
 
