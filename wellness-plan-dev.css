@@ -2792,6 +2792,21 @@ body {
 
 
 
+/* ============================================================
+   ✅ TO CONSIDER ONLY — REMOVE EXTRA TRAILING SPACE
+   ============================================================ */
+
+#toConsider > li:last-child {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.to-consider-section .wellness-bubble::after {
+  height: 0 !important;
+}
+
+
+
 
 
 
