@@ -286,7 +286,9 @@ html, body {
 
 .portal-access-mini {
   max-width: 760px;
-  margin: -14px auto 40px auto; /* 👈 pulls it upward slightly */
+
+  /* ✅ Move it UP closer to blue header */
+  margin: -22px auto 22px auto;
 
   display: flex;
   align-items: center;
@@ -301,6 +303,7 @@ html, body {
 
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
+
 
 
 
