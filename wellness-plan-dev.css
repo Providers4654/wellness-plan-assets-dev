@@ -302,7 +302,7 @@ html, body {
   max-width: 760px;
 
   /* ✅ Move it UP closer to blue header */
-  margin: -24px auto 28px auto;
+  margin: -12px auto 22px auto;
 
   display: flex;
   align-items: center;
