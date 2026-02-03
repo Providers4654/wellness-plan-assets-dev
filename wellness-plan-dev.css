@@ -1676,7 +1676,11 @@ html, body {
 #visitTimeline li {
   color: #4b6fff;
   background: linear-gradient(to right, rgba(75,111,255,0.12), rgba(255,255,255,0));
+
+  /* ✅ EDIT: Force consistent card padding */
+  padding: 14px 20px;
 }
+
 #visitTimeline li:hover {
   background: linear-gradient(to right, rgba(75,111,255,0.2), rgba(255,255,255,0));
 }
@@ -1799,7 +1803,11 @@ html, body {
 #targetGoals li {
   color: #9a46ff;
   background: linear-gradient(to right, rgba(154,70,255,0.12), rgba(255,255,255,0));
+
+  /* ✅ EDIT: Force consistent card padding */
+  padding: 14px 20px;
 }
+
 #targetGoals li:hover {
   background: linear-gradient(to right, rgba(154,70,255,0.2), rgba(255,255,255,0));
 }
@@ -1814,7 +1822,11 @@ html, body {
 #otherItems li {
   color: #1d914e;
   background: linear-gradient(to right, rgba(29,145,78,0.12), rgba(255,255,255,0));
+
+  /* ✅ EDIT: Force consistent card padding */
+  padding: 14px 20px;
 }
+
 #otherItems li:hover {
   background: linear-gradient(to right, rgba(29,145,78,0.2), rgba(255,255,255,0));
 }
@@ -2714,8 +2726,6 @@ body {
 .lifestyle-tips-list + .resource-link {
   margin-top: 50px !important;
 }
-
-
 
 
 
