@@ -1113,11 +1113,14 @@ html, body {
 
 
 
+/* ============================================================
+   TO CONSIDER — FINAL CLEAN ACCORDION (NO EXTRA SPACE)
+   ============================================================ */
+
 /* ============================
-   TO CONSIDER — POLISHED + FIXED
+   1. Wrapper Cleanup
    ============================ */
 
-/* Wrapper cleanup */
 .wellness-plan .med-time-block.to-consider-block {
   background: transparent !important;
   border: none !important;
@@ -1125,24 +1128,24 @@ html, body {
   box-shadow: none !important;
 }
 
-/* Remove any old label */
 .wellness-plan .med-time-block.to-consider-block .med-time-label {
   display: none !important;
 }
 
-/* Each category <li> */
-#toConsider .to-consider-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+/* ============================
+   2. Remove Global <ul><li> Spacing
+   ============================ */
+
+#toConsider {
+  padding-left: 0 !important;
+  margin: 0 !important;
 }
 
-/* ===============================
-   ✅ EDIT: Remove global <ul><li> spacing
-   (Prevents huge blank space at bottom)
-   =============================== */
 #toConsider > li {
+  list-style: none !important;
   margin-bottom: 12px !important;
+  padding: 0 !important;
 }
 
 #toConsider > li:last-child {
@@ -1150,64 +1153,29 @@ html, body {
 }
 
 
-/* ------------------------------
-   SECTION SUBTEXT — styled intro box (full width + visible text)
-------------------------------- */
+/* ============================
+   3. Category Header Card
+   ============================ */
 
-.to-consider-subtext {
-  position: relative;
-  display: block;
-  background: #f9fbff;
-  border: 1px solid #e3e8f4;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.55;
-  font-style: italic;
-  text-align: center;
-  margin: 0.5rem 0 1.3rem 0;
-  padding: 1rem 1.25rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-  position: relative;
-  z-index: 1;
-
-  /* ✅ Full width alignment with category cards */
-  width: 100%;
-  max-width: 100%; 
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* Hover polish */
-.to-consider-subtext:hover {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
-  transform: translateY(-1px);
-}
-
-
-
-
-/* ------------------------------
-   CATEGORY HEADER — restored solid accent, aligned flush
-------------------------------- */
 .wellness-plan .to-consider-subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+
   background: #ffffff;
   border: 1px solid rgba(226, 232, 249, 0.9);
-  border-left: 8px solid var(--accent-color, #6b93ff); /* ✅ restored solid accent */
+  border-left: 8px solid var(--accent-color, #6b93ff);
+
   border-radius: 14px;
-  padding: 0.55rem 0.9rem; /* ✅ matches Lifestyle spacing */
-  margin: 0.5rem 0;
-  color: #121212;
+  padding: 0.65rem 1rem;
+
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 750;
+  color: #121212;
+
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
 }
 
 .wellness-plan .to-consider-subtitle:hover {
@@ -1215,100 +1183,86 @@ html, body {
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Clean — no gradient or pseudo-element */
-.wellness-plan .to-consider-subtitle::before {
-  content: none;
-}
-
-/* Chevron arrow */
+/* Chevron */
 .wellness-plan .to-consider-subtitle::after {
   content: "›";
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--accent-color, #6b93ff);
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  margin-left: 6px;
+  transition: transform 0.25s ease;
 }
+
 .wellness-plan .to-consider-subtitle.expanded::after {
   transform: rotate(90deg);
 }
 
-/* Mobile scaling */
-@media (max-width: 600px) {
-  .wellness-plan .to-consider-subtitle {
-    font-size: 1rem !important;
-    padding: 0.6rem 0.8rem !important;
-  }
-}
 
-/* Align the entire list flush */
-#toConsider {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-}
+/* ============================
+   4. Accordion Panel (KEY FIX)
+   ============================ */
 
-
-
-/* ------------------------------
-   PANEL CONTENT (collapsible)
-------------------------------- */
 .wellness-plan .to-consider-content {
   overflow: hidden;
   max-height: 0;
+
   opacity: 0;
-  padding: 0 1.2rem;
-  margin: 0.25rem 0 0.5rem 0.4rem;
+
+  /* Closed state must take ZERO space */
+  padding: 0 !important;
+  margin: 0 !important;
+
   transition: all 0.3s ease;
-  border-left: 2px solid transparent;
-  border-radius: 5px;
-  background: #fff;
-}
-.wellness-plan .to-consider-content.open {
-  max-height: none;  /* let height expand freely */
-  opacity: 1;
-  padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
 }
 
-/* ------------------------------
-   ITEMS INSIDE PANEL
-------------------------------- */
+.wellness-plan .to-consider-content.open {
+  max-height: 800px; /* safe accordion ceiling */
+
+  opacity: 1;
+
+  /* Padding ONLY when open */
+  padding: 0.6rem 1.2rem 0.5rem !important;
+
+  margin-top: 6px !important;
+}
+
+
+/* ============================
+   5. Items Inside Panel
+   ============================ */
+
 .wellness-plan .to-consider-item {
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: 0.55rem 0;
   border-bottom: 1px dashed #e3e6f0;
-  transition: background 0.25s ease, transform 0.2s ease;
 }
-.wellness-plan .to-consider-item:hover {
-  background: #f8faff;
-  transform: translateY(-1px);
-}
+
 .wellness-plan .to-consider-item:last-child {
   border-bottom: none;
 }
 
 .wellness-plan .to-consider-name {
-  font-weight: 700;
-  color: #202020;
-  margin-bottom: 0.2rem;
+  font-weight: 750;
   font-size: 0.95rem;
+  margin-bottom: 0.15rem;
 }
 
 .wellness-plan .to-consider-blurb {
   font-size: 0.85rem;
+  font-style: italic;
   color: #444;
   line-height: 1.45;
-  font-style: italic;
 }
 
-.wellness-plan .to-consider-blurb a {
-  color: var(--accent-color, #3052ff);
-  text-decoration: underline;
-  font-style: italic;
-  transition: color 0.25s ease;
+
+/* ============================
+   6. Mobile Scaling
+   ============================ */
+
+@media (max-width: 600px) {
+  .wellness-plan .to-consider-subtitle {
+    font-size: 1rem !important;
+    padding: 0.65rem 0.85rem !important;
+  }
 }
-.wellness-plan .to-consider-blurb a:hover {
-  color: #1b33b6;
-}
+
 
 /* ------------------------------
    CATEGORY COLORS + BACKGROUND TINTS (1–20)
@@ -2605,13 +2559,6 @@ ul li,
   margin: 0;
 }
 
-
-/* Remove dashed medication borders from To Consider category rows */
-.wellness-plan #toConsider .to-consider-li {
-  border-bottom: none !important;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
 
 
 
