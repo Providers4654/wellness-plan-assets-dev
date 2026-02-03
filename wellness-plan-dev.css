@@ -224,21 +224,32 @@ html, body {
 
 
 /* ============================
-   SECTION DIVIDER LINE (Even Spacing)
+   SECTION DIVIDER LINE (Stronger + Spacious)
    ============================ */
 
 .wellness-plan .section-wrapper:not(.plan-header)::after {
   content: "";
   display: block;
 
-  width: 82%;
-  max-width: 720px;
-  height: 1px;
+  /* Divider stays within content width */
+  width: 84%;
+  max-width: 760px;
 
-  /* ✅ Equal space above AND below divider */
-  margin: 50px auto 50px auto;
+  /* Slightly thicker + clearer */
+  height: 2px;
 
-  background: rgba(0, 0, 0, 0.08);
+  /* ✅ More breathing room above + below */
+  margin: 70px auto 70px auto;
+
+  /* Premium fade line (more visible than flat gray) */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.18),
+    transparent
+  );
+
+  opacity: 0.9;
 }
 
 /* Remove divider after last section */
@@ -246,14 +257,25 @@ html, body {
   display: none;
 }
 
-/* Mobile: slightly tighter but still equal */
+
+/* ============================
+   MOBILE DIVIDER (Still Bold + Balanced)
+   ============================ */
 @media (max-width: 600px) {
+
   .wellness-plan .section-wrapper:not(.plan-header)::after {
-    width: 90%;
-    margin: 38px auto 38px auto;
-    opacity: 0.6;
+    width: 92%;
+
+    /* Keep it obvious on mobile */
+    height: 2px;
+
+    /* Equal spacing, slightly tighter than desktop */
+    margin: 52px auto 52px auto;
+
+    opacity: 0.75;
   }
 }
+
 
 
 
