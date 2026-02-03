@@ -151,8 +151,21 @@ setTextIfAvailable(".title-goals", "--title-goals", "Goals & Follow-Up");
   const intro = document.querySelector(".intro-text");
   if (intro) intro.innerHTML = normalizeCellText(cssVar("--intro-message"));
 
-  // ✅ Top button injection removed — portal is now static in the header card
+  // ============================
+  // Patient Portal Button Injection
+  // ============================
+
+  const portalBtn = document.getElementById("portalAccessBtn");
+
+  if (portalBtn) {
+    portalBtn.textContent =
+      cssVar("--portal-btn-text") || "Open Patient Portal →";
+
+    portalBtn.href =
+      cssVar("--portal-btn-url") || "https://mtnhlthclient.md-hq.com";
+  }
 }
+
 
 
 
