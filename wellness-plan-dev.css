@@ -1011,39 +1011,50 @@ html, body {
 
 
 /* ============================
-   RESPONSIVE: MOBILE FONT + PILL BOOST
+   RESPONSIVE: MOBILE PILL + WRAP SAFETY
    ============================ */
 @media (max-width: 600px) {
 
-  /* ✅ Section title pills (Treatment Summary, Lifestyle, etc.) */
+  /* ✅ Section title pills */
   .wellness-plan .section-title {
-    font-size: 18px !important;       /* bigger + more noticeable */
-    font-weight: 900 !important;      /* stronger header feel */
+    font-size: 18px !important;
+    font-weight: 900 !important;
 
-    padding: 10px 22px !important;    /* taller + wider pill */
+    padding: 10px 22px !important;
     border-radius: 999px !important;
 
-    /* stronger outline + depth */
     border: 2px solid #bfc5cc !important;
     box-shadow: 0 5px 14px rgba(0,0,0,0.12) !important;
 
-    /* slightly deeper overlap into the bubble */
-    top: -26px !important;
+    /* ✅ Allows long titles to wrap cleanly */
+    white-space: normal !important;
+    max-width: 88% !important;
+    line-height: 1.25 !important;
+
+    /* Position */
+    top: -28px !important;
     left: 18px !important;
   }
 
-  /* ✅ Treatment Summary block labels (Daily, Evening, Weekly, PRN) */
-  .wellness-plan .med-time-label {
-    font-size: 16px !important;
-    padding: 10px 14px !important;   /* slightly bigger for readability */
+  /* ✅ WRAP SAFETY:
+     If pill becomes 2 lines, bubble needs extra clearance */
+  .wellness-plan .wellness-bubble {
+    padding-top: 70px !important;
   }
 
-  /* ✅ Medication rows (keep compact but readable) */
+  /* ✅ Treatment Summary block labels */
+  .wellness-plan .med-time-label {
+    font-size: 16px !important;
+    padding: 10px 14px !important;
+  }
+
+  /* ✅ Medication rows */
   .wellness-plan .medication-list li {
     font-size: 14px !important;
     line-height: 1.4 !important;
   }
 }
+
 
 
 
@@ -2032,9 +2043,6 @@ html, body {
   text-decoration: underline;
 }
 
-
-/* Spacing between consecutive sections */
-.wellness-plan .section-wrapper + .section-wrapper { margin-top: 80px; }
 
 
 /* Generic “dose” utility (outside medication-list too) */
