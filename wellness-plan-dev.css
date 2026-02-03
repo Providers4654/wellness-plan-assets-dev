@@ -1017,14 +1017,23 @@ html, body {
 /* ============================
    SECTION BUBBLES (normalized spacing)
    ============================ */
+
+/* ============================================================
+   ✅ EDIT: Universal Bubble Padding (All Sections Match)
+   ============================================================ */
+
 .wellness-plan .wellness-bubble {
   background: #ffffff;
   border-radius: 20px;
-  padding: 48px 28px 28px; /* increased top padding */
+
+  /* ✅ Universal spacing */
+  padding: 48px 28px 18px;  /* bottom reduced */
+
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  margin-top: 44px;        /* unified gap between pill and bubble border */
+  margin-top: 44px;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
+
 
 /* normalize first element inside bubble */
 .wellness-plan .wellness-bubble > *:first-child,
@@ -1126,6 +1135,7 @@ html, body {
 /* ============================================================
    TO CONSIDER — FINAL CLEAN ACCORDION (NO EXTRA SPACE)
    ============================================================ */
+
 
 /* ============================
    1. Wrapper Cleanup
@@ -1302,6 +1312,32 @@ html, body {
     padding: 0.65rem 0.85rem !important;
   }
 }
+
+
+
+
+
+/* ============================================================
+   ✅ EDIT: Remove dashed <li> borders leaking into To Consider
+   ============================================================ */
+
+#toConsider li {
+  border-bottom: none !important;
+}
+
+
+
+/* ============================================================
+   ✅ FINAL FIX: Remove dashed dividers from To Consider cards
+   ============================================================ */
+
+#toConsider > li {
+  border-bottom: none !important;
+}
+
+
+
+
 
 
 /* ------------------------------
