@@ -1081,7 +1081,7 @@ html, body {
 
 
 /* ============================
-   RESPONSIVE: MOBILE PILL + WRAP SAFETY
+   RESPONSIVE: MOBILE PILL + WRAP SAFETY (UNIVERSAL)
    ============================ */
 @media (max-width: 600px) {
 
@@ -1089,11 +1089,14 @@ html, body {
   .wellness-plan .section-title {
     font-size: 18px !important;
     font-weight: 900 !important;
-    padding: 10px 22px !important;
+
+    padding: 8px 20px !important;   /* slightly tighter */
     border-radius: 999px !important;
+
     border: 2px solid #bfc5cc !important;
     box-shadow: 0 5px 14px rgba(0,0,0,0.12) !important;
 
+    /* ✅ Allow wrapping cleanly */
     white-space: normal !important;
     max-width: 88% !important;
     line-height: 1.25 !important;
@@ -1102,9 +1105,10 @@ html, body {
     left: 18px !important;
   }
 
-  /* ✅ FIX: Reduce gap under pill titles */
+  /* ✅ UNIVERSAL CLEARANCE:
+     Enough space for BOTH 1-line and 2-line titles */
   .wellness-plan .wellness-bubble {
-    padding-top: 54px !important;
+    padding-top: 70px !important;
   }
 
   /* ✅ Treatment Summary block labels */
@@ -1119,6 +1123,7 @@ html, body {
     line-height: 1.4 !important;
   }
 }
+
 
 
 
