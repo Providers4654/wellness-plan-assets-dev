@@ -304,7 +304,7 @@ html, body {
   /* ✅ FIXED SPACING:
      - More breathing room ABOVE (no negative pull)
      - Much more space BELOW before Treatment Summary */
-  margin: 8px auto 44px auto;
+  margin: 8px auto 60px auto;
 
   display: flex;
   align-items: center;
