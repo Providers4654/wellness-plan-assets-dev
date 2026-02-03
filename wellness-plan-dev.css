@@ -1089,27 +1089,22 @@ html, body {
   .wellness-plan .section-title {
     font-size: 18px !important;
     font-weight: 900 !important;
-
     padding: 10px 22px !important;
     border-radius: 999px !important;
-
     border: 2px solid #bfc5cc !important;
     box-shadow: 0 5px 14px rgba(0,0,0,0.12) !important;
 
-    /* ✅ Allows long titles to wrap cleanly */
     white-space: normal !important;
     max-width: 88% !important;
     line-height: 1.25 !important;
 
-    /* Position */
     top: -28px !important;
     left: 18px !important;
   }
 
-  /* ✅ WRAP SAFETY:
-     If pill becomes 2 lines, bubble needs extra clearance */
+  /* ✅ FIX: Reduce gap under pill titles */
   .wellness-plan .wellness-bubble {
-    padding-top: 70px !important;
+    padding-top: 54px !important;
   }
 
   /* ✅ Treatment Summary block labels */
@@ -1124,6 +1119,7 @@ html, body {
     line-height: 1.4 !important;
   }
 }
+
 
 
 
