@@ -1108,7 +1108,7 @@ html, body {
   /* ✅ UNIVERSAL CLEARANCE:
      Enough space for BOTH 1-line and 2-line titles */
   .wellness-plan .wellness-bubble {
-    padding-top: 70px !important;
+    padding-top: 50px !important;
   }
 
   /* ✅ Treatment Summary block labels */
