@@ -1224,15 +1224,45 @@ html, body {
 }
 
 .wellness-plan .to-consider-content.open {
-  max-height: 800px; /* safe accordion ceiling */
-
+  max-height: 800px;
   opacity: 1;
 
-  /* Padding ONLY when open */
+  /* ✅ Keep normal padding so content breathes */
   padding: 0.6rem 1.2rem 0.5rem !important;
 
   margin-top: 6px !important;
 }
+
+/* ✅ EDIT: Remove extra bottom padding ONLY on the final dropdown */
+#toConsider > li:last-child .to-consider-content.open {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+
+
+
+
+/* ============================================================
+   4.5 RESTORE: TO CONSIDER SUBTEXT BOX STYLING
+   (This brings back the shaded paragraph background)
+   ============================================================ */
+
+.to-consider-subtext {
+  display: block;
+  background: #f9fbff;
+  border: 1px solid #e3e8f4;
+  border-radius: 14px;
+  padding: 18px 22px;
+  font-size: 15.5px;
+  line-height: 1.65;
+  font-style: italic;
+  text-align: center;
+  margin: 0.5rem 0 1.6rem 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
 
 
 /* ============================
@@ -1241,7 +1271,7 @@ html, body {
 
 .wellness-plan .to-consider-item {
   padding: 0.55rem 0;
-  border-bottom: 1px dashed #e3e6f0;
+  border-bottom: none !important; /* ✅ EDIT: remove dashed divider */
 }
 
 .wellness-plan .to-consider-item:last-child {
