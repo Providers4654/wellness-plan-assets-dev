@@ -14,11 +14,6 @@
 
 
   /* Resource URLs */
-  --treatment-addons-url: https://www.mtnhlth.com/treatment-add-ons;
-
-  --standards-text: 🔗 Basic HLTH Standards;
-  --basic-standards-url: https://www.mtnhlth.com/basic-hlth-standards;
-  --standards-note: A reference for the core habits and principles we believe form the foundation of good health — the standards everyone should aim to meet.;
 
   --coaching-text: Schedule a free consultation with our HLTH Coach;
   --health-coaching-url: https://www.mtnhlth.com/health-coaching;
@@ -65,9 +60,6 @@
   --fullscript-url: https://us.fullscript.com/welcome/mtnhlth/store-start?preview=true;
   --fullscript-note: Personalized recommendations, shipped directly to you — at a discounted price.;
 
-  --addons-text: 🔗 Additional Add-On Therapies;
-  --addons-url: https://www.mtnhlth.com/treatment-add-ons;
-  --addons-note: A growing library of additional therapies and treatment options designed to complement your plan and support your goals.;
 
   /* Visit Timeline labels */
   --visit-timeline-title: Visit Timeline;
