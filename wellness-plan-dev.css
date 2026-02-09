@@ -843,17 +843,17 @@ html, body {
    ============================ */
 .lifestyle-divider-label {
   list-style: none;
-  margin: 14px 0 10px;
-  padding: 0 0 0 14px;               /* room for accent bar */
+  margin: 0 !important;                /* margins handled manually */
+  padding: 0 0 12px 14px !important;   /* ✅ spacing BELOW title */
   font-size: 15px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.9px;
-  color: #111;
+  color: #111 !important;
   position: relative;
 }
 
-/* Accent bar to the left (premium, non-boring) */
+/* Accent bar to the left */
 .lifestyle-divider-label::before {
   content: "";
   position: absolute;
@@ -867,7 +867,7 @@ html, body {
 
 /* Softer emphasis for General section */
 .lifestyle-divider-label.general {
-  color: #444;
+  color: #444 !important;
 }
 
 .lifestyle-divider-label.general::before {
@@ -875,11 +875,18 @@ html, body {
 }
 
 /* ============================
+   FIX: Remove weird first-letter coloring
+   ============================ */
+.lifestyle-divider-label::first-letter {
+  color: inherit !important;
+}
+
+/* ============================
    Spacer between sections
    ============================ */
 .lifestyle-divider-spacer {
   list-style: none;
-  height: 10px;   /* tightened — was causing excess space */
+  height: 10px;
 }
 
 /* ============================
@@ -889,7 +896,7 @@ html, body {
   display: block;
   width: 100%;
   height: 2px;
-  margin: 10px 0 18px;
+  margin: 0 0 18px 0 !important;  /* sits directly under title */
   background: linear-gradient(
     to right,
     transparent,
@@ -909,19 +916,8 @@ html, body {
 }
 
 /* ============================
-   Prevent divider rows from inheriting tip-card styles
-   ============================ */
-.wellness-plan .lifestyle-divider-label,
-.wellness-plan .lifestyle-divider-line,
-.wellness-plan .lifestyle-divider-spacer {
-  background: none !important;
-  border-left: none !important;
-  padding-left: 14px !important; /* keep alignment for accent bar */
-}
-
-/* ============================
-   REMOVE ALL card spacing from divider <li> rows
-   (this fixes the giant empty gap)
+   REMOVE ALL card styling from divider <li> rows
+   (prevents giant gaps + colored blocks)
    ============================ */
 .wellness-plan .lifestyle-tips-list > li.lifestyle-divider-label,
 .wellness-plan .lifestyle-tips-list > li.lifestyle-divider-line,
@@ -933,6 +929,7 @@ html, body {
   background: none !important;
   box-shadow: none !important;
 }
+
 
 
 
