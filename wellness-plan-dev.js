@@ -579,11 +579,12 @@ if (lifestyleBlock) {
     // ----------------------------
     if (hasCustomTips) {
 
-      html += `
-        <li class="lifestyle-divider-label">
-          Tips personally created by your provider for you
-        </li>
-      `;
+html += `
+  <div class="lifestyle-divider-label">
+    Tips personally created by your provider for you
+  </div>
+`;
+
 
       customTips.forEach(tipName => {
 
@@ -614,14 +615,16 @@ if (lifestyleBlock) {
     if (hasGeneralTips) {
 
       if (hasCustomTips) {
-        html += `<li class="lifestyle-divider-spacer"></li>`;
+       html += `<div class="lifestyle-divider-spacer"></div>`;
+
       }
 
-      html += `
-        <li class="lifestyle-divider-label general">
-          General lifestyle recommendations
-        </li>
-      `;
+html += `
+  <div class="lifestyle-divider-label general">
+    General lifestyle recommendations
+  </div>
+`;
+
 
       generalTips.forEach(tipName => {
 
