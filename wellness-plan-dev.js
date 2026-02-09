@@ -523,10 +523,7 @@ if (lifestyleBlock) {
   );
 
   // ============================
-  // ORDERING RULES:
-  // 1. Custom tips first
-  // 2. Priority tip LT-VPWGNK next
-  // 3. Remaining library tips alphabetically
+  // ORDERING RULES
   // ============================
 
   const customTips = [];
@@ -544,7 +541,7 @@ if (lifestyleBlock) {
       return;
     }
 
-    // Priority tip goes first in General
+    // Priority tip
     if ((match["ID"] || "").trim() === "LT-VPWGNK") {
       priorityTip = tipName;
     } else {
@@ -552,7 +549,6 @@ if (lifestyleBlock) {
     }
   });
 
-  // Alphabetical sorting
   customTips.sort((a, b) =>
     a.localeCompare(b, undefined, { sensitivity: "base" })
   );
@@ -578,11 +574,10 @@ if (lifestyleBlock) {
     const hasGeneralTips = generalTips.length > 0;
 
     // ----------------------------
-    // Custom Tips Section
+    // CASE 1: Custom tips exist
     // ----------------------------
     if (hasCustomTips) {
 
-      // Divider header OUTSIDE the UL
       html += `
         <div class="lifestyle-divider-label">
           Personalized for You
@@ -591,14 +586,12 @@ if (lifestyleBlock) {
         <ul class="lifestyle-tips-list">
       `;
 
-      // Only REAL tips inside UL
       customTips.forEach(tipName => {
 
         let raw = String(tipName);
         let title = raw;
         let blurb = "";
 
-        // Support: "Title: blurb..."
         const colonIndex = raw.indexOf(":");
         if (colonIndex !== -1) {
           title = raw.slice(0, colonIndex).trim();
@@ -619,31 +612,27 @@ if (lifestyleBlock) {
         `;
       });
 
-      html += `
-        </ul>
-      `;
+      html += `</ul>`;
     }
 
     // ----------------------------
-    // General Tips Section
+    // CASE 2: General tips
     // ----------------------------
-    if (hasGeneralTips && hasCustomTips) {
+    if (hasGeneralTips) {
 
-      // Optional spacer between groups (outside UL)
+      // Only show header if custom tips exist
       if (hasCustomTips) {
-        html += `<div class="lifestyle-divider-spacer"></div>`;
+        html += `
+          <div class="lifestyle-divider-spacer"></div>
+
+          <div class="lifestyle-divider-label general">
+            Core Lifestyle Guidelines
+          </div>
+        `;
       }
 
-      // Divider header OUTSIDE the UL
-      html += `
-        <div class="lifestyle-divider-label general">
-          Core Lifestyle Guidelines
-        </div>
+      html += `<ul class="lifestyle-tips-list">`;
 
-        <ul class="lifestyle-tips-list">
-      `;
-
-      // Only REAL tips inside UL
       generalTips.forEach(tipName => {
 
         const tipInfo = lifestyleData.find(
@@ -666,15 +655,13 @@ if (lifestyleBlock) {
         `;
       });
 
-      html += `
-        </ul>
-      `;
+      html += `</ul>`;
     }
 
-    // Inject final HTML
     lifestyleBlock.innerHTML = html;
   }
 }
+
 
 
 
