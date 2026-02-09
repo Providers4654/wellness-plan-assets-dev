@@ -831,6 +831,9 @@ html, body {
 }
 
 
+
+
+
 /* ============================
    Lifestyle custom/general divider
    ============================ */
@@ -857,6 +860,16 @@ html, body {
   );
   margin-bottom: 18px;
 }
+
+
+/* Prevent divider items from inheriting tip theme colors */
+.wellness-plan .lifestyle-divider-label,
+.wellness-plan .lifestyle-divider-line {
+  background: none !important;
+  border-left: none !important;
+  padding: 0 !important;
+}
+
 
 
 
