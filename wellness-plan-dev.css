@@ -883,17 +883,6 @@ html, body {
   position: relative;
 }
 
-/* Accent bar */
-.lifestyle-divider-label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  width: 5px;
-  height: 16px;
-  border-radius: 4px;
-  background: rgba(0, 140, 160, 0.55);
-}
 
 /* Softer General section */
 .lifestyle-divider-label.general {
