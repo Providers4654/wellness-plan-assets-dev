@@ -627,7 +627,7 @@ if (lifestyleBlock) {
     // ----------------------------
     // General Tips Section
     // ----------------------------
-    if (hasGeneralTips) {
+    if (hasGeneralTips && hasCustomTips) {
 
       // Optional spacer between groups (outside UL)
       if (hasCustomTips) {
