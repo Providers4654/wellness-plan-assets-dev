@@ -884,9 +884,10 @@ html, body {
 
 /* Softer General section */
 .lifestyle-divider-label.general {
-  margin-top: 30px !important; /* ✅ extra space above General */
-  color: #444 !important;
+  margin-top: 30px;
+  color: inherit !important;
 }
+
 
 .lifestyle-divider-label.general::before {
   background: rgba(0, 0, 0, 0.25);
