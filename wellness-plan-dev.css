@@ -873,12 +873,12 @@ html, body {
   padding-bottom: 10px !important;
 
   font-size: 15px;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.9px;
+  letter-spacing: 0.8px;
 
   /* ✅ Force neutral text */
-  color: #111 !important;
+  color: #3a3f45 !important;
 
   position: relative;
 }
