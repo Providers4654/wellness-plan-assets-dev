@@ -619,42 +619,46 @@ if (orderedTips.length > 0) {
     });
   }
 
-  // ============================
-  // General tips section
-  // ============================
-  if (hasGeneralTips) {
-    if (hasCustomTips) {
-      html += `
-        <li class="lifestyle-divider-label">
-          General lifestyle recommendations
-        </li>
-        <li class="lifestyle-divider-line"></li>
-      `;
-    }
+// ============================
+// General tips section
+// ============================
 
-    const generalTips = [
-      ...(priorityTip ? [priorityTip] : []),
-      ...libraryTips
-    ];
+// ONLY show headers + divider if custom tips exist
+const generalTips = [
+  ...(priorityTip ? [priorityTip] : []),
+  ...libraryTips
+];
 
-    generalTips.forEach(tipName => {
-      const tipInfo = lifestyleData.find(
-        r => (r["Tip"] || "").trim() === tipName.trim()
-      );
+if (generalTips.length > 0) {
 
-      if (!tipInfo) return;
-
-      html += `
-        <li class="lifestyle-row">
-          <div class="tip-name">
-            <strong>${tipInfo["Tip"]}</strong>
-            ${tipInfo["Blurb"] ? `<span class="info-icon">i</span>` : ""}
-          </div>
-          ${tipInfo["Blurb"] ? `<div class="lifestyle-learn-more">${normalizeCellText(tipInfo["Blurb"])}</div>` : ""}
-        </li>
-      `;
-    });
+  if (hasCustomTips) {
+    html += `
+      <li class="lifestyle-divider-spacer"></li>
+      <li class="lifestyle-divider-line strong"></li>
+      <li class="lifestyle-divider-label general">
+        General lifestyle recommendations
+      </li>
+    `;
   }
+
+  generalTips.forEach(tipName => {
+    const tipInfo = lifestyleData.find(
+      r => (r["Tip"] || "").trim() === tipName.trim()
+    );
+    if (!tipInfo) return;
+
+    html += `
+      <li class="lifestyle-row">
+        <div class="tip-name">
+          <strong>${tipInfo["Tip"]}</strong>
+          ${tipInfo["Blurb"] ? `<span class="info-icon">i</span>` : ""}
+        </div>
+        ${tipInfo["Blurb"] ? `<div class="lifestyle-learn-more">${normalizeCellText(tipInfo["Blurb"])}</div>` : ""}
+      </li>
+    `;
+  });
+}
+
 
   lifestyleBlock.innerHTML = html;
 }
