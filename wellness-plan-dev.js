@@ -577,8 +577,6 @@ const orderedTips = [
       const tipInfo = lifestyleData.find(r => (r["Tip"] || "").trim() === tipName.trim());
 
 if (tipInfo) {
-  // ✅ Known tip from library (now includes "Updated" line)
-  const updated = (tipInfo["Updated"] || "").trim();
 
   html += `
     <li class="lifestyle-row">
@@ -586,7 +584,6 @@ if (tipInfo) {
         <strong>${tipInfo["Tip"]}</strong>
         ${tipInfo["Blurb"] ? `<span class="info-icon">i</span>` : ""}
       </div>
-      ${updated ? `<div class="tip-updated">Updated: ${normalizeCellText(updated)}</div>` : ""}
       ${tipInfo["Blurb"] ? `<div class="lifestyle-learn-more">${normalizeCellText(tipInfo["Blurb"])}</div>` : ""}
     </li>`;
 } else {
