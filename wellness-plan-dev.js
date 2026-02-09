@@ -538,11 +538,13 @@ if (lifestyleBlock) {
       r => (r["Tip"] || "").trim() === tipName.trim()
     );
 
+    // Custom free-text tip
     if (!match) {
       customTips.push(tipName);
       return;
     }
 
+    // Priority tip goes first in General
     if ((match["ID"] || "").trim() === "LT-VPWGNK") {
       priorityTip = tipName;
     } else {
@@ -550,6 +552,7 @@ if (lifestyleBlock) {
     }
   });
 
+  // Alphabetical sorting
   customTips.sort((a, b) =>
     a.localeCompare(b, undefined, { sensitivity: "base" })
   );
@@ -575,27 +578,31 @@ if (lifestyleBlock) {
     const hasGeneralTips = generalTips.length > 0;
 
     // ----------------------------
-    // Custom Tips Header
+    // Custom Tips Section
     // ----------------------------
     if (hasCustomTips) {
 
-html += `
-  <div class="lifestyle-divider-label">
-    Tips personally created by your provider for you
-  </div>
-`;
+      // Divider header OUTSIDE the UL
+      html += `
+        <div class="lifestyle-divider-label">
+          Tips personally created by your provider for you
+        </div>
 
+        <ul class="lifestyle-tips-list">
+      `;
 
+      // Only REAL tips inside UL
       customTips.forEach(tipName => {
 
         let raw = String(tipName);
         let title = raw;
         let blurb = "";
 
+        // Support: "Title: blurb..."
         const colonIndex = raw.indexOf(":");
         if (colonIndex !== -1) {
           title = raw.slice(0, colonIndex).trim();
-          blurb = raw.slice(colonIndex + 1);
+          blurb = raw.slice(colonIndex + 1).trim();
         }
 
         html += `
@@ -603,29 +610,40 @@ html += `
             <div class="tip-name">
               <strong>${normalizeCellText(title)}</strong>
             </div>
-            ${blurb ? `<div class="lifestyle-learn-more">${normalizeCellText(blurb)}</div>` : ""}
+            ${
+              blurb
+                ? `<div class="lifestyle-learn-more">${normalizeCellText(blurb)}</div>`
+                : ""
+            }
           </li>
         `;
       });
+
+      html += `
+        </ul>
+      `;
     }
 
     // ----------------------------
-    // General Tips Header
+    // General Tips Section
     // ----------------------------
     if (hasGeneralTips) {
 
+      // Optional spacer between groups (outside UL)
       if (hasCustomTips) {
-       html += `<div class="lifestyle-divider-spacer"></div>`;
-
+        html += `<div class="lifestyle-divider-spacer"></div>`;
       }
 
-html += `
-  <div class="lifestyle-divider-label general">
-    General lifestyle recommendations
-  </div>
-`;
+      // Divider header OUTSIDE the UL
+      html += `
+        <div class="lifestyle-divider-label general">
+          General lifestyle recommendations
+        </div>
 
+        <ul class="lifestyle-tips-list">
+      `;
 
+      // Only REAL tips inside UL
       generalTips.forEach(tipName => {
 
         const tipInfo = lifestyleData.find(
@@ -637,16 +655,23 @@ html += `
         html += `
           <li class="lifestyle-row">
             <div class="tip-name">
-              <strong>${tipInfo["Tip"]}</strong>
+              <strong>${normalizeCellText(tipInfo["Tip"])}</strong>
             </div>
-            ${tipInfo["Blurb"]
-              ? `<div class="lifestyle-learn-more">${normalizeCellText(tipInfo["Blurb"])}</div>`
-              : ""}
+            ${
+              tipInfo["Blurb"]
+                ? `<div class="lifestyle-learn-more">${normalizeCellText(tipInfo["Blurb"])}</div>`
+                : ""
+            }
           </li>
         `;
       });
+
+      html += `
+        </ul>
+      `;
     }
 
+    // Inject final HTML
     lifestyleBlock.innerHTML = html;
   }
 }
