@@ -585,7 +585,7 @@ if (lifestyleBlock) {
       // Divider header OUTSIDE the UL
       html += `
         <div class="lifestyle-divider-label">
-          Tips personally created by your provider for you
+          Personalized for You
         </div>
 
         <ul class="lifestyle-tips-list">
@@ -637,7 +637,7 @@ if (lifestyleBlock) {
       // Divider header OUTSIDE the UL
       html += `
         <div class="lifestyle-divider-label general">
-          General lifestyle recommendations
+          Core Lifestyle Guidelines
         </div>
 
         <ul class="lifestyle-tips-list">
